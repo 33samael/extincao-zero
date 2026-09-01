@@ -424,7 +424,7 @@ body.light-theme .nav-button:hover {
 
 
 /* ================================
-   BOTÕES
+   BOTÕES-b
 ================================ */
 
 .hero-buttons {
@@ -437,7 +437,8 @@ body.light-theme .nav-button:hover {
 }
 
 .btn-primary,
-.btn-secondary {
+.btn-secondary
+ {
     height: 46px;
 
     padding: 0 22px;
@@ -796,7 +797,7 @@ body.light-theme .store-button small {
 /* LOGO */
 
 .app-logo img {
-    width: 80px;
+    width: 40px;
     height: auto;
 }
 
@@ -831,7 +832,7 @@ body.light-theme .store-button small {
 ================================= */
 
 .phone-title {
-    margin-top: 35px;
+    margin-top: 10px;
 }
 
 .phone-title small {
@@ -861,7 +862,7 @@ body.light-theme .store-button small {
 
 .animal-image {
     width: 100%;
-    height: 190px;
+    height: 130px;
 
     margin-top: 22px;
 
@@ -1117,6 +1118,1272 @@ body.light-theme .store-button small {
 
     .species-tag {
         right: -5px;
+    }
+
+}
+
+/* ========================================
+   SEÇÃO — O PROBLEMA
+======================================== */
+
+.problem-section {
+    width: 100%;
+
+    min-height: 100vh;
+
+    padding: 120px 0;
+
+    display: flex;
+    align-items: center;
+}
+
+
+.problem-container {
+    width: 100%;
+    max-width: 1240px;
+
+    margin: 0 auto;
+
+    padding: 0 20px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 60px;
+}
+
+
+/* ========================================
+   LADO ESQUERDO
+======================================== */
+
+.problem-content {
+    width: 50%;
+
+    position: relative;
+}
+
+
+/* ========================================
+   LABEL
+======================================== */
+
+.problem-label {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 7px 16px;
+
+    border: 1px solid rgba(255, 119, 0, 0.55);
+
+    border-radius: 30px;
+
+    color: #ff7900;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 1.8px;
+}
+
+
+.label-dot {
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: #ff7900;
+
+    box-shadow:
+        0 0 8px rgba(255, 119, 0, 0.7);
+}
+
+
+/* ========================================
+   TÍTULO
+======================================== */
+
+.problem-content h2 {
+    max-width: 570px;
+
+    margin-top: 25px;
+
+    color: #f2f6ef;
+
+    font-size: clamp(35px, 3.6vw, 50px);
+
+    line-height: 0.98;
+
+    letter-spacing: -2.5px;
+
+    font-weight: 800;
+}
+
+
+.problem-content h2 span {
+    display: inline;
+
+    color: #f2f6ef;
+}
+
+
+/* ========================================
+   TEXTO DE DESTAQUE
+======================================== */
+
+.problem-highlight {
+    max-width: 570px;
+
+    margin-top: 20px;
+    margin-bottom: 50px;
+
+    color: #a8c99c;
+
+    font-size: 17px;
+
+    line-height: 1.55;
+}
+
+
+/* ========================================
+   PARÁGRAFOS
+======================================== */
+
+.problem-content p:not(.problem-highlight) {
+    max-width: 570px;
+
+    margin-top: 22px;
+
+    color: #d5ddd5;
+
+    font-size: 15px;
+
+    line-height: 1.65;
+}
+
+
+/* ========================================
+   BOTÃO
+======================================== */
+
+.problem-button {
+    margin-top: 30px;
+    margin-right: 15px;
+    height: 45px;
+
+    padding: 0 23px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    border-radius: 30px;
+
+    color: #111a08;
+
+    background: #a9f21d;
+
+    text-decoration: none; 
+    position: relative;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    box-shadow:
+        0 0 20px rgba(169, 242, 29, 0.18);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+
+.problem-button:hover {
+    transform: translateY(-2px);
+
+    background: #baff35;
+
+    box-shadow:
+        0 8px 30px rgba(169, 242, 29, 0.28);
+}
+
+
+.problem-button i {
+    font-size: 15px;
+}
+
+
+/* ========================================
+   LADO DIREITO
+======================================== */
+
+.problem-visual {
+    width: 50%;
+
+    min-height: 570px;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* ========================================
+   IMAGEM PRINCIPAL
+======================================== */
+
+.main-animal {
+    width: 570px;
+    height: 510px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 30px;
+
+    background: #111a14;
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.35);
+}
+
+
+.main-animal img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    filter: brightness(0.72);
+
+    transition:
+        transform 0.8s ease,
+        filter 0.8s ease;
+}
+
+
+.main-animal:hover img {
+    transform: scale(1.03);
+
+    filter: brightness(0.82);
+}
+
+
+/* ========================================
+   CARDS DOS ANIMAIS
+======================================== */
+
+.animal-card {
+    position: absolute;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    background: #17221b;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    box-shadow:
+        0 18px 40px rgba(0, 0, 0, 0.45);
+
+    z-index: 3;
+
+    transition:
+        transform 0.4s ease;
+}
+
+
+.animal-card:hover {
+    transform: translateY(-5px);
+}
+
+
+/* IMAGENS DOS CARDS */
+
+.animal-card img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* ========================================
+   CARD SUPERIOR
+======================================== */
+
+.animal-card-top {
+    width: 180px;
+    height: 145px;
+
+    top: -25px;
+    right: -25px;
+}
+
+
+.animal-card-top img {
+    height: 110px;
+}
+
+
+/* ========================================
+   CARD INFERIOR
+======================================== */
+
+.animal-card-bottom {
+    width: 195px;
+    height: 158px;
+
+    bottom: -25px;
+    left: -35px;
+}
+
+
+.animal-card-bottom img {
+    height: 122px;
+}
+
+
+/* ========================================
+   TEXTO DOS CARDS
+======================================== */
+
+.animal-card-info {
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+
+    height: 35px;
+
+    padding: 0 10px;
+
+    display: flex;
+    align-items: center;
+
+    color: #ffffff;
+
+    background: rgba(10, 19, 13, 0.88);
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+
+/* ========================================
+   TEMA CLARO
+======================================== */
+
+body.light-theme .problem-content h2 {
+    color: #182219;
+}
+
+
+body.light-theme .problem-content h2 span {
+    color: #182219;
+}
+
+
+body.light-theme .problem-highlight {
+    color: #577254;
+}
+
+
+body.light-theme .problem-content p:not(.problem-highlight) {
+    color: #465548;
+}
+
+
+body.light-theme .main-animal {
+    box-shadow:
+        0 25px 60px rgba(20, 40, 20, 0.18);
+}
+
+
+body.light-theme .animal-card {
+    background: #ffffff;
+
+    border-color: rgba(20, 50, 25, 0.10);
+}
+
+
+body.light-theme .animal-card-info {
+    color: #ffffff;
+
+    background: rgba(10, 25, 13, 0.88);
+}
+
+
+/* ========================================
+   ANIMAÇÃO DE ENTRADA
+======================================== */
+
+.problem-content {
+    animation: problemContentIn 0.9s ease both;
+}
+
+
+.problem-visual {
+    animation: problemVisualIn 1s ease 0.15s both;
+}
+
+
+@keyframes problemContentIn {
+
+    from {
+        opacity: 0;
+
+        transform: translateX(-30px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateX(0);
+    }
+
+}
+
+
+@keyframes problemVisualIn {
+
+    from {
+        opacity: 0;
+
+        transform: translateX(30px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateX(0);
+    }
+
+}
+
+
+/* ========================================
+   RESPONSIVO
+======================================== */
+
+@media (max-width: 1000px) {
+
+    .problem-container {
+        gap: 35px;
+    }
+
+    .problem-content h2 {
+        font-size: 45px;
+    }
+
+    .main-animal {
+        width: 470px;
+        height: 450px;
+    }
+
+    .animal-card-top {
+        right: -10px;
+    }
+
+    .animal-card-bottom {
+        left: -15px;
+    }
+
+}
+
+
+@media (max-width: 800px) {
+
+    .problem-section {
+        padding: 90px 0;
+    }
+
+    .problem-container {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .problem-content,
+    .problem-visual {
+        width: 100%;
+    }
+
+    .problem-content h2 {
+        max-width: 650px;
+
+        font-size: 48px;
+    }
+
+    .problem-visual {
+        min-height: 550px;
+
+        margin-top: 40px;
+    }
+
+    .main-animal {
+        width: 100%;
+        max-width: 570px;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .problem-content h2 {
+        font-size: 38px;
+
+        letter-spacing: -1.5px;
+    }
+
+    .problem-highlight {
+        font-size: 16px;
+    }
+
+    .problem-content p:not(.problem-highlight) {
+        font-size: 14px;
+    }
+
+    .problem-visual {
+        min-height: 430px;
+    }
+
+    .main-animal {
+        height: 390px;
+
+        border-radius: 22px;
+    }
+
+    .animal-card-top {
+        width: 145px;
+        height: 120px;
+
+        right: -5px;
+    }
+
+    .animal-card-top img {
+        height: 90px;
+    }
+
+    .animal-card-bottom {
+        width: 155px;
+        height: 125px;
+
+        left: -5px;
+    }
+
+    .animal-card-bottom img {
+        height: 95px;
+    }
+
+}
+
+/* ========================================
+   SEÇÃO — QUEM FAZ
+======================================== */
+
+.team-section {
+    width: 100%;
+
+    padding: 110px 0 100px;
+}
+
+
+.team-container {
+    width: 100%;
+    max-width: 1300px;
+
+    margin: 0 auto;
+
+    padding: 0 30px;
+}
+
+
+/* ========================================
+   CABEÇALHO
+======================================== */
+
+.team-header {
+    margin-bottom: 48px;
+}
+
+
+.team-label {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 9px;
+
+    padding: 7px 16px;
+
+    border: 1px solid rgba(150, 235, 25, 0.45);
+
+    border-radius: 30px;
+
+    color: #a8ee19;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 1.8px;
+}
+
+
+.team-label span {
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: #a8ee19;
+
+    box-shadow:
+        0 0 8px rgba(168, 238, 25, 0.7);
+}
+
+
+.team-header h2 {
+    margin-top: 22px;
+
+    color: #f3f7f2;
+
+    font-size: clamp(48px, 5vw, 64px);
+
+    line-height: 1;
+
+    letter-spacing: -3px;
+
+    font-weight: 800;
+}
+
+
+.team-header p {
+    max-width: 600px;
+
+    margin-top: 18px;
+
+    color: #9eb1a2;
+
+    font-size: 16px;
+
+    line-height: 1.5;
+}
+
+
+/* ========================================
+   GRID
+======================================== */
+
+.team-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 24px;
+}
+
+
+/* ========================================
+   CARD
+======================================== */
+
+.team-card {
+    min-height: 225px;
+
+    padding: 32px;
+
+    display: flex;
+
+    gap: 24px;
+
+    border: 1px solid rgba(130, 190, 140, 0.22);
+
+    border-radius: 23px;
+
+    background: rgba(3, 13, 8, 0.28);
+
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        background 0.35s ease;
+}
+
+
+.team-card:hover {
+    transform: translateY(-4px);
+
+    border-color: rgba(168, 238, 25, 0.30);
+
+    background: rgba(8, 24, 13, 0.45);
+}
+
+
+/* ========================================
+   FOTO
+======================================== */
+
+.team-photo {
+    width: 112px;
+    height: 112px;
+
+    flex-shrink: 0;
+
+    overflow: hidden;
+
+    border-radius: 15px;
+
+    background: #17251b;
+}
+
+
+.team-photo img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition: transform 0.5s ease;
+}
+
+
+.team-card:hover .team-photo img {
+    transform: scale(1.00);
+}
+
+
+/* ========================================
+   INFORMAÇÕES
+======================================== */
+
+.team-info {
+    flex: 1;
+
+    min-width: 0;
+}
+
+
+.team-info h3 {
+    color: #f2f7f2;
+
+    font-size: 19px;
+
+    line-height: 1.2;
+
+    font-weight: 800;
+}
+
+
+.team-role {
+    display: block;
+
+    margin-top: 5px;
+
+    color: #a8ee19;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+
+.team-info p {
+    max-width: 470px;
+
+    margin-top: 15px;
+
+    color: #9eafa2;
+
+    font-size: 14px;
+
+    line-height: 1.55;
+}
+
+
+/* ========================================
+   REDES SOCIAIS
+======================================== */
+
+.team-socials {
+    display: flex;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-top: 19px;
+}
+
+
+.team-social {
+    height: 36px;
+
+    padding: 0 13px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    border: 1px solid rgba(170, 195, 175, 0.20);
+
+    border-radius: 20px;
+
+    color: #e3ebe4;
+
+    background: transparent;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    transition:
+        color 0.25s ease,
+        border-color 0.25s ease,
+        background 0.25s ease;
+}
+
+
+.team-social i {
+    font-size: 14px;
+}
+
+
+.team-social:hover {
+    color: #b5f52a;
+
+    border-color: rgba(168, 238, 25, 0.40);
+
+    background: rgba(168, 238, 25, 0.06);
+}
+
+
+/* ========================================
+   TEMA CLARO
+======================================== */
+
+body.light-theme .team-header h2 {
+    color: #182219;
+}
+
+
+body.light-theme .team-header p {
+    color: #607064;
+}
+
+
+body.light-theme .team-card {
+    background: rgba(255, 255, 255, 0.35);
+
+    border-color: rgba(50, 90, 55, 0.18);
+}
+
+
+body.light-theme .team-card:hover {
+    background: rgba(255, 255, 255, 0.65);
+
+    border-color: rgba(80, 130, 65, 0.35);
+}
+
+
+body.light-theme .team-info h3 {
+    color: #1b271d;
+}
+
+
+body.light-theme .team-info p {
+    color: #607064;
+}
+
+
+body.light-theme .team-social {
+    color: #344137;
+
+    border-color: rgba(40, 70, 45, 0.20);
+}
+
+
+body.light-theme .team-social:hover {
+    color: #4d8200;
+
+    border-color: rgba(100, 150, 40, 0.40);
+
+    background: rgba(160, 210, 80, 0.10);
+}
+
+
+/* ========================================
+   RESPONSIVO
+======================================== */
+
+@media (max-width: 900px) {
+
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 550px) {
+
+    .team-container {
+        padding: 0 20px;
+    }
+
+    .team-section {
+        padding: 80px 0;
+    }
+
+    .team-card {
+        padding: 24px;
+
+        flex-direction: column;
+
+        gap: 18px;
+    }
+
+    .team-photo {
+        width: 20px;
+        height: 20px;
+    }
+
+    .team-header h2 {
+        font-size: 48px;
+    }
+
+}
+
+/* ========================================
+   FOOTER
+======================================== */
+
+.site-footer {
+    width: 100%;
+
+    padding: 58px 0 0;
+
+    background: rgba(3, 12, 7, 0.75);
+
+    border-top: 1px solid rgba(120, 180, 130, 0.08);
+}
+
+
+.footer-container {
+    width: 100%;
+    max-width: 1350px;
+
+    margin: 0 auto;
+
+    padding: 0 30px 48px;
+
+    display: grid;
+
+    grid-template-columns:
+        1.05fr
+        1fr
+        1fr;
+
+    gap: 70px;
+}
+
+
+/* ========================================
+   MARCA
+======================================== */
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+
+    gap: 11px;
+
+    color: #edf5ec;
+
+    font-size: 17px;
+
+    font-weight: 700;
+}
+
+
+.footer-logo strong {
+    color: #a9ef20;
+}
+
+
+.footer-logo-icon {
+    width: 37px;
+    height: 37px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #a9ef20;
+
+    color: #17200e;
+
+    font-size: 18px;
+}
+
+
+.footer-brand > p {
+    margin-top: 18px;
+
+    color: #91a69a;
+
+    font-size: 13px;
+
+    line-height: 1.8;
+}
+
+
+/* ========================================
+   TÍTULOS
+======================================== */
+
+.footer-navigation h4,
+.footer-sources h4 {
+    margin-bottom: 17px;
+
+    color: #91b79b;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+}
+
+
+/* ========================================
+   NAVEGAÇÃO
+======================================== */
+
+.footer-links {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 55px;
+}
+
+
+.footer-links div {
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+
+.footer-links a {
+    width: fit-content;
+
+    color: #d3ddd5;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.footer-links a:hover {
+    color: #a9ef20;
+
+    transform: translateX(3px);
+}
+
+
+/* ========================================
+   FONTES
+======================================== */
+
+.footer-sources p {
+    max-width: 390px;
+
+    color: #d0dad2;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+/* ========================================
+   PARTE INFERIOR
+======================================== */
+
+.footer-bottom {
+    width: 100%;
+    max-width: 1350px;
+
+    margin: 0 auto;
+
+    padding: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+
+    border-top: 1px solid rgba(120, 180, 130, 0.15);
+}
+
+
+.footer-bottom p {
+    margin: 0;
+
+    color: #779080;
+
+    font-size: 11px;
+
+    line-height: 1.5;
+}
+
+
+.footer-bottom p:last-child {
+    text-align: right;
+}
+
+
+/* ========================================
+   TEMA CLARO
+======================================== */
+
+body.light-theme .site-footer {
+    background: rgba(242, 246, 237, 0.75);
+
+    border-top-color: rgba(40, 70, 45, 0.10);
+}
+
+
+body.light-theme .footer-logo {
+    color: #182219;
+}
+
+
+body.light-theme .footer-brand > p {
+    color: #607064;
+}
+
+
+body.light-theme .footer-navigation h4,
+body.light-theme .footer-sources h4 {
+    color: #58715d;
+}
+
+
+body.light-theme .footer-links a {
+    color: #3f4d42;
+}
+
+
+body.light-theme .footer-links a:hover {
+    color: #568900;
+}
+
+
+body.light-theme .footer-sources p {
+    color: #536157;
+}
+
+
+body.light-theme .footer-bottom {
+    border-top-color: rgba(40, 70, 45, 0.14);
+}
+
+
+body.light-theme .footer-bottom p {
+    color: #708073;
+}
+
+
+/* ========================================
+   RESPONSIVO
+======================================== */
+
+@media (max-width: 900px) {
+
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 45px;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .site-footer {
+        padding-top: 45px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+
+        padding-bottom: 40px;
+    }
+
+    .footer-brand {
+        grid-column: auto;
+    }
+
+    .footer-links {
+        gap: 30px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        padding: 25px 20px;
+    }
+
+    .footer-bottom p:last-child {
+        text-align: left;
     }
 
 }
