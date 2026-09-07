@@ -253,6 +253,213 @@ body.light-theme .nav-button:hover {
     transform: translateY(2px);
 }
 
+/* ========================================
+   AJUSTE GERAL — TEMA CLARO
+======================================== */
+
+/* Destaques verdes */
+body.light-theme .hero-tag,
+body.light-theme .tag-title,
+body.light-theme .team-label,
+body.light-theme .team-role {
+    color: #356b16;
+}
+
+/* Linhas e pontos verdes */
+body.light-theme .tag-line,
+body.light-theme .team-label span {
+    background: #356b16;
+}
+
+/* Título destacado */
+body.light-theme .hero h1 span {
+    color: #356b16;
+}
+
+/* Botões verdes */
+body.light-theme .btn-primary,
+body.light-theme .problem-button {
+    background: #3f751b;
+    color: #ffffff;
+}
+
+body.light-theme .btn-primary:hover,
+body.light-theme .problem-button:hover {
+    background: #315f14;
+}
+
+/* Ícones da navbar */
+body.light-theme .nav-button {
+    color: #356b16;
+}
+
+body.light-theme .nav-button:hover {
+    color: #315f14;
+    border-color: rgba(53, 107, 22, 0.35);
+    background: rgba(53, 107, 22, 0.08);
+}
+
+/* Menu mobile */
+body.light-theme .menu-toggle {
+    color: #356b16;
+}
+
+/* Links sociais */
+body.light-theme .team-social:hover {
+    color: #356b16;
+    border-color: rgba(53, 107, 22, 0.35);
+    background: rgba(53, 107, 22, 0.08);
+}
+
+/* Links do footer */
+body.light-theme .footer-links a:hover {
+    color: #356b16;
+}
+
+/* Logo/textos verdes do footer */
+body.light-theme .footer-logo strong {
+    color: #356b16;
+}
+
+/* Botão ativo da navbar */
+body.light-theme .nav-link.active {
+    color: #356b16;
+    background: rgba(53, 107, 22, 0.10);
+}
+
+body.light-theme .nav-link.active:hover {
+    background: rgba(53, 107, 22, 0.16);
+}
+
+
+/* ========================================
+   MENU MOBILE
+======================================== */
+
+.menu-toggle {
+    display: none;
+    width: 42px;
+    height: 42px;
+    border: 1px solid rgba(168, 238, 25, 0.18);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.04);
+    color: #b6f51d;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 700px) {
+
+    .nav-container {
+        padding: 0 18px;
+    }
+
+    .logo img {
+        max-width: 125px;
+    }
+
+    .menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: auto;
+    }
+
+    /* Esconde menu inicialmente */
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 82px;
+        left: auto;
+        right: 15px;
+
+        width: 260px;
+        transform: none;
+
+        flex-direction: column;
+        align-items: stretch;
+
+        padding: 14px;
+        gap: 5px;
+
+        background: rgba(5, 17, 8, 0.96);
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+
+        border: 1px solid rgba(168, 238, 25, 0.12);
+        border-radius: 18px;
+
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+    }
+
+
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-link {
+        width: 100%;
+        padding: 13px 15px;
+        border-radius: 10px;
+    }
+
+    .nav-dropdown {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    }
+
+    /* BOTÕES DENTRO DO MENU */
+    .nav-actions {
+        width: 100%;
+        margin: 8px 0 0;
+        padding-top: 12px;
+
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .nav-actions .nav-button {
+        width: 42px;
+        height: 42px;
+    }
+
+    /* Fecha o menu visualmente no desktop */
+    .navbar .nav-actions {
+        position: static;
+    }
+}
+
+
+/* ========================================
+   TEMA CLARO — MENU MOBILE
+======================================== */
+
+body.light-theme .nav-menu {
+    background: rgba(242, 246, 237, 0.97);
+    border-color: rgba(40, 70, 35, 0.12);
+}
+
+body.light-theme .nav-actions {
+    border-top-color: rgba(40, 70, 35, 0.12);
+}
+
+body.light-theme .menu-toggle {
+    color: #477900;
+    background: rgba(180, 225, 100, 0.18);
+    border-color: rgba(40, 70, 35, 0.12);
+}
+
 
 /* =========================
    RESPONSIVO
@@ -540,7 +747,7 @@ body.light-theme .nav-button:hover {
 
     border-radius: 15px;
 
-    color: #f0f5ef;
+    color: #696969;
 
     text-decoration: none;
 
@@ -1121,6 +1328,373 @@ body.light-theme .store-button small {
     }
 
 }
+
+
+/* ========================================
+   FAIXA + CARROSSEL
+======================================== */
+
+.species-carousel {
+    width: 100%;
+    background: #050d08;
+}
+
+
+/* ========================================
+   FAIXA ANIMADA
+======================================== */
+
+.species-marquee {
+    width: 100%;
+    height: 70px;
+    overflow: hidden;
+    background: #030a06;
+    border-top: 1px solid rgba(168, 238, 25, 0.08);
+    border-bottom: 1px solid rgba(168, 238, 25, 0.08);
+
+    display: flex;
+    align-items: center;
+}
+
+.marquee-track {
+    display: flex;
+    align-items: center;
+    gap: 34px;
+    width: max-content;
+
+    animation: marqueeMove 35s linear infinite;
+}
+
+.marquee-track span {
+    color: #929d96;
+    font-size: 19px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    white-space: nowrap;
+}
+
+.marquee-track i {
+    color: #83c914;
+    font-size: 15px;
+    transform: rotate(-20deg);
+}
+
+@keyframes marqueeMove {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+
+/* ========================================
+   CARROSSEL
+======================================== */
+
+.field-carousel {
+    position: relative;
+    width: 100%;
+    height: 560px;
+    overflow: hidden;
+}
+
+.field-slide {
+    position: absolute;
+    inset: 0;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity 0.8s ease,
+        visibility 0.8s ease;
+}
+
+.field-slide.active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 2;
+}
+
+.field-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+
+    transform: scale(1.03);
+    transition: transform 6s ease;
+}
+
+.field-slide.active img {
+    transform: scale(1);
+}
+
+
+/* ========================================
+   ESCURECIMENTO DA IMAGEM
+======================================== */
+
+.slide-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(3, 8, 5, 0.92) 0%,
+            rgba(3, 8, 5, 0.72) 25%,
+            rgba(3, 8, 5, 0.25) 60%,
+            rgba(3, 8, 5, 0.45) 100%
+        );
+
+    z-index: 1;
+}
+
+
+/* ========================================
+   TEXTO
+======================================== */
+
+.slide-content {
+    position: absolute;
+    z-index: 3;
+
+    left: max(8%, calc((100% - 1240px) / 2));
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 560px;
+}
+
+.slide-content > span {
+    display: block;
+
+    margin-bottom: 18px;
+
+    color: #9bea24;
+
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+.slide-content h2 {
+    margin: 0 0 12px;
+
+    color: #f4f7f3;
+
+    font-size: clamp(42px, 4vw, 58px);
+    line-height: 1.05;
+    font-weight: 800;
+    letter-spacing: -2px;
+}
+
+.slide-content p {
+    max-width: 570px;
+
+    margin: 0 0 28px;
+
+    color: #d1d8d2;
+
+    font-size: 16px;
+    line-height: 1.65;
+}
+
+
+/* ========================================
+   BOTÃO
+======================================== */
+
+.slide-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 13px 24px;
+
+    border-radius: 30px;
+
+    background: #9bea24;
+    color: #101a08;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    transition: 0.3s ease;
+
+    box-shadow: 0 10px 30px rgba(140, 220, 20, 0.25);
+}
+
+.slide-button:hover {
+    background: #b1f43b;
+    color: #101a08;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 12px 35px rgba(140, 220, 20, 0.4);
+}
+
+.slide-button i {
+    font-size: 16px;
+}
+
+
+/* ========================================
+   CONTROLES
+======================================== */
+
+.carousel-controls {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 20px;
+
+    z-index: 5;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.leaf-icon {
+    width: 17px;
+    height: 17px;
+    fill: #83c914;
+    flex-shrink: 0;
+}
+
+.species-marquee-bottom .marquee-track {
+    animation-direction: reverse;
+}
+
+/* PONTOS */
+
+.carousel-dots {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.carousel-dot {
+    width: 16px;
+    height: 5px;
+
+    border-radius: 10px;
+
+    background: rgba(255, 255, 255, 0.4);
+
+    transition: 0.3s ease;
+}
+
+.carousel-dot.active {
+    width: 40px;
+    background: #9bea24;
+}
+
+
+/* BOTÕES */
+
+.carousel-buttons {
+    position: absolute;
+    right: 22px;
+    bottom: 15px;
+    display: flex;
+    gap: 10px;
+}
+
+.carousel-buttons button {
+    width: 40px;
+    height: 40px;
+
+    border: 0;
+    border-radius: 50%;
+
+    background: rgba(35, 45, 39, 0.85);
+    color: #e8eee9;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.carousel-buttons button:hover {
+    background: #9bea24;
+    color: #101a08;
+}
+
+
+/* ========================================
+   RESPONSIVO
+======================================== */
+
+@media (max-width: 700px) {
+
+    .species-marquee {
+        height: 58px;
+    }
+
+    .marquee-track {
+        gap: 22px;
+    }
+
+    .marquee-track span {
+        font-size: 14px;
+        letter-spacing: 1.5px;
+    }
+
+    .field-carousel {
+        height: 620px;
+    }
+
+    .slide-overlay {
+        background:
+            linear-gradient(
+                90deg,
+                rgba(3, 8, 5, 0.88),
+                rgba(3, 8, 5, 0.55)
+            );
+    }
+
+    .slide-content {
+        left: 25px;
+        right: 25px;
+        width: auto;
+    }
+
+    .slide-content h2 {
+        font-size: 40px;
+    }
+
+    .slide-content p {
+        font-size: 14px;
+    }
+
+    .carousel-controls {
+        bottom: 18px;
+    }
+
+    .carousel-buttons {
+        right: 15px;
+    }
+
+    .carousel-buttons button {
+        width: 36px;
+        height: 36px;
+    }
+}
+
 
 /* ========================================
    SEÇÃO — O PROBLEMA
@@ -1810,17 +2384,15 @@ body.light-theme .animal-card-info {
 
 .team-card {
     min-height: 225px;
-
     padding: 32px;
 
     display: flex;
+    align-items: center; /* ADICIONE */
 
     gap: 24px;
 
     border: 1px solid rgba(130, 190, 140, 0.22);
-
     border-radius: 23px;
-
     background: rgba(3, 13, 8, 0.28);
 
     transition:
@@ -1851,11 +2423,10 @@ body.light-theme .animal-card-info {
 
     overflow: hidden;
 
-    border-radius: 15px;
+    border-radius: 0;
 
-    background: #17251b;
+    background: transparent;
 }
-
 
 .team-photo img {
     width: 100%;
@@ -1863,7 +2434,7 @@ body.light-theme .animal-card-info {
 
     display: block;
 
-    object-fit: cover;
+    object-fit: contain;
 
     transition: transform 0.5s ease;
 }
@@ -2387,3 +2958,348 @@ body.light-theme .footer-bottom p {
     }
 
 }
+
+/* ========================================
+   GRID SYSTEM — REFERÊNCIAS
+======================================== */
+
+.grid-references {
+    width: 100%;
+    padding: 110px 0 100px;
+}
+
+.grid-references-container {
+    width: 100%;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+
+/* LABEL */
+
+.grid-references-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 7px 16px;
+
+    border: 1px solid rgba(230, 190, 20, .45);
+    border-radius: 30px;
+
+    color: #e7c515;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+
+    margin-bottom: 45px;
+}
+
+.grid-references-label span {
+    font-size: 9px;
+}
+
+
+/* ========================================
+   GRID PRINCIPAL — 12 COLUNAS
+======================================== */
+
+.grid-blog {
+    display: grid;
+
+    grid-template-columns: repeat(12, 1fr);
+
+    gap: 24px;
+
+    align-items: stretch;
+}
+
+
+/* ========================================
+   SIDEBAR — TEXTO EM CIMA / IMAGEM EMBAIXO
+======================================== */
+
+.references-sidebar {
+    grid-column: span 3;
+
+    min-height: 700px;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(130, 190, 140, .20);
+    border-radius: 23px;
+
+    background: rgba(3, 13, 8, .28);
+}
+
+
+/* TEXTO — METADE SUPERIOR */
+
+.sidebar-info {
+    height: 50%;
+
+    padding: 30px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.sidebar-info > span {
+    color: #a8ee19;
+
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.sidebar-info h2 {
+    margin-top: 20px;
+
+    color: #f3f7f2;
+
+    font-size: 30px;
+    line-height: 1.1;
+    letter-spacing: -1px;
+    font-weight: 800;
+}
+
+.sidebar-info p {
+    margin-top: 16px;
+
+    color: #9eb1a2;
+
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+/* IMAGEM — METADE INFERIOR */
+
+.sidebar-image {
+    width: 100%;
+    height: 50%;
+
+    min-height: 320px;
+
+    overflow: hidden;
+}
+
+.sidebar-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition: transform .5s ease;
+}
+
+.references-sidebar:hover .sidebar-image img {
+    transform: scale(1.04);
+}
+
+
+/* RESPONSIVO */
+
+@media (max-width: 900px) {
+
+    .references-sidebar {
+        grid-column: span 12;
+        min-height: auto;
+    }
+
+    .sidebar-info {
+        height: auto;
+        min-height: 300px;
+    }
+
+    .sidebar-image {
+        height: 350px;
+    }
+
+    .references-content {
+        grid-column: span 12;
+    }
+}
+
+/* ========================================
+   CONTEÚDO — 9 COLUNAS
+======================================== */
+
+.references-content {
+    grid-column: span 9;
+}
+
+
+/* ========================================
+   GRID INTERNO DAS REFERÊNCIAS
+======================================== */
+
+.references-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+
+    height: 100%;
+}
+
+
+/* ========================================
+   CARDS
+======================================== */
+
+.reference-card {
+    min-height: 340px;
+
+    padding: 28px;
+
+    display: flex;
+    flex-direction: column;
+
+    border: 1px solid rgba(130, 190, 140, .20);
+    border-radius: 23px;
+
+    background: rgba(3, 13, 8, .28);
+
+    transition: .3s ease;
+}
+
+.reference-card:hover {
+    transform: translateY(-4px);
+
+    border-color: rgba(168, 238, 25, .35);
+
+    background: rgba(8, 24, 13, .45);
+}
+
+
+/* ÍCONE */
+
+.reference-icon {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 24px;
+
+    border-radius: 15px;
+
+    background: rgba(100, 180, 25, .15);
+
+    color: #a8ee19;
+
+    font-size: 14px;
+    font-weight: 800;
+}
+
+
+/* TEXTO */
+
+.reference-card h3 {
+    color: #f2f7f2;
+
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.reference-card p {
+    margin-top: 12px;
+
+    color: #9eafa2;
+
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+
+/* DATA */
+
+.reference-card small {
+    margin-top: auto;
+    padding-top: 24px;
+
+    color: #a8ee19;
+
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: .5px;
+}
+
+
+/* LINK */
+
+.reference-card a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    width: fit-content;
+
+    margin-top: 17px;
+
+    color: #a8ee19;
+
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.reference-card a:hover {
+    color: #c2ff5a;
+}
+
+
+/* ========================================
+   RESPONSIVO
+======================================== */
+
+@media (max-width: 900px) {
+
+    .references-sidebar {
+        grid-column: span 12;
+        min-height: auto;
+    }
+
+    .sidebar-image {
+        height: 350px;
+    }
+
+    .references-content {
+        grid-column: span 12;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .grid-references {
+        padding: 80px 0;
+    }
+
+    .grid-references-container {
+        padding: 0 20px;
+    }
+
+    .references-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .reference-card {
+        min-height: 300px;
+    }
+}
+
+

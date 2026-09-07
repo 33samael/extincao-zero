@@ -1,0 +1,728 @@
+/* ========================================
+   O APP
+======================================== */
+
+.app-section {
+    width: 100%;
+    min-height: 100vh;
+
+    padding: 120px 0 100px;
+
+    overflow: hidden;
+}
+
+.app-container {
+    width: 100%;
+    max-width: 1240px;
+
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+
+/* ========================================
+   CABEÇALHO
+======================================== */
+
+.app-header {
+    text-align: center;
+
+    max-width: 700px;
+
+    margin: 0 auto 30px;
+}
+
+.app-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    color: #a8ee19;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 1.8px;
+}
+
+.app-label i {
+    font-size: 14px;
+}
+
+.app-header h2 {
+    margin-top: 18px;
+
+    color: #f3f7f2;
+
+    font-size: clamp(42px, 5vw, 64px);
+
+    line-height: 1;
+
+    letter-spacing: -3px;
+
+    font-weight: 800;
+}
+
+.app-header h2 span {
+    color: #a8ee19;
+}
+
+.app-header p {
+    max-width: 620px;
+
+    margin: 20px auto 0;
+
+    color: #9eb1a2;
+
+    font-size: 15px;
+
+    line-height: 1.6;
+}
+
+
+/* ========================================
+   EXPERIÊNCIA
+======================================== */
+
+.app-experience {
+    position: relative;
+
+    width: 100%;
+    height: 680px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* ========================================
+   ÓRBITAS
+======================================== */
+
+.app-orbit {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    border: 1px solid rgba(168, 238, 25, .08);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+.orbit-1 {
+    width: 440px;
+    height: 440px;
+}
+
+.orbit-2 {
+    width: 560px;
+    height: 560px;
+}
+
+.orbit-3 {
+    width: 680px;
+    height: 680px;
+}
+
+
+/* ========================================
+   CELULAR
+======================================== */
+
+.app-phone {
+    position: relative;
+    z-index: 5;
+
+    width: 280px;
+    height: 550px;
+
+    padding: 10px;
+
+    border-radius: 45px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #314d3e,
+            #14261e 45%,
+            #07120d
+        );
+
+    border: 2px solid rgba(150, 180, 160, .25);
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.55),
+        0 0 50px rgba(130,210,30,.12);
+
+    transform: rotate(2deg);
+
+    transition: .4s ease;
+}
+
+.app-phone:hover {
+    transform: rotate(0deg) translateY(-8px);
+}
+
+.app-phone-screen {
+    width: 100%;
+    height: 100%;
+
+    padding: 20px 17px;
+
+    overflow: hidden;
+
+    border-radius: 36px;
+
+    background:
+        linear-gradient(
+            160deg,
+            #203a2e,
+            #0d2118
+        );
+
+    color: #f1f6ef;
+}
+
+.app-phone-notch {
+    position: absolute;
+
+    z-index: 10;
+
+    top: 11px;
+    left: 50%;
+
+    width: 105px;
+    height: 25px;
+
+    transform: translateX(-50%);
+
+    border-radius: 0 0 16px 16px;
+
+    background: #050b08;
+}
+
+
+/* ========================================
+   CONTEÚDO DO CELULAR
+======================================== */
+
+.app-phone-top {
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: 3px;
+
+    color: #8e9d93;
+
+    font-size: 10px;
+}
+
+.app-profile {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 25px;
+}
+
+.app-avatar {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #a8ee19;
+
+    color: #17200e;
+
+    font-size: 17px;
+}
+
+.app-profile small {
+    display: block;
+
+    color: #8e9d93;
+
+    font-size: 9px;
+}
+
+.app-profile strong {
+    display: block;
+
+    margin-top: 2px;
+
+    font-size: 13px;
+}
+
+.app-phone-title {
+    margin-top: 27px;
+}
+
+.app-phone-title small {
+    color: #a8ee19;
+
+    font-size: 8px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+.app-phone-title h3 {
+    margin-top: 5px;
+
+    font-size: 25px;
+
+    line-height: 1.1;
+}
+
+.app-phone-title h3 span {
+    color: #a8ee19;
+}
+
+
+/* ========================================
+   ANIMAL CARD
+======================================== */
+
+.app-animal-card {
+    position: relative;
+
+    height: 190px;
+
+    margin-top: 20px;
+
+    overflow: hidden;
+
+    border-radius: 18px;
+}
+
+.app-animal-card img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+.app-animal-card::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background: linear-gradient(
+        to top,
+        rgba(4,15,9,.95),
+        transparent 65%
+    );
+}
+
+.app-animal-info {
+    position: absolute;
+
+    z-index: 2;
+
+    bottom: 14px;
+    left: 14px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.app-animal-info small {
+    color: #a8ee19;
+
+    font-size: 7px;
+
+    font-weight: 800;
+}
+
+.app-animal-info strong {
+    margin-top: 3px;
+
+    font-size: 15px;
+}
+
+
+/* ========================================
+   PROGRESSO
+======================================== */
+
+.app-progress {
+    margin-top: 18px;
+}
+
+.app-progress > div:first-child {
+    display: flex;
+    justify-content: space-between;
+
+    color: #8e9d93;
+
+    font-size: 9px;
+}
+
+.app-progress strong {
+    color: #a8ee19;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 5px;
+
+    margin-top: 7px;
+
+    overflow: hidden;
+
+    border-radius: 10px;
+
+    background: rgba(255,255,255,.08);
+}
+
+.progress-bar span {
+    display: block;
+
+    width: 68%;
+    height: 100%;
+
+    border-radius: inherit;
+
+    background: #a8ee19;
+}
+
+
+/* ========================================
+   BOTÃO
+======================================== */
+
+.app-explore-button {
+    width: 100%;
+    height: 42px;
+
+    margin-top: 18px;
+
+    border: 0;
+    border-radius: 22px;
+
+    background: #a8ee19;
+
+    color: #17200e;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+
+/* ========================================
+   FUNCIONALIDADES
+======================================== */
+
+.app-feature {
+    position: absolute;
+
+    z-index: 4;
+
+    width: 280px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 16px;
+}
+
+.feature-icon {
+    width: 58px;
+    height: 58px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(168, 238, 25, .08);
+
+    border: 1px solid rgba(168, 238, 25, .18);
+
+    color: #a8ee19;
+
+    font-size: 21px;
+}
+
+.app-feature h3 {
+    color: #f3f7f2;
+
+    font-size: 20px;
+
+    font-weight: 700;
+}
+
+.app-feature p {
+    margin-top: 6px;
+
+    color: #8fa195;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+}
+
+
+/* ========================================
+   POSIÇÃO DAS FUNCIONALIDADES
+======================================== */
+
+.feature-left-top {
+    top: 115px;
+    left: 50px;
+}
+
+.feature-right-top {
+    top: 115px;
+    right: 58px;
+}
+
+.feature-left-bottom {
+    bottom: 115px;
+    left: 52px;
+}
+
+.feature-right-bottom {
+    bottom: 115px;
+    right: 54px;
+}
+
+.feature-left-top,
+.feature-left-bottom {
+    text-align: right;
+}
+
+/* ========================================
+   POSIÇÃO DOS ELEMENTOS FLUTUANTES
+======================================== */
+
+.floating-1 {
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.floating-2 {
+    top: 105px;
+    left: 390px;
+}
+
+.floating-3 {
+    top: 120px;
+    right: 378px;
+}
+
+.floating-4 {
+    top: 320px;
+    left: 285px;
+}
+
+.floating-5 {
+    top: 320px;
+    right: 288px;
+}
+
+.floating-6 {
+    bottom: 160px;
+    left: 334px;
+}
+
+.floating-7 {
+    bottom: 105px;
+    right: 366px;
+}
+
+.floating-8 {
+    bottom: -28px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* ========================================
+   ELEMENTOS FLUTUANTES
+======================================== */
+
+.floating-element {
+    position: absolute;
+
+    z-index: 3;
+
+    width: 54px;
+    height: 54px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(20, 38, 25, .85);
+
+    border: 1px solid rgba(168, 238, 25, .18);
+
+    color: #a8ee19;
+
+    font-size: 20px;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.25),
+        0 0 20px rgba(168,238,25,.05);
+
+    backdrop-filter: blur(8px);
+
+    animation: floatingElement 5s ease-in-out infinite;
+}
+
+.floating-element i {
+    line-height: 1;
+}
+
+
+
+
+/* ANIMAÇÃO */
+
+@keyframes floatingElement {
+
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-14px) rotate(5deg);
+    }
+}
+
+
+/* VARIAÇÕES */
+
+.floating-2,
+.floating-4,
+.floating-7 {
+    width: 48px;
+    height: 48px;
+
+    font-size: 17px;
+
+    background: rgba(168,238,25,.08);
+}
+
+.floating-3,
+.floating-6 {
+    background: rgba(25,60,35,.75);
+}
+
+.floating-5,
+.floating-8 {
+    width: 44px;
+    height: 44px;
+
+    font-size: 16px;
+
+    background: rgba(168,238,25,.06);
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 900px) {
+
+    .floating-element {
+        display: none;
+    }
+}
+
+
+/* ========================================
+   RESPONSIVO
+======================================== */
+
+@media (max-width: 900px) {
+
+    .app-experience {
+        height: auto;
+
+        padding: 40px 0;
+
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .app-orbit {
+        display: none;
+    }
+
+    .app-phone {
+        order: 1;
+    }
+
+    .app-feature {
+        position: relative;
+
+        top: auto;
+        right: auto;
+        bottom: auto;
+        left: auto;
+
+        width: 100%;
+        max-width: 400px;
+
+        order: 2;
+    }
+
+    .feature-right-top,
+    .feature-right-bottom {
+        flex-direction: row;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .app-section {
+        padding: 80px 0;
+    }
+
+    .app-container {
+        padding: 0 20px;
+    }
+
+    .app-phone {
+        width: 255px;
+        height: 500px;
+    }
+
+    .app-header h2 {
+        letter-spacing: -2px;
+    }
+}
