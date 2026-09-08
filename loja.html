@@ -49,7 +49,7 @@
 
             <a
                 href="index.html"
-                class="nav-link active"
+                class="nav-link"
             >
                 Início
             </a>
@@ -80,10 +80,24 @@
 
             <a
                 href="loja.html"
-                class="nav-link"
+                class="nav-link active"
             >
                 Loja
             </a>
+
+            <!-- AÇÕES NO MENU MOBILE -->
+            <div class="mobile-nav-actions">
+
+                <button class="nav-action cart-trigger" id="mobileOpenCart" aria-label="Abrir carrinho" type="button">
+                    <i class="bi bi-cart"></i>
+                    <span class="mobile-cart-count" id="mobileCartCount">0</span>
+                </button>
+
+                <button class="nav-button" id="mobile-theme-button" aria-label="Alterar tema" type="button">
+                    <i class="bi bi-sun"></i>
+                </button>
+
+            </div>
 
         </nav>
 
@@ -117,7 +131,7 @@
 
         </div>
 
-        <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">
+        <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
                 <i class="bi bi-list"></i>
             </button>
     
@@ -1678,6 +1692,60 @@
 ====================================================== -->
 
 <script src="js/loja.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const menuToggle = document.getElementById("menu-toggle");
+    const navMenu = document.querySelector(".nav-menu");
+    const mobileCart = document.getElementById("mobileOpenCart");
+    const desktopCart = document.getElementById("openCart");
+    const mobileTheme = document.getElementById("mobile-theme-button");
+    const desktopTheme = document.getElementById("theme-button");
+    const mobileCartCount = document.getElementById("mobileCartCount");
+    const desktopCartCount = document.getElementById("cartCount");
+
+    const closeMenu = () => {
+        if (!navMenu || !menuToggle) return;
+        navMenu.classList.remove("active");
+        menuToggle.setAttribute("aria-expanded", "false");
+        const icon = menuToggle.querySelector("i");
+        if (icon) icon.className = "bi bi-list";
+        menuToggle.setAttribute("aria-label", "Abrir menu");
+    };
+
+    if (menuToggle && navMenu) {
+        menuToggle.addEventListener("click", (event) => {
+            event.stopPropagation();
+            const isOpen = navMenu.classList.toggle("active");
+            menuToggle.setAttribute("aria-expanded", String(isOpen));
+            const icon = menuToggle.querySelector("i");
+            if (icon) icon.className = isOpen ? "bi bi-x-lg" : "bi bi-list";
+            menuToggle.setAttribute("aria-label", isOpen ? "Fechar menu" : "Abrir menu");
+        });
+
+        navMenu.querySelectorAll(".nav-link").forEach(link => {
+            link.addEventListener("click", closeMenu);
+        });
+
+        document.addEventListener("click", (event) => {
+            if (navMenu.classList.contains("active") && !navMenu.contains(event.target) && !menuToggle.contains(event.target)) {
+                closeMenu();
+            }
+        });
+    }
+
+    if (mobileCart && desktopCart) mobileCart.addEventListener("click", () => desktopCart.click());
+    if (mobileTheme && desktopTheme) mobileTheme.addEventListener("click", () => desktopTheme.click());
+
+    const syncCartCount = () => {
+        if (mobileCartCount && desktopCartCount) mobileCartCount.textContent = desktopCartCount.textContent.trim();
+    };
+    syncCartCount();
+    if (desktopCartCount) {
+        new MutationObserver(syncCartCount).observe(desktopCartCount, { childList: true, subtree: true, characterData: true });
+    }
+});
+</script>
 
 </body>
 
