@@ -18,7 +18,7 @@
         <div class="nav-container">
 
             <!-- LOGO -->
-            <a href="#" class="logo">
+            <a href="index.html" class="logo">
                 <img src="assets/img/logo.svg" alt="Extinção Zero">
             </a>
 
@@ -29,7 +29,7 @@
                     Início
                 </a>
 
-                <a href="#" class="nav-link">
+                <a href="app.html" class="nav-link">
                     O App
                 </a>
 
@@ -51,8 +51,16 @@
             <!-- AÇÕES -->
             <div class="nav-actions">
 
-                <button class="nav-button" aria-label="Loja">
-                    <i class="bi bi-bag"></i>
+                <button 
+                    class="nav-action cart-trigger"
+                    id="openCart"
+                    aria-label="Abrir carrinho">
+
+                    <i class="bi bi-cart"></i>
+
+                    <span id="cartCount">
+                        0
+                    </span>
                 </button>
 
                 <button class="nav-button" id="theme-button" aria-label="Alterar tema">
@@ -728,7 +736,7 @@
 
                 <div class="sidebar-info">
 
-                    <span>GRID SYSTEM</span>
+                    <span>CIENTÍFICOS</span>
 
                     <h2>Dados e referências</h2>
 

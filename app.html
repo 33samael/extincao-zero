@@ -19,14 +19,14 @@
         <div class="nav-container">
 
             <!-- LOGO -->
-            <a href="#" class="logo">
+            <a href="index.html" class="logo">
                 <img src="assets/img/logo.svg" alt="Extinção Zero">
             </a>
 
             <!-- MENU -->
             <nav class="nav-menu">
 
-                <a href="#" class="nav-link active">
+                <a href="index.html" class="nav-link active">
                     Início
                 </a>
 
@@ -43,7 +43,7 @@
                     Preservar
                 </a>
 
-                <a href="#" class="nav-link">
+                <a href="loja.html" class="nav-link">
                     Loja
                 </a>
 
@@ -52,9 +52,19 @@
             <!-- AÇÕES -->
             <div class="nav-actions">
 
-                <button class="nav-button" aria-label="Loja">
-                    <i class="bi bi-bag"></i>
-                </button>
+                <button
+                class="nav-action cart-trigger"
+                id="openCart"
+                aria-label="Abrir carrinho"
+            >
+
+                <i class="bi bi-cart"></i>
+
+                <span id="cartCount">
+                    0
+                </span>
+
+            </button>
 
                 <button class="nav-button" id="theme-button" aria-label="Alterar tema">
                     <i class="bi bi-sun"></i>

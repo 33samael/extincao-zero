@@ -4,70 +4,160 @@
 
 const products = {
 
-    onca: {
-        id: "onca",
-        name: "Action Figure — Onça-pintada",
+    /* =====================================================
+       ROUPAS
+    ===================================================== */
+
+    bone: {
+        id: "bone",
+        name: "Boné — Extinção Zero",
+        category: "ROUPAS",
+        price: 49.90,
+        rating: "4.9",
+        image: "assets/img/bone.png",
+        description:
+            "Boné exclusivo da Extinção Zero, inspirado na biodiversidade brasileira e criado para representar a conservação da nossa fauna."
+    },
+
+    chapeu_1: {
+        id: "chapeu_1",
+        name: "Chapéu — Extinção Zero",
+        category: "ROUPAS",
+        price: 59.90,
+        rating: "4.8",
+        image: "assets/img/chapeu_1.png",
+        description:
+            "Chapéu da coleção Extinção Zero com design inspirado na natureza brasileira."
+    },
+
+    chapeu_2: {
+        id: "chapeu_2",
+        name: "Chapéu — Fauna Brasileira",
+        category: "ROUPAS",
+        price: 59.90,
+        rating: "4.8",
+        image: "assets/img/chapeu_2.png",
+        description:
+            "Chapéu inspirado na fauna brasileira, combinando estilo e conscientização ambiental."
+    },
+
+    blusa: {
+        id: "blusa",
+        name: "Blusa — Extinção Zero",
+        category: "ROUPAS",
+        price: 69.90,
+        rating: "4.9",
+        image: "assets/img/blusa.png",
+        description:
+            "Blusa exclusiva da Extinção Zero criada para levar a mensagem de preservação da fauna brasileira."
+    },
+
+
+    /* =====================================================
+       ACTION FIGURES
+    ===================================================== */
+
+    action_figure: {
+        id: "action_figure",
+        name: "Action Figure — Lobo-guará",
         category: "ACTION FIGURES",
         price: 89.90,
         rating: "4.9",
-        image: "assets/img/onca.jpg",
+        image: "assets/img/action_figure.png",
         description:
-            "Uma representação da onça-pintada, símbolo da fauna brasileira e uma das espécies mais importantes dos nossos ecossistemas."
+            "Action figure do lobo-guará, uma das espécies mais emblemáticas do Cerrado e símbolo da biodiversidade brasileira."
     },
 
-    camiseta: {
-        id: "camiseta",
-        name: "Camiseta — Extinção Zero",
-        category: "CAMISETAS",
-        price: 59.90,
-        rating: "4.8",
-        image: null,
-        description:
-            "Camiseta exclusiva da coleção Extinção Zero criada para levar a mensagem de conservação da fauna brasileira."
-    },
 
-    acessorio: {
-        id: "acessorio",
-        name: "Ecobag — Fauna Brasileira",
+    /* =====================================================
+       ACESSÓRIOS
+    ===================================================== */
+
+    chaveiro: {
+        id: "chaveiro",
+        name: "Chaveiro — Fauna Brasileira",
         category: "ACESSÓRIOS",
-        price: 39.90,
-        rating: "4.7",
-        image: null,
-        description:
-            "Ecobag reutilizável com identidade visual inspirada na fauna brasileira."
-    },
-
-    poster: {
-        id: "poster",
-        name: "Poster — Fauna Brasileira",
-        category: "POSTERS",
-        price: 29.90,
-        rating: "4.9",
-        image: null,
-        description:
-            "Poster exclusivo para levar a biodiversidade brasileira para dentro da sua casa."
-    },
-
-    adesivos: {
-        id: "adesivos",
-        name: "Kit — Fauna Brasileira",
-        category: "ADESIVOS",
         price: 19.90,
         rating: "4.8",
-        image: null,
+        image: "assets/img/chaveiro.png",
         description:
-            "Kit de adesivos inspirado em espécies da fauna brasileira."
+            "Chaveiro inspirado na fauna brasileira para você levar a biodiversidade sempre com você."
     },
 
-    mico: {
-        id: "mico",
-        name: "Action Figure — Mico-leão",
-        category: "ACTION FIGURES",
-        price: 79.90,
-        rating: "4.9",
-        image: "assets/img/mico.png",
+    boton: {
+        id: "boton",
+        name: "Boton — Extinção Zero",
+        category: "ACESSÓRIOS",
+        price: 9.90,
+        rating: "4.7",
+        image: "assets/img/boton.png",
         description:
-            "Action figure inspirada no mico-leão, uma das espécies mais emblemáticas da fauna brasileira."
+            "Boton exclusivo da Extinção Zero com identidade visual inspirada na conservação da fauna brasileira."
+    },
+
+
+    /* =====================================================
+       PAPELARIA
+    ===================================================== */
+
+    caderno: {
+        id: "caderno",
+        name: "Caderno — Extinção Zero",
+        category: "PAPELARIA",
+        price: 34.90,
+        rating: "4.9",
+        image: "assets/img/caderno.png",
+        description:
+            "Caderno da coleção Extinção Zero, ideal para estudos, anotações e registros do dia a dia."
+    },
+
+    caneta: {
+        id: "caneta",
+        name: "Caneta — Extinção Zero",
+        category: "PAPELARIA",
+        price: 7.90,
+        rating: "4.7",
+        image: "assets/img/caneta.png",
+        description:
+            "Caneta exclusiva da Extinção Zero com design inspirado na biodiversidade brasileira."
+    },
+
+    figurinhas: {
+        id: "figurinhas",
+        name: "Kit de Figurinhas — Fauna Brasileira",
+        category: "PAPELARIA",
+        price: 14.90,
+        rating: "4.9",
+        image: "assets/img/figurinhas.png",
+        description:
+            "Kit de figurinhas com espécies da fauna brasileira para colecionar e conhecer mais sobre nossa biodiversidade."
+    },
+
+    figurinha: {
+        id: "figurinha",
+        name: "Figurinha — Fauna Brasileira",
+        category: "PAPELARIA",
+        price: 3.90,
+        rating: "4.8",
+        image: "assets/img/figurinha.png",
+        description:
+            "Figurinha individual inspirada em uma espécie da fauna brasileira."
+    },
+
+
+    /* =====================================================
+       OUTROS
+    ===================================================== */
+
+    bolsa: {
+        id: "bolsa",
+        name: "Bolsa — Extinção Zero",
+        category: "OUTROS",
+        price: 49.90,
+        rating: "4.8",
+        image: "assets/img/bolsa.png",
+        description:
+            "Bolsa exclusiva da Extinção Zero inspirada na natureza brasileira, ideal para o dia a dia."
     }
 
 };
@@ -191,20 +281,32 @@ function closeCart() {
    EVENTOS CARRINHO
 ========================================================= */
 
-openCartButton.addEventListener(
-    "click",
-    openCart
-);
+if (openCartButton) {
 
-closeCartButton.addEventListener(
-    "click",
-    closeCart
-);
+    openCartButton.addEventListener(
+        "click",
+        openCart
+    );
 
-cartOverlay.addEventListener(
-    "click",
-    closeCart
-);
+}
+
+if (closeCartButton) {
+
+    closeCartButton.addEventListener(
+        "click",
+        closeCart
+    );
+
+}
+
+if (cartOverlay) {
+
+    cartOverlay.addEventListener(
+        "click",
+        closeCart
+    );
+
+}
 
 
 /* =========================================================
@@ -216,6 +318,9 @@ function addToCart(id, quantity = 1) {
     const product = products[id];
 
     if (!product) {
+        console.warn(
+            `Produto "${id}" não encontrado.`
+        );
         return;
     }
 
@@ -243,7 +348,7 @@ function addToCart(id, quantity = 1) {
 
 
 /* =========================================================
-   REMOVER
+   REMOVER DO CARRINHO
 ========================================================= */
 
 function removeFromCart(id) {
@@ -291,14 +396,26 @@ function changeCartQuantity(id, amount) {
 
 function renderCart() {
 
+    if (!cartCountElement ||
+        !cartSubtotalElement ||
+        !cartItemsElement) {
+        return;
+    }
+
+
+    /* TOTAL DE ITENS */
+
     const totalItems = cart.reduce(
-        (total, item) => total + item.quantity,
+        (total, item) =>
+            total + item.quantity,
         0
     );
 
     cartCountElement.textContent =
         totalItems;
 
+
+    /* SUBTOTAL */
 
     const subtotal = cart.reduce(
         (total, item) =>
@@ -309,6 +426,8 @@ function renderCart() {
     cartSubtotalElement.textContent =
         formatPrice(subtotal);
 
+
+    /* CARRINHO VAZIO */
 
     if (cart.length === 0) {
 
@@ -335,6 +454,8 @@ function renderCart() {
     }
 
 
+    /* PRODUTOS */
+
     cartItemsElement.innerHTML =
         cart.map(item => {
 
@@ -347,20 +468,18 @@ function renderCart() {
                         ${
                             item.image
 
-                                ? `
-                                    <img
-                                        src="${item.image}"
-                                        alt="${item.name}"
-                                    >
-                                  `
+                            ? `
+                                <img
+                                    src="${item.image}"
+                                    alt="${item.name}"
+                                >
+                              `
 
-                                : `
-                                    <span style="
-                                        font-size:28px;
-                                    ">
-                                        🐆
-                                    </span>
-                                  `
+                            : `
+                                <span>
+                                    🛍️
+                                </span>
+                              `
                         }
 
                     </div>
@@ -411,6 +530,7 @@ function renderCart() {
                         onclick="removeFromCart(
                             '${item.id}'
                         )"
+                        aria-label="Remover produto"
                     >
 
                         <i class="bi bi-trash3"></i>
@@ -453,13 +573,19 @@ document.querySelectorAll(".add-cart")
 ========================================================= */
 
 const categoryButtons =
-    document.querySelectorAll(".category-button");
+    document.querySelectorAll(
+        ".category-button"
+    );
 
 const productCards =
-    document.querySelectorAll(".product-card");
+    document.querySelectorAll(
+        ".product-card"
+    );
 
 const productCount =
-    document.getElementById("productCount");
+    document.getElementById(
+        "productCount"
+    );
 
 
 categoryButtons.forEach(button => {
@@ -467,6 +593,8 @@ categoryButtons.forEach(button => {
     button.addEventListener(
         "click",
         () => {
+
+            /* Remove active dos outros */
 
             categoryButtons.forEach(item => {
 
@@ -476,14 +604,24 @@ categoryButtons.forEach(button => {
 
             });
 
-            button.classList.add("active");
 
+            /* Ativa botão selecionado */
+
+            button.classList.add(
+                "active"
+            );
+
+
+            /* Categoria */
 
             const category =
                 button.dataset.category;
 
+
             let visibleProducts = 0;
 
+
+            /* Filtra produtos */
 
             productCards.forEach(card => {
 
@@ -496,8 +634,7 @@ categoryButtons.forEach(button => {
                     cardCategory === category
                 ) {
 
-                    card.style.display =
-                        "";
+                    card.style.display = "";
 
                     visibleProducts++;
 
@@ -511,8 +648,14 @@ categoryButtons.forEach(button => {
             });
 
 
-            productCount.textContent =
-                visibleProducts;
+            /* Atualiza contador */
+
+            if (productCount) {
+
+                productCount.textContent =
+                    visibleProducts;
+
+            }
 
         }
     );
@@ -548,7 +691,13 @@ function openProductModal(id) {
         products[id];
 
     if (!product) {
+
+        console.warn(
+            `Produto "${id}" não encontrado.`
+        );
+
         return;
+
     }
 
 
@@ -556,48 +705,85 @@ function openProductModal(id) {
 
     modalQuantity = 1;
 
-    modalQuantityElement.textContent =
-        modalQuantity;
 
+    /* QUANTIDADE */
 
-    modalCategory.textContent =
-        product.category;
+    if (modalQuantityElement) {
 
-    modalTitle.textContent =
-        product.name;
-
-    modalPrice.textContent =
-        formatPrice(product.price);
-
-    modalDescription.textContent =
-        product.description;
-
-
-    if (product.image) {
-
-        modalImage.src =
-            product.image;
-
-        modalImage.alt =
-            product.name;
-
-        modalImage.style.display =
-            "block";
-
-    } else {
-
-        modalImage.style.display =
-            "none";
+        modalQuantityElement.textContent =
+            modalQuantity;
 
     }
 
 
-    productModal.classList.add(
-        "active"
-    );
+    /* INFORMAÇÕES */
 
-    document.body.style.overflow =
-        "hidden";
+    if (modalCategory) {
+
+        modalCategory.textContent =
+            product.category;
+
+    }
+
+    if (modalTitle) {
+
+        modalTitle.textContent =
+            product.name;
+
+    }
+
+    if (modalPrice) {
+
+        modalPrice.textContent =
+            formatPrice(product.price);
+
+    }
+
+    if (modalDescription) {
+
+        modalDescription.textContent =
+            product.description;
+
+    }
+
+
+    /* IMAGEM */
+
+    if (modalImage) {
+
+        if (product.image) {
+
+            modalImage.src =
+                product.image;
+
+            modalImage.alt =
+                product.name;
+
+            modalImage.style.display =
+                "block";
+
+        } else {
+
+            modalImage.style.display =
+                "none";
+
+        }
+
+    }
+
+
+    /* ABRE MODAL */
+
+    if (productModal) {
+
+        productModal.classList.add(
+            "active"
+        );
+
+        document.body.style.overflow =
+            "hidden";
+
+    }
 
 }
 
@@ -607,6 +793,10 @@ function openProductModal(id) {
 ========================================================= */
 
 function closeProductModal() {
+
+    if (!productModal) {
+        return;
+    }
 
     productModal.classList.remove(
         "active"
@@ -618,84 +808,104 @@ function closeProductModal() {
 }
 
 
-closeModalButton.addEventListener(
-    "click",
-    closeProductModal
-);
+if (closeModalButton) {
+
+    closeModalButton.addEventListener(
+        "click",
+        closeProductModal
+    );
+
+}
 
 
-productModal.addEventListener(
-    "click",
-    event => {
+if (productModal) {
 
-        if (
-            event.target ===
-            productModal
-        ) {
+    productModal.addEventListener(
+        "click",
+        event => {
 
-            closeProductModal();
+            if (
+                event.target ===
+                productModal
+            ) {
+
+                closeProductModal();
+
+            }
 
         }
+    );
 
-    }
-);
+}
 
 
 /* =========================================================
    QUANTIDADE DO MODAL
 ========================================================= */
 
-decreaseQuantityButton.addEventListener(
-    "click",
-    () => {
+if (decreaseQuantityButton) {
 
-        if (modalQuantity > 1) {
+    decreaseQuantityButton.addEventListener(
+        "click",
+        () => {
 
-            modalQuantity--;
+            if (modalQuantity > 1) {
+
+                modalQuantity--;
+
+                modalQuantityElement.textContent =
+                    modalQuantity;
+
+            }
+
+        }
+    );
+
+}
+
+
+if (increaseQuantityButton) {
+
+    increaseQuantityButton.addEventListener(
+        "click",
+        () => {
+
+            modalQuantity++;
 
             modalQuantityElement.textContent =
                 modalQuantity;
 
         }
+    );
 
-    }
-);
-
-
-increaseQuantityButton.addEventListener(
-    "click",
-    () => {
-
-        modalQuantity++;
-
-        modalQuantityElement.textContent =
-            modalQuantity;
-
-    }
-);
+}
 
 
 /* =========================================================
    ADICIONAR PELO MODAL
 ========================================================= */
 
-modalAddCartButton.addEventListener(
-    "click",
-    () => {
+if (modalAddCartButton) {
 
-        if (!currentProduct) {
-            return;
+    modalAddCartButton.addEventListener(
+        "click",
+        () => {
+
+            if (!currentProduct) {
+                return;
+            }
+
+            addToCart(
+                currentProduct.id,
+                modalQuantity
+            );
+
+            closeProductModal();
+
         }
+    );
 
-        addToCart(
-            currentProduct.id,
-            modalQuantity
-        );
-
-        closeProductModal();
-
-    }
-);
+}
 
 
 /* =========================================================

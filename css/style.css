@@ -107,6 +107,92 @@ body.light-theme .nav-button:hover {
     position: relative;
 }
 
+/* AÇÕES */
+
+.nav-actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    gap: 10px;
+}
+
+.nav-action {
+    position: relative;
+
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+
+    border: 1px solid var(--border);
+
+    background: rgba(10, 24, 17, .65);
+
+    color: #eaf2e9;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: .25s ease;
+}
+
+.nav-action:hover {
+    color: var(--green);
+
+    border-color: var(--green);
+
+    transform: translateY(-2px);
+}
+
+.nav-action i {
+    font-size: 17px;
+}
+
+#cartCount {
+    position: absolute;
+
+    top: -4px;
+    right: -3px;
+
+    min-width: 18px;
+    height: 18px;
+
+    padding: 0 4px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 20px;
+
+    background: var(--green);
+    color: #071006;
+
+    font-size: 10px;
+    font-weight: 800;
+}
+
+:root {
+
+    --background: #020806;
+    --background-soft: #07110d;
+    --surface: #08130f;
+    --surface-light: #0c1914;
+
+    --border: rgba(116, 194, 120, 0.22);
+
+    --green: #9cff27;
+    --green-light: #b4ff50;
+
+    --text: #f4f7ee;
+    --text-soft: #a9b9ac;
+    --text-muted: #718076;
+
+    --orange: #ff7417;
+
+}
 
 /* =========================
    LOGO
