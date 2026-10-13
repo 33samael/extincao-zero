@@ -20,15 +20,6 @@
 }
 
 
-/* ========================================
-   CABEÇALHO
-======================================== */
-
-body.light-theme .nav-link.active {
-    color: #477900;
-    background: rgba(180, 225, 100, 0.35);
-}
-
 .app-header {
     text-align: center;
 
@@ -82,31 +73,6 @@ body.light-theme .nav-link.active {
     font-size: 15px;
 
     line-height: 1.6;
-}
-
-/* ITEM ATIVO */
-
-.nav-link.active {
-    color: #b4f526;
-
-    background: #19330c;
-}
-
-.nav-link.active:hover {
-    background: #21420e;
-}
-
-/* TEMA CLARO */
-
-
-/* Botão ativo da navbar */
-body.light-theme .nav-link.active {
-    color: #356b16;
-    background: rgba(53, 107, 22, 0.10);
-}
-
-body.light-theme .nav-link.active:hover {
-    background: rgba(53, 107, 22, 0.16);
 }
 
 /* ========================================
