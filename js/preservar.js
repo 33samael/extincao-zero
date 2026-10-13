@@ -1,52 +1,4 @@
 /* =========================================================
-   TEMA CLARO / ESCURO
-========================================================= */
-
-const themeButton = document.getElementById("theme-button");
-
-const savedTheme = localStorage.getItem("extincao-theme");
-
-if (savedTheme === "light") {
-
-    document.body.classList.add("light-theme");
-
-    themeButton.innerHTML =
-        '<i class="bi bi-moon"></i>';
-}
-
-
-themeButton.addEventListener("click", () => {
-
-    document.body.classList.toggle("light-theme");
-
-    const isLight =
-        document.body.classList.contains("light-theme");
-
-    if (isLight) {
-
-        localStorage.setItem(
-            "extincao-theme",
-            "light"
-        );
-
-        themeButton.innerHTML =
-            '<i class="bi bi-moon"></i>';
-
-    } else {
-
-        localStorage.setItem(
-            "extincao-theme",
-            "dark"
-        );
-
-        themeButton.innerHTML =
-            '<i class="bi bi-sun"></i>';
-    }
-
-});
-
-
-/* =========================================================
    CONTRIBUIÇÃO DINÂMICA
 ========================================================= */
 
@@ -185,34 +137,3 @@ contributionCards.forEach(card => {
 });
 
 
-/* =========================================================
-   SCROLL SUAVE
-========================================================= */
-
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-
-    link.addEventListener("click", event => {
-
-        const targetId =
-            link.getAttribute("href");
-
-        if (targetId === "#") return;
-
-
-        const target =
-            document.querySelector(targetId);
-
-        if (!target) return;
-
-
-        event.preventDefault();
-
-
-        target.scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-        });
-
-    });
-
-});

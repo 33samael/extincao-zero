@@ -932,4 +932,32 @@ document.addEventListener(
    INICIALIZAÇÃO
 ========================================================= */
 
+const mobileCartButton =
+    document.getElementById("mobileOpenCart");
+
+const mobileCartCount =
+    document.getElementById("mobileCartCount");
+
+if (mobileCartButton && openCartButton) {
+    mobileCartButton.addEventListener("click", () => {
+        openCartButton.click();
+    });
+}
+
+function syncMobileCartCount() {
+    if (mobileCartCount && cartCountElement) {
+        mobileCartCount.textContent = cartCountElement.textContent.trim();
+    }
+}
+
+syncMobileCartCount();
+
+if (cartCountElement) {
+    new MutationObserver(syncMobileCartCount).observe(cartCountElement, {
+        childList: true,
+        subtree: true,
+        characterData: true
+    });
+}
+
 renderCart();
