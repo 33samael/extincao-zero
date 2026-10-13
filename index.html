@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/home.css">
 </head>
 
 <body>
@@ -862,7 +863,170 @@
 
     </div>
 
+    
+
 </section>
+
+
+<!-- CHAT IA — EXTINÇÃO ZERO -->
+<section class="ai-chat-section" id="chat-ia">
+    <div class="ai-chat-container">
+
+        <div class="ai-chat-intro">
+            <span class="ai-chat-eyebrow">
+                <span class="ai-chat-eyebrow-dot"></span>
+                CENTRAL DE INVESTIGAÇÃO
+            </span>
+
+            <h2>
+                A natureza tem perguntas.
+                <span>Nós ajudamos a responder.</span>
+            </h2>
+
+            <p>
+                Quer conhecer melhor o Extinção Zero? Converse com nosso
+                assistente e descubra mais sobre o projeto, os biomas
+                brasileiros e a preservação da fauna.
+            </p>
+        </div>
+
+        <div class="ai-chat-card">
+
+            <div class="ai-chat-header">
+                <div class="ai-chat-avatar" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M12 21s7-3.5 7-10V5l-7-3-7 3v6c0 6.5 7 10 7 10Z"
+                            stroke="currentColor" stroke-width="1.6"
+                            stroke-linejoin="round"/>
+                        <path d="M8.5 12.5 11 15l5-6"
+                            stroke="currentColor" stroke-width="1.6"
+                            stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+
+                <div class="ai-chat-header-info">
+                    <h3>Guia Extinção Zero</h3>
+                    <p>
+                        <span class="ai-chat-status-dot"></span>
+                        <span id="ai-chat-status">Preparando assistente...</span>
+                    </p>
+                </div>
+
+                <button type="button" class="ai-chat-clear"
+                    id="ai-chat-clear" aria-label="Limpar conversa"
+                    title="Limpar conversa">
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M4 7h16M10 11v6m4-6v6M5 7l1 14h12l1-14M9 7V4h6v3"
+                            stroke="currentColor" stroke-width="1.6"
+                            stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Limpar</span>
+                </button>
+            </div>
+
+            <div class="ai-chat-messages" id="ai-chat-messages"
+                role="log" aria-live="polite" aria-relevant="additions">
+
+                <div class="ai-chat-message ai-chat-message-bot">
+                    <div class="ai-chat-message-avatar" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M12 3v3m0 12v3M3 12h3m12 0h3M5.6 5.6l2.1 2.1m8.6 8.6 2.1 2.1m0-12.8-2.1 2.1m-8.6 8.6-2.1 2.1"
+                                stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round"/>
+                            <circle cx="12" cy="12" r="5"
+                                stroke="currentColor" stroke-width="1.5"/>
+                        </svg>
+                    </div>
+
+                    <div class="ai-chat-bubble">
+                        <p>Olá, investigador(a)! 🌿</p>
+                        <p>
+                            Sou o assistente do Extinção Zero. Posso explicar
+                            o projeto, falar sobre os biomas brasileiros e
+                            ajudar você a descobrir maneiras de proteger
+                            os animais ameaçados.
+                        </p>
+                        <p>Por onde vamos começar?</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="ai-chat-suggestions" id="ai-chat-suggestions">
+                <span>PERGUNTAS SUGERIDAS</span>
+
+                <div class="ai-chat-suggestion-list">
+                    <button type="button" class="ai-chat-suggestion"
+                        data-question="O que é o projeto Extinção Zero?">
+                        O que é o Extinção Zero?
+                        <span>↗</span>
+                    </button>
+
+                    <button type="button" class="ai-chat-suggestion"
+                        data-question="Quais são os seis biomas brasileiros e quais são suas características?">
+                        Quais são os biomas brasileiros?
+                        <span>↗</span>
+                    </button>
+
+                    <button type="button" class="ai-chat-suggestion"
+                        data-question="Como o aplicativo ensina sobre os animais ameaçados de extinção?">
+                        Como funciona o aplicativo?
+                        <span>↗</span>
+                    </button>
+
+                    <button type="button" class="ai-chat-suggestion"
+                        data-question="O que podemos fazer para ajudar na preservação dos animais ameaçados?">
+                        Como ajudar na preservação?
+                        <span>↗</span>
+                    </button>
+                </div>
+            </div>
+
+            <form class="ai-chat-form" id="ai-chat-form">
+                <label class="ai-chat-sr-only" for="ai-chat-input">
+                    Digite sua pergunta
+                </label>
+
+                <textarea id="ai-chat-input" name="question"
+                    placeholder="Faça uma pergunta sobre o projeto..."
+                    rows="1" maxlength="1000" required></textarea>
+
+                <button type="submit" id="ai-chat-send"
+                    aria-label="Enviar pergunta" disabled>
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M12 19V5m-7 7 7-7 7 7"
+                            stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </form>
+
+            <div class="ai-chat-footer">
+                <span>
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <rect x="5" y="10" width="14" height="11" rx="2"
+                            stroke="currentColor" stroke-width="1.5"/>
+                        <path d="M8 10V7a4 4 0 0 1 8 0v3"
+                            stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round"/>
+                    </svg>
+                    Processamento local após o download do modelo
+                </span>
+                <span class="ai-chat-powered">IA EXPERIMENTAL</span>
+            </div>
+
+        </div>
+
+        <p class="ai-chat-disclaimer">
+            As respostas são geradas por inteligência artificial e podem
+            conter imprecisões. Consulte fontes científicas para confirmar
+            informações sobre conservação.
+        </p>
+
+    </div>
+</section>
+<!-- FIM DO CHAT IA -->
+
 
 
 <!-- =========================
@@ -952,7 +1116,9 @@
 </footer>
 
 
-    <script src="js/script.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/home.js"></script>
+    <script type="module" src="js/ai-chat.js"></script>
 
 </body>
 </html>
