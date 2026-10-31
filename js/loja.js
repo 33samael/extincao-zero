@@ -167,7 +167,29 @@ const products = {
    ESTADO
 ========================================================= */
 
-let cart = [];
+const STORE_CART_STORAGE_KEY = "extincao-cart";
+
+function loadCart() {
+    try {
+        const savedCart = JSON.parse(localStorage.getItem(STORE_CART_STORAGE_KEY) || "[]");
+        if (!Array.isArray(savedCart)) return [];
+
+        return savedCart.map(item => {
+            const product = products[item?.id];
+            const quantity = Number(item?.quantity);
+
+            if (!product || !Number.isSafeInteger(quantity) || quantity <= 0) {
+                return null;
+            }
+
+            return { ...product, quantity };
+        }).filter(Boolean);
+    } catch {
+        return [];
+    }
+}
+
+let cart = loadCart();
 
 let currentProduct = null;
 
@@ -232,6 +254,18 @@ const increaseQuantityButton =
 const modalAddCartButton =
     document.getElementById("modalAddCart");
 
+const checkoutButton =
+    document.querySelector(".checkout-button");
+
+const checkoutForm =
+    document.getElementById("checkoutForm");
+
+const checkoutFeedback =
+    document.getElementById("checkoutFeedback");
+
+const cancelCheckoutButton =
+    document.getElementById("cancelCheckout");
+
 
 /* =========================================================
    FORMATAÇÃO DE PREÇO
@@ -289,6 +323,22 @@ if (openCartButton) {
     );
 
 }
+
+document.querySelectorAll(".cart-trigger").forEach(link => {
+    link.addEventListener("click", event => {
+        if (!window.location.pathname.toLowerCase().endsWith("/loja.html")) return;
+
+        event.preventDefault();
+        openCart();
+    });
+});
+
+function openCartFromHash() {
+    if (window.location.hash === "#cart") openCart();
+}
+
+window.addEventListener("hashchange", openCartFromHash);
+openCartFromHash();
 
 if (closeCartButton) {
 
@@ -411,8 +461,29 @@ function renderCart() {
         0
     );
 
+    try {
+        localStorage.setItem(STORE_CART_STORAGE_KEY, JSON.stringify(
+            cart.map(item => ({ id: item.id, quantity: item.quantity }))
+        ));
+    } catch {
+        // The cart remains usable for the current page if storage is unavailable.
+    }
+
+    document.querySelectorAll("[data-cart-count]").forEach(badge => {
+        badge.textContent = totalItems;
+    });
+
     cartCountElement.textContent =
         totalItems;
+
+    if (checkoutButton) {
+        checkoutButton.disabled = cart.length === 0;
+    }
+
+    if (cart.length === 0 && checkoutForm) {
+        checkoutForm.hidden = true;
+        cartElement?.classList.remove("checkout-open");
+    }
 
 
     /* SUBTOTAL */
@@ -543,6 +614,41 @@ function renderCart() {
 
         }).join("");
 
+}
+
+if (checkoutButton && checkoutForm) {
+    checkoutButton.addEventListener("click", () => {
+        if (cart.length === 0) return;
+
+        checkoutForm.hidden = false;
+        cartElement?.classList.add("checkout-open");
+        checkoutForm.querySelector("input")?.focus();
+    });
+}
+
+if (cancelCheckoutButton && checkoutForm) {
+    cancelCheckoutButton.addEventListener("click", () => {
+        checkoutForm.hidden = true;
+        cartElement?.classList.remove("checkout-open");
+        checkoutButton?.focus();
+    });
+}
+
+if (checkoutForm) {
+    checkoutForm.addEventListener("submit", event => {
+        event.preventDefault();
+
+        if (!checkoutForm.reportValidity()) return;
+
+        if (checkoutFeedback) {
+            checkoutFeedback.textContent =
+                "Dados validados. O pagamento não é processado nesta demonstração.";
+        }
+    });
+
+    checkoutForm.addEventListener("input", () => {
+        if (checkoutFeedback) checkoutFeedback.textContent = "";
+    });
 }
 
 
