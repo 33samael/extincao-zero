@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore fichas interativas de animais brasileiros, seus habitats e categorias de conservação.">
+    <title>Mostruário de espécies | Extinção Zero</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/explorar.css">
+    <link rel="stylesheet" href="css/mostruario.css">
+    <link rel="stylesheet" href="css/field-identity.css">
+    <link rel="stylesheet" href="css/ux-foundation.css">
+</head>
+<body class="field-identity">
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo"><img src="assets/img/logo.svg" alt="Extinção Zero"></a>
+            <nav class="nav-menu" aria-label="Navegação principal">
+                <a href="index.html" class="nav-link">Início</a>
+                <a href="app.html" class="nav-link">O App</a>
+                <div class="nav-explore">
+                    <button class="nav-link nav-dropdown" type="button" aria-expanded="false" aria-controls="explore-menu">Explorar <i class="bi bi-chevron-down"></i></button>
+                    <div class="nav-submenu" id="explore-menu">
+                        <a class="nav-link" href="dashboard.html"><i class="bi bi-bar-chart-line"></i> Dashboard</a>
+                        <a class="nav-link" href="biomas.html"><i class="bi bi-tree"></i> Biomas</a>
+                        <a class="nav-link" href="mostruario.html"><i class="bi bi-journal-richtext"></i> Mostruário</a>
+                    </div>
+                </div>
+                <a href="preservar.html" class="nav-link">Preservar</a>
+                <a href="loja.html" class="nav-link">Loja</a>
+            </nav>
+            <div class="nav-actions">
+                <a class="nav-action cart-trigger" href="loja.html#cart" aria-label="Abrir carrinho na loja"><i class="bi bi-cart"></i><span class="cart-count" data-cart-count>0</span></a>
+                <button class="nav-button" id="theme-button" type="button" aria-label="Alterar tema"><i class="bi bi-sun"></i></button>
+            </div>
+            <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="primary-navigation"><i class="bi bi-list"></i></button>
+        </div>
+    </header>
+
+    <main class="field-guide specimen-guide">
+        <section class="field-hero specimen-hero">
+            <span class="field-eyebrow"><i class="bi bi-binoculars"></i> CADERNO DE CAMPO · FAUNA</span>
+            <h1>Uma espécie.<br><em>Uma história viva.</em></h1>
+            <p>Gire a ficha, investigue os sinais e descubra como cada animal se relaciona com o ambiente.</p>
+            <a class="field-button" href="#specimen-explorer">Começar a observar <i class="bi bi-arrow-down-right"></i></a>
+            <img class="field-hero-image" src="assets/img/amazonia.jpg" alt="" aria-hidden="true" fetchpriority="high">
+            <span class="field-stamp"><i class="bi bi-journal-bookmark"></i> MOSTRUÁRIO DE CAMPO <small>FAUNA BRASILEIRA</small></span>
+        </section>
+
+        <section class="specimen-explorer" id="specimen-explorer" aria-label="Explorador interativo de espécies">
+            <div class="specimen-heading">
+                <span class="specimen-index" id="specimen-index">FICHA 01 / 04</span>
+                <h2 id="species-name">Onça-pintada</h2>
+                <p id="species-scientific">Panthera onca</p>
+            </div>
+
+            <div class="specimen-layout">
+                <aside class="field-note habitat-note">
+                    <span class="note-kicker"><i class="bi bi-compass"></i> ÁREA DE OCORRÊNCIA</span>
+                    <h3>Onde encontrar</h3>
+                    <p id="species-biomes">Amazônia, Cerrado, Pantanal, Caatinga e Mata Atlântica.</p>
+                    <div class="note-coordinate"><i class="bi bi-crosshair"></i><span id="species-habitat-short">Florestas, savanas e áreas alagáveis</span></div>
+                    <span class="note-number">01</span>
+                </aside>
+
+                <div class="specimen-stage">
+                    <span class="stage-coordinate"><i class="bi bi-geo-alt-fill"></i> OBSERVAÇÃO DE CAMPO</span>
+                    <div class="stage-contours" aria-hidden="true"></div>
+                    <span class="stage-marker stage-marker-one" aria-hidden="true"><i class="bi bi-geo-alt-fill"></i></span>
+                    <span class="stage-marker stage-marker-two" aria-hidden="true"><i class="bi bi-crosshair"></i></span>
+                    <figure class="animal-model" id="animal-model" role="img" tabindex="0" aria-label="Imagem interativa da espécie selecionada. Arraste ou use as setas do teclado para inclinar a imagem.">
+                        <span class="animal-frame"></span>
+                        <img id="species-image" src="assets/img/onca.jpg" alt="Onça-pintada" draggable="false" fetchpriority="high">
+                        <span class="animal-fallback" id="animal-fallback" hidden aria-live="polite">
+                            <img src="assets/img/fauna-fallback.svg" alt="Ilustração de fauna e vegetação brasileira">
+                            <small>ILUSTRAÇÃO DE CAMPO</small>
+                        </span>
+                        <figcaption><span id="species-image-caption">Panthera onca</span><span>ARQUIVO DE OBSERVAÇÃO</span></figcaption>
+                    </figure>
+                    <span class="stage-leaf stage-leaf-left" aria-hidden="true"></span>
+                    <span class="stage-leaf stage-leaf-right" aria-hidden="true"></span>
+                    <button class="rotation-toggle" id="rotation-toggle" type="button" aria-pressed="true" aria-label="Pausar rotação automática">
+                        <i class="bi bi-arrow-repeat" aria-hidden="true"></i>
+                        <span>Rotação automática</span>
+                    </button>
+                    <span class="drag-hint"><i class="bi bi-arrows-move"></i> Arraste para observar</span>
+                </div>
+
+                <aside class="field-note status-note">
+                    <span class="note-kicker"><i class="bi bi-shield-exclamation"></i> STATUS DE CONSERVAÇÃO</span>
+                    <div class="risk-heading"><span id="risk-symbol" class="risk-symbol" aria-hidden="true">!</span><div><span id="risk-source">LISTA NACIONAL · ICMBIO</span><strong id="risk-name">Vulnerável</strong></div></div>
+                    <div class="risk-meter" id="risk-meter" role="img" aria-label="Grau de ameaça: Vulnerável">
+                        <div class="risk-scale"><span class="risk-fill" id="risk-fill"></span><span class="risk-pin" id="risk-pin"></span></div>
+                        <div class="risk-labels"><span>Menor</span><span>Maior</span></div>
+                    </div>
+                    <div class="risk-global"><span>AVALIAÇÃO GLOBAL · IUCN</span><strong id="risk-global">NT · Quase ameaçada</strong></div>
+                    <span class="note-number">02</span>
+                </aside>
+            </div>
+
+            <div class="specimen-controls" aria-label="Navegação entre espécies">
+                <button class="species-arrow" id="species-prev" type="button" aria-label="Espécie anterior"><i class="bi bi-arrow-left"></i></button>
+                <div class="species-pager" aria-live="polite"><span id="pager-current">01</span><span class="pager-line"></span><span>04</span></div>
+                <button class="species-arrow" id="species-next" type="button" aria-label="Próxima espécie"><i class="bi bi-arrow-right"></i></button>
+            </div>
+
+            <div class="risk-legend" aria-label="Legenda das categorias nacionais de ameaça">
+                <span><i class="legend-dot critically"></i>CR · Criticamente em perigo</span>
+                <span><i class="legend-dot endangered"></i>EN · Em perigo</span>
+                <span><i class="legend-dot vulnerable"></i>VU · Vulnerável</span>
+                <span><i class="legend-dot near-threatened"></i>NT · Quase ameaçada</span>
+            </div>
+
+            <section class="field-dossier" aria-label="Informações sobre a espécie">
+                <div class="dossier-intro"><span class="note-kicker">ANOTAÇÕES DO EXPLORADOR</span><h3>Leia os sinais<br><em>do habitat.</em></h3><p>Abra uma ficha para investigar a vida e os desafios desta espécie.</p></div>
+                <div class="dossier-tabs" role="tablist" aria-label="Informações da espécie">
+                    <button id="tab-habitat" class="dossier-tab active" type="button" role="tab" aria-selected="true" aria-controls="panel-habitat" data-panel="habitat"><i class="bi bi-tree"></i><span>Habitat</span></button>
+                    <button id="tab-alimentacao" class="dossier-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-alimentacao" data-panel="alimentacao"><i class="bi bi-egg"></i><span>Alimentação</span></button>
+                    <button id="tab-comportamento" class="dossier-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-comportamento" data-panel="comportamento"><i class="bi bi-eye"></i><span>Comportamento</span></button>
+                    <button id="tab-ameacas" class="dossier-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-ameacas" data-panel="ameacas"><i class="bi bi-fire"></i><span>Ameaças</span></button>
+                    <button id="tab-ajuda" class="dossier-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-ajuda" data-panel="ajuda"><i class="bi bi-heart"></i><span>Como ajudar</span></button>
+                </div>
+                <div class="dossier-panels">
+                    <section class="dossier-panel active" id="panel-habitat" role="tabpanel" aria-labelledby="tab-habitat"><span class="panel-number">01 / AMBIENTE</span><h4>Habitat</h4><p id="info-habitat"></p></section>
+                    <section class="dossier-panel" id="panel-alimentacao" role="tabpanel" aria-labelledby="tab-alimentacao" hidden><span class="panel-number">02 / DIETA</span><h4>Alimentação</h4><p id="info-alimentacao"></p></section>
+                    <section class="dossier-panel" id="panel-comportamento" role="tabpanel" aria-labelledby="tab-comportamento" hidden><span class="panel-number">03 / OBSERVAÇÃO</span><h4>Comportamento</h4><p id="info-comportamento"></p></section>
+                    <section class="dossier-panel" id="panel-ameacas" role="tabpanel" aria-labelledby="tab-ameacas" hidden><span class="panel-number">04 / PRESSÕES</span><h4>Principais ameaças</h4><p id="info-ameacas"></p></section>
+                    <section class="dossier-panel" id="panel-ajuda" role="tabpanel" aria-labelledby="tab-ajuda" hidden><span class="panel-number">05 / CONSERVAÇÃO</span><h4>Como ajudar</h4><p id="info-ajuda"></p></section>
+                </div>
+            </section>
+
+            <p class="field-source"><i class="bi bi-journal-text"></i> Status nacional: <a href="https://www.in.gov.br/en/web/dou/-/portaria-mma-n-148-de-7-de-junho-de-2022-406272733" target="_blank" rel="noopener noreferrer">Portaria MMA nº 148/2022</a>. Status global e informações de conservação: <a id="species-iucn-link" href="https://www.iucnredlist.org/search?query=Panthera%20onca&searchType=species" target="_blank" rel="noopener noreferrer">IUCN Red List</a> e <a href="https://www.gov.br/icmbio/pt-br/assuntos/biodiversidade/pan" target="_blank" rel="noopener noreferrer">Planos de Ação Nacional do ICMBio</a>. A barra representa a categoria, não uma probabilidade de extinção.</p>
+        </section>
+
+        <aside class="field-next"><span>PRÓXIMA PARADA</span><div><h2>Observe o panorama.</h2><p>Compare espécies, biomas e as ameaças à fauna.</p></div><a href="dashboard.html">Abrir o dashboard <i class="bi bi-arrow-up-right"></i></a></aside>
+    </main>
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-brand"><div class="footer-logo"><a href="index.html" class="logo"><img src="assets/img/logo.svg" alt="Extinção Zero"></a></div><p>Projeto acadêmico da Fatec Carapicuíba.<br>Conhecer é o primeiro passo para preservar.</p></div>
+            <div class="footer-navigation"><h4>NAVEGAÇÃO</h4><div class="footer-links"><div><a href="index.html">Início</a><a href="app.html">O App</a><a href="dashboard.html">Dashboard</a><a href="biomas.html">Biomas</a></div><div><a href="mostruario.html">Mostruário</a><a href="preservar.html">Preservar</a><a href="loja.html">Loja</a></div></div></div>
+            <div class="footer-sources"><h4>FONTES DE DADOS</h4><p>ICMBio/MMA · IUCN Red List · IBGE · INPE/PRODES · MapBiomas</p></div>
+        </div>
+        <div class="footer-bottom"><p>© 2026 Extinção Zero — Fatec Carapicuíba. Projeto educativo sem fins lucrativos.</p><p>Dados com finalidade educativa. Consulte as fontes originais.</p></div>
+    </footer>
+    <script src="js/common.js"></script>
+    <script src="js/mostruario.js"></script>
+</body>
+</html>

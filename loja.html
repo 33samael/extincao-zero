@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -18,11 +17,13 @@
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/loja.css">
+    <link rel="stylesheet" href="css/field-identity.css">
+    <link rel="stylesheet" href="css/ux-foundation.css">
 
 </head>
 
 
-<body>
+<body class="field-identity">
 
 
 <!-- =====================================================
@@ -30,114 +31,28 @@
 ====================================================== -->
 
 <header class="navbar">
-
     <div class="nav-container">
-
-        <!-- LOGO -->
-        <a href="index.html" class="logo">
-
-            <img
-                src="assets/img/logo.svg"
-                alt="Extinção Zero"
-            >
-
-        </a>
-
-
-        <!-- MENU -->
-        <nav class="nav-menu">
-
-            <a
-                href="index.html"
-                class="nav-link"
-            >
-                Início
-            </a>
-
-            <a
-                href="app.html"
-                class="nav-link"
-            >
-                O App
-            </a>
-
-            <a
-                href="#"
-                class="nav-link nav-dropdown"
-            >
-                Explorar
-
-                <i class="bi bi-chevron-down"></i>
-
-            </a>
-
-            <a
-                href="preservar.html"
-                class="nav-link"
-            >
-                Preservar
-            </a>
-
-            <a
-                href="loja.html"
-                class="nav-link active"
-            >
-                Loja
-            </a>
-
-            <!-- AÇÕES NO MENU MOBILE -->
-            <div class="mobile-nav-actions">
-
-                <button class="nav-action cart-trigger" id="mobileOpenCart" aria-label="Abrir carrinho" type="button">
-                    <i class="bi bi-cart"></i>
-                    <span class="mobile-cart-count" id="mobileCartCount">0</span>
-                </button>
-
-                <button class="nav-button" id="mobile-theme-button" aria-label="Alterar tema" type="button">
-                    <i class="bi bi-sun"></i>
-                </button>
-
+        <a href="index.html" class="logo"><img src="assets/img/logo.svg" alt="Extinção Zero"></a>
+        <nav class="nav-menu" aria-label="Navegação principal">
+            <a href="index.html" class="nav-link">Início</a>
+            <a href="app.html" class="nav-link">O App</a>
+            <div class="nav-explore">
+                <button class="nav-link nav-dropdown" type="button" aria-expanded="false" aria-controls="explore-menu">Explorar <i class="bi bi-chevron-down"></i></button>
+                <div class="nav-submenu" id="explore-menu">
+                    <a class="nav-link" href="dashboard.html"><i class="bi bi-bar-chart-line"></i> Dashboard</a>
+                    <a class="nav-link" href="biomas.html"><i class="bi bi-tree"></i> Biomas</a>
+                    <a class="nav-link" href="mostruario.html"><i class="bi bi-journal-richtext"></i> Mostruário</a>
+                </div>
             </div>
-
+            <a href="preservar.html" class="nav-link">Preservar</a>
+            <a href="loja.html" class="nav-link">Loja</a>
         </nav>
-
-
-        <!-- AÇÕES -->
         <div class="nav-actions">
-
-            <button
-                class="nav-action cart-trigger"
-                id="openCart"
-                aria-label="Abrir carrinho">
-
-                <i class="bi bi-cart"></i>
-
-                <span id="cartCount">
-                    0
-                </span>
-
-            </button>
-
-
-            <button
-                class="nav-button"
-                id="theme-button"
-                aria-label="Alterar tema"
-            >
-
-                <i class="bi bi-sun"></i>
-
-            </button>
-
+            <a class="nav-action cart-trigger" href="loja.html#cart" aria-label="Abrir carrinho na loja"><i class="bi bi-cart"></i><span class="cart-count" data-cart-count>0</span></a>
+            <button class="nav-button" id="theme-button" type="button" aria-label="Alterar tema"><i class="bi bi-sun"></i></button>
         </div>
-
-        <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
-                <i class="bi bi-list"></i>
-            </button>
-    
-
+        <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="primary-navigation"><i class="bi bi-list"></i></button>
     </div>
-
 </header>
 
 
@@ -217,7 +132,7 @@
 
             <div class="hero-floating-card">
 
-                <span>🐺</span>
+                <span><i class="bi bi-patch-check-fill" aria-hidden="true"></i></span>
 
                 <div>
 
@@ -1452,6 +1367,57 @@
 
         </button>
 
+        <form class="checkout-form" id="checkoutForm" hidden>
+            <h3>Dados para entrega</h3>
+            <p class="checkout-intro">Preencha os dados para validar seu pedido.</p>
+
+            <div class="checkout-field">
+                <label for="checkoutName">Nome completo</label>
+                <input id="checkoutName" name="name" type="text" autocomplete="name" placeholder="Ex.: Maria Silva" required>
+            </div>
+
+            <div class="checkout-field">
+                <label for="checkoutEmail">E-mail</label>
+                <input id="checkoutEmail" name="email" type="email" autocomplete="email" placeholder="maria@email.com" required>
+            </div>
+
+            <div class="checkout-field">
+                <label for="checkoutPhone">Telefone</label>
+                <input id="checkoutPhone" name="phone" type="tel" autocomplete="tel" inputmode="tel" pattern="[0-9()+ .-]{10,}" placeholder="(11) 99999-9999" title="Informe um telefone com DDD." required>
+            </div>
+
+            <div class="checkout-field">
+                <label for="checkoutAddress">Endereço</label>
+                <input id="checkoutAddress" name="address" type="text" autocomplete="street-address" placeholder="Rua, número e complemento" required>
+            </div>
+
+            <div class="checkout-field checkout-field-inline">
+                <div>
+                    <label for="checkoutCity">Cidade</label>
+                    <input id="checkoutCity" name="city" type="text" autocomplete="address-level2" required>
+                </div>
+                <div>
+                    <label for="checkoutPostalCode">CEP</label>
+                    <input id="checkoutPostalCode" name="postalCode" type="text" autocomplete="postal-code" inputmode="numeric" pattern="[0-9]{5}-?[0-9]{3}" placeholder="00000-000" title="Informe um CEP válido." required>
+                </div>
+            </div>
+
+            <div class="checkout-field">
+                <label for="checkoutPayment">Forma de pagamento</label>
+                <select id="checkoutPayment" name="payment" required>
+                    <option value="" selected disabled>Selecione uma opção</option>
+                    <option value="pix">Pix</option>
+                    <option value="card">Cartão de crédito</option>
+                </select>
+            </div>
+
+            <p class="checkout-feedback" id="checkoutFeedback" role="status" aria-live="polite"></p>
+            <div class="checkout-form-actions">
+                <button class="checkout-cancel" id="cancelCheckout" type="button">Voltar ao carrinho</button>
+                <button class="checkout-submit" type="submit">Validar pedido</button>
+            </div>
+        </form>
+
     </div>
 
 </aside>
@@ -1612,7 +1578,7 @@
         <div class="footer-brand">
 
             <div class="footer-logo">
-                <a href="#" class="logo">
+                <a href="index.html" class="logo">
                 <img src="assets/img/logo.svg" alt="Extinção Zero">
             </a>
             </div>
@@ -1635,14 +1601,14 @@
 
                 <div>
                     <a href="index.html">Início</a>
-                    <a href="#especies">Espécies</a>
-                    <a href="#dados">Dados</a>
+                    <a href="mostruario.html">Espécies</a>
+                    <a href="dashboard.html">Dados</a>
                     <a href="loja.html">Loja</a>
                 </div>
 
                 <div>
                     <a href="app.html">O App</a>
-                    <a href="#biomas">Biomas</a>
+                    <a href="biomas.html">Biomas</a>
                     <a href="preservar.html">Preservar</a>
                 </div>
 

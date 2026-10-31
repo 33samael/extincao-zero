@@ -1,406 +1,106 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Extinção Zero</title>
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/app.css">
-</head>
-
-<body>
-
-    <!-- NAVBAR -->
-    <header class="navbar">
-
-        <div class="nav-container">
-
-            <!-- LOGO -->
-            <a href="index.html" class="logo">
-                <img src="assets/img/logo.svg" alt="Extinção Zero">
-            </a>
-
-            <!-- MENU -->
-            <nav class="nav-menu">
-
-                <a href="index.html" class="nav-link">
-                    Início
-                </a>
-
-                <a href="app.html" class="nav-link active">
-                    O App
-                </a>
-
-                <a href="#" class="nav-link nav-dropdown">
-                    Explorar
-                    <i class="bi bi-chevron-down"></i>
-                </a>
-
-                <a href="preservar.html" class="nav-link">
-                    Preservar
-                </a>
-
-                <a href="loja.html" class="nav-link">
-                    Loja
-                </a>
-
-            </nav>
-
-            <!-- AÇÕES -->
-            <div class="nav-actions">
-
-                <button
-                class="nav-action cart-trigger"
-                id="openCart"
-                aria-label="Abrir carrinho"
-            >
-
-                <i class="bi bi-cart"></i>
-
-                <span id="cartCount">
-                    0
-                </span>
-
-            </button>
-
-                <button class="nav-button" id="theme-button" aria-label="Alterar tema">
-                    <i class="bi bi-sun"></i>
-                </button>
-
-            </div>
-
-            <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">
-                <i class="bi bi-list"></i>
-            </button>
-
-        </div>
-
-    </header>
-
-<!-- ========================================
-     O APP
-======================================== -->
-
-<section class="app-section" id="o-app">
-
-    <div class="app-container">
-
-        <!-- TEXTO SUPERIOR -->
-        <div class="app-header">
-
-            <span class="app-label">
-                <i class="bi bi-phone"></i>
-                CONHEÇA O APP
-            </span>
-
-            <h2>
-                Explore. <span>Descubra.</span> Preserve.
-            </h2>
-
-            <p>
-                Uma experiência interativa para conhecer a biodiversidade
-                brasileira e descobrir como ajudar na sua preservação.
-            </p>
-
-        </div>
-
-
-        <!-- EXPERIÊNCIA -->
-        <div class="app-experience">
-
-            <!-- ELEMENTOS FLUTUANTES -->
-
-<div class="floating-element floating-1">
-    <i class="bi bi-shield"></i>
+<html lang="pt-BR"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>O App | Extinção Zero</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/app.css">
+<link rel="stylesheet" href="css/ux-foundation.css">
+</head><body>
+<header class="navbar">
+	<div class="nav-container">
+		<a href="index.html" class="logo"><img src="assets/img/logo.svg" alt="Extinção Zero"></a>
+		<nav class="nav-menu" aria-label="Navegação principal">
+			<a href="index.html" class="nav-link">Início</a>
+			<a href="app.html" class="nav-link">O App</a>
+			<div class="nav-explore">
+				<button class="nav-link nav-dropdown" type="button" aria-expanded="false" aria-controls="explore-menu">Explorar <i class="bi bi-chevron-down"></i></button>
+				<div class="nav-submenu" id="explore-menu">
+					<a class="nav-link" href="dashboard.html"><i class="bi bi-bar-chart-line"></i> Dashboard</a>
+					<a class="nav-link" href="biomas.html"><i class="bi bi-tree"></i> Biomas</a>
+					<a class="nav-link" href="mostruario.html"><i class="bi bi-journal-richtext"></i> Mostruário</a>
+				</div>
+			</div>
+			<a href="preservar.html" class="nav-link">Preservar</a>
+			<a href="loja.html" class="nav-link">Loja</a>
+		</nav>
+		<div class="nav-actions">
+			<a class="nav-action cart-trigger" href="loja.html#cart" aria-label="Abrir carrinho na loja"><i class="bi bi-cart"></i><span class="cart-count" data-cart-count>0</span></a>
+			<button class="nav-button" id="theme-button" type="button" aria-label="Alterar tema"><i class="bi bi-sun"></i></button>
+		</div>
+		<button class="menu-toggle" id="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="primary-navigation"><i class="bi bi-list"></i></button>
+	</div>
+</header>
+<main class="ez-app">
+<section class="ez-hero" id="topo">
+<div class="hero-landscape" aria-hidden="true"><img src="assets/img/amazonia.jpg" alt=""><span class="landscape-shade"></span><span class="canopy-front canopy-left"></span><span class="canopy-front canopy-right"></span><span class="field-grain"></span></div>
+<div class="hero-inner">
+<div class="hero-copy reveal">
+<span class="eyebrow"><i class="bi bi-compass-fill"></i> CADERNO DE CAMPO · MISSÃO 01</span>
+<h1>A natureza tem pistas.<br><em>Você tem uma missão.</em></h1>
+<p>Explore os biomas brasileiros, investigue espécies ameaçadas e descubra como cada atitude pode ajudar a proteger nossa biodiversidade.</p>
+<div class="hero-actions"><a class="ez-btn primary" href="#jornada">Começar a explorar <i class="bi bi-arrow-down-right"></i></a><a class="ez-btn ghost" href="#livro">Conhecer o protótipo <i class="bi bi-book"></i></a></div>
+<div class="hero-tags"><span><i class="bi bi-binoculars-fill"></i> Explore</span><span><i class="bi bi-search"></i> Investigue</span><span><i class="bi bi-heart-pulse-fill"></i> Preserve</span></div>
 </div>
-
-<div class="floating-element floating-2">
-    <i class="bi bi-tree"></i>
+<div class="hero-scene reveal" aria-label="Cena de exploração na floresta brasileira">
+<div class="scene-coordinate"><i class="bi bi-crosshair"></i> 03° 27' S · CERRADO</div>
+<figure class="scene-animal"><img src="assets/img/onca.jpg" alt="Onça-pintada em seu habitat natural"></figure>
+<div class="scene-track" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+<div class="scene-marker marker-trail"><i class="bi bi-geo-alt-fill"></i><span>TRILHA MAPEADA<small>Área de ocorrência</small></span></div>
+<div class="scene-marker marker-record"><i class="bi bi-journal-check"></i><span>REGISTRO DE CAMPO<small>Panthera onca</small></span></div>
+<div class="phone">
+<div class="speaker"></div><div class="screen">
+<div class="phone-brand">EXTINÇÃO ZERO <i class="bi bi-three-dots"></i></div>
+<div class="map-preview"><span class="pin p1"><i class="bi bi-geo-alt-fill"></i></span><span class="pin p2"><i class="bi bi-geo-alt-fill"></i></span><span class="route"></span><b>TRILHA DO CERRADO</b></div>
+<span class="mini-eyebrow">MISSÃO ATIVA</span><h3>Em busca de pistas</h3><p>Investigue o habitat e registre suas descobertas.</p>
+<div class="progress"><span></span></div><small>Progresso <b>2 de 5 pistas</b></small>
+<div class="phone-nav"><i class="bi bi-house-fill"></i><i class="bi bi-map-fill"></i><i class="bi bi-journal-bookmark-fill"></i><i class="bi bi-person-fill"></i></div>
+</div></div>
+<span class="scene-plant plant-one" aria-hidden="true"></span><span class="scene-plant plant-two" aria-hidden="true"></span>
 </div>
-
-<div class="floating-element floating-3">
-    <i class="bi bi-bug"></i>
 </div>
-
-<div class="floating-element floating-4">
-    <i class="bi bi-water"></i>
-</div>
-
-<div class="floating-element floating-5">
-    <i class="bi bi-flower1"></i>
-</div>
-
-<div class="floating-element floating-6">
-    <i class="bi bi-binoculars"></i>
-</div>
-
-<div class="floating-element floating-7">
-    <i class="bi bi-globe-americas"></i>
-</div>
-
-<div class="floating-element floating-8">
-    <i class="bi bi-feather"></i>
-</div>
-
-            <!-- CÍRCULO DECORATIVO -->
-            <div class="app-orbit orbit-1"></div>
-            <div class="app-orbit orbit-2"></div>
-            <div class="app-orbit orbit-3"></div>
-
-
-            <!-- ITEM ESQUERDA SUPERIOR -->
-            <div class="app-feature feature-left-top">
-
-                
-
-                <div>
-                    <h3>Explorar</h3>
-
-                    <p>
-                        Navegue pelo mapa e descubra os biomas
-                        brasileiros.
-                    </p>
-                </div>
-
-                <div class="feature-icon">
-                    <i class="bi bi-map"></i>
-                </div>
-
-            </div>
-
-
-            <!-- ITEM DIREITA SUPERIOR -->
-            <div class="app-feature feature-right-top">
-
-                <div class="feature-icon">
-                    <i class="bi bi-search"></i>
-                </div>
-
-                <div>
-                    <h3>Descobrir</h3>
-
-                    <p>
-                        Conheça espécies, curiosidades e histórias
-                        da nossa fauna.
-                    </p>
-                </div>
-
-            </div>
-
-
-            <!-- ITEM ESQUERDA INFERIOR -->
-            <div class="app-feature feature-left-bottom">
-
-                
-
-                <div>
-                    <h3>Jogar</h3>
-
-                    <p>
-                        Aprenda brincando através de desafios
-                        e minijogos.
-                    </p>
-                </div>
-
-                <div class="feature-icon">
-                    <i class="bi bi-controller"></i>
-                </div>
-
-            </div>
-
-
-            <!-- ITEM DIREITA INFERIOR -->
-            <div class="app-feature feature-right-bottom">
-
-                <div class="feature-icon">
-                    <i class="bi bi-heart"></i>
-                </div>
-
-                <div>
-                    <h3>Preservar</h3>
-
-                    <p>
-                        Transforme conhecimento em atitudes
-                        para proteger a natureza.
-                    </p>
-                </div>
-
-            </div>
-
-
-            <!-- CELULAR -->
-            <div class="app-phone">
-
-                <div class="app-phone-notch"></div>
-
-                <div class="app-phone-screen">
-
-                    <div class="app-phone-top">
-                        <span>09:41</span>
-                        <i class="bi bi-battery-full"></i>
-                    </div>
-
-                    <div class="app-profile">
-
-                        <div class="app-avatar">
-                            <i class="bi bi-person-fill"></i>
-                        </div>
-
-                        <div>
-                            <small>Olá!</small>
-                            <strong>Explorador</strong>
-                        </div>
-
-                    </div>
-
-
-                    <div class="app-phone-title">
-                        <small>DESCUBRA A FAUNA</small>
-                        <h3>
-                            Conheça o
-                            <span>Brasil.</span>
-                        </h3>
-                    </div>
-
-
-                    <div class="app-animal-card">
-
-                        <img src="assets/img/onca.jpg"
-                             alt="Onça-pintada">
-
-                        <div class="app-animal-info">
-                            <small>ESPÉCIE EM DESTAQUE</small>
-                            <strong>Onça-pintada</strong>
-                        </div>
-
-                    </div>
-
-
-                    <div class="app-progress">
-
-                        <div>
-                            <span>Seu progresso</span>
-                            <strong>68%</strong>
-                        </div>
-
-                        <div class="progress-bar">
-                            <span></span>
-                        </div>
-
-                    </div>
-
-
-                    <button class="app-explore-button">
-                        Explorar agora
-                        <i class="bi bi-arrow-right"></i>
-                    </button>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
+<nav class="exploration-trail reveal" aria-label="Atalhos de exploração">
+<svg class="trail-ink" viewBox="0 0 1000 80" preserveAspectRatio="none" aria-hidden="true"><path d="M12 46 C120 4 180 77 276 41 S430 8 502 43 S682 80 746 38 S902 4 988 43"/></svg>
+<a class="trail-stop" href="biomas.html"><span class="trail-number">01</span><span class="trail-mark"><i class="bi bi-tree-fill"></i></span><span class="trail-copy"><small>TRACE O MAPA</small><strong>Explore os biomas</strong></span><i class="bi bi-arrow-up-right trail-arrow"></i></a>
+<a class="trail-stop" href="mostruario.html"><span class="trail-number">02</span><span class="trail-mark"><i class="bi bi-binoculars-fill"></i></span><span class="trail-copy"><small>ENCONTRE UMA PISTA</small><strong>Descubra espécies</strong></span><i class="bi bi-arrow-up-right trail-arrow"></i></a>
+<a class="trail-stop" href="#mecanicas"><span class="trail-number">03</span><span class="trail-mark"><i class="bi bi-controller"></i></span><span class="trail-copy"><small>APRENDA JOGANDO</small><strong>Entre na missão</strong></span><i class="bi bi-arrow-up-right trail-arrow"></i></a>
+<a class="trail-stop" href="preservar.html"><span class="trail-number">04</span><span class="trail-mark"><i class="bi bi-heart-pulse-fill"></i></span><span class="trail-copy"><small>FAÇA A DIFERENÇA</small><strong>Preserve a vida</strong></span><i class="bi bi-arrow-up-right trail-arrow"></i></a>
+</nav>
+<a class="scroll-cue" href="#jornada"><i class="bi bi-arrow-down"></i> CONTINUE A JORNADA</a>
 </section>
-
-    
-
-
-
-
-<!-- =========================
-     FOOTER
-========================= -->
-
-<footer class="site-footer">
-
-    <div class="footer-container">
-
-        <!-- MARCA -->
-
-        <div class="footer-brand">
-
-            <div class="footer-logo">
-                <a href="#" class="logo">
-                <img src="assets/img/logo.svg" alt="Extinção Zero">
-            </a>
-            </div>
-
-            <p>
-                Projeto acadêmico da Fatec Carapicuíba.<br>
-                Conhecer é o primeiro passo para preservar.
-            </p>
-
-        </div>
-
-
-        <!-- NAVEGAÇÃO -->
-
-        <div class="footer-navigation">
-
-            <h4>NAVEGAÇÃO</h4>
-
-            <div class="footer-links">
-
-                <div>
-                    <a href="index.html">Início</a>
-                    <a href="#especies">Espécies</a>
-                    <a href="#dados">Dados</a>
-                    <a href="loja.html">Loja</a>
-                </div>
-
-                <div>
-                    <a href="app.html">O App</a>
-                    <a href="#biomas">Biomas</a>
-                    <a href="preservar.html">Preservar</a>
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <!-- FONTES -->
-
-        <div class="footer-sources">
-
-            <h4>FONTES DE DADOS</h4>
-
-            <p>
-                ICMBio/MMA (Portaria nº 148/2022) · IUCN Red List 2024 ·
-                IBGE (2019) · INPE/PRODES (2024) · MapBiomas (2023)
-            </p>
-
-        </div>
-
-    </div>
-
-
-    <!-- LINHA INFERIOR -->
-
-    <div class="footer-bottom">
-
-        <p>
-            © 2026 Extinção Zero — Fatec Carapicuíba.
-            Projeto educativo sem fins lucrativos.
-        </p>
-
-        <p>
-            Dados com finalidade educativa.
-            Consulte sempre as fontes originais.
-        </p>
-
-    </div>
-
-</footer>
-
-
-    <script src="js/common.js"></script>
-
-</body>
-</html>
+<section class="ez-section journey" id="jornada"><header class="section-heading reveal"><span class="eyebrow">01 / SUA JORNADA</span><h2>Como funciona <em>a aventura?</em></h2><p>Cada missão aproxima você de entender a vida selvagem e os desafios que ela enfrenta.</p></header>
+<div class="journey-grid"><div class="journey-line"><span id="journeyProgress"></span></div>
+<article class="journey-step active reveal" tabindex="0" role="button" aria-expanded="true"><div class="step-icon"><i class="bi bi-flag-fill"></i><b>01</b></div><div class="step-card"><small>COMECE A MISSÃO</small><h3>Escolha uma missão</h3><p>Selecione uma espécie, um bioma ou uma ameaça ambiental para investigar.</p><div class="step-extra">Defina seu destino e prepare seu diário de campo.</div></div></article>
+<article class="journey-step reveal" tabindex="0" role="button" aria-expanded="false"><div class="step-icon"><i class="bi bi-tree-fill"></i><b>02</b></div><div class="step-card"><small>OBSERVE AO REDOR</small><h3>Explore o habitat</h3><p>Observe o ambiente, reconheça elementos do bioma e descubra onde a espécie vive.</p><div class="step-extra">Cada detalhe pode revelar algo importante.</div></div></article>
+<article class="journey-step reveal" tabindex="0" role="button" aria-expanded="false"><div class="step-icon"><i class="bi bi-search"></i><b>03</b></div><div class="step-card"><small>REÚNA EVIDÊNCIAS</small><h3>Investigue as pistas</h3><p>Descubra informações sobre alimentação, comportamento, habitat e ameaças.</p><div class="step-extra">Registre evidências para compreender a situação da espécie.</div></div></article>
+<article class="journey-step reveal" tabindex="0" role="button" aria-expanded="false"><div class="step-icon"><i class="bi bi-controller"></i><b>04</b></div><div class="step-card"><small>APRENDA FAZENDO</small><h3>Complete desafios</h3><p>Participe de minijogos e atividades que reforçam o conhecimento adquirido.</p><div class="step-extra">Use o que aprendeu para resolver desafios ambientais.</div></div></article>
+<article class="journey-step reveal" tabindex="0" role="button" aria-expanded="false"><div class="step-icon"><i class="bi bi-journal-bookmark-fill"></i><b>05</b></div><div class="step-card"><small>GUARDE A DESCOBERTA</small><h3>Registre sua descoberta</h3><p>Desbloqueie fichas de espécies, conquistas e conteúdos sobre preservação.</p><div class="step-extra">Seu livro cresce a cada descoberta.</div></div></article></div></section>
+<section class="ez-section mechanics" id="mecanicas"><header class="section-heading reveal"><span class="eyebrow">02 / APRENDER JOGANDO</span><h2>Mecânicas de <em>jogabilidade</em></h2><p>Observe, experimente e descubra as consequências de cada escolha.</p></header>
+<div class="mechanics-grid">
+<button class="mechanic-card selected reveal" data-key="habitat" aria-pressed="true"><small>01 / INTERAÇÃO</small><div class="mechanic-art"><i class="bi bi-tree-fill"></i><i class="bi bi-droplet-fill"></i><i class="bi bi-flower1"></i></div><span class="mechanic-icon"><i class="bi bi-puzzle-fill"></i></span><h3>Monte o habitat</h3><p>Combine árvores, água, abrigo e alimento para entender as necessidades de uma espécie.</p><strong><i class="bi bi-unlock-fill"></i> Ficha do bioma</strong><span class="card-action">Explorar mecânica ↗</span></button>
+<button class="mechanic-card reveal" data-key="species" aria-pressed="false"><small>02 / OBSERVAÇÃO</small><div class="mechanic-art"><i class="bi bi-eye-fill"></i><i class="bi bi-feather"></i><i class="bi bi-paw-fill"></i></div><span class="mechanic-icon"><i class="bi bi-search"></i></span><h3>Identifique a espécie</h3><p>Analise silhuetas, sons, pegadas, cores e hábitos para reconhecer animais brasileiros.</p><strong><i class="bi bi-journal-bookmark-fill"></i> Ficha da espécie</strong><span class="card-action">Explorar mecânica ↗</span></button>
+<button class="mechanic-card reveal" data-key="biome" aria-pressed="false"><small>03 / DECISÃO</small><div class="mechanic-art"><i class="bi bi-tree"></i><i class="bi bi-recycle"></i><i class="bi bi-water"></i></div><span class="mechanic-icon"><i class="bi bi-globe-americas"></i></span><h3>Proteja o bioma</h3><p>Escolha ações sustentáveis e observe como decisões humanas afetam o ambiente.</p><strong><i class="bi bi-graph-up-arrow"></i> Evolução do bioma</strong><span class="card-action">Explorar mecânica ↗</span></button>
+<button class="mechanic-card reveal" data-key="track" aria-pressed="false"><small>04 / EXPLORAÇÃO</small><div class="mechanic-art"><i class="bi bi-geo-alt-fill"></i><i class="bi bi-signpost-split"></i><i class="bi bi-footprints"></i></div><span class="mechanic-icon"><i class="bi bi-binoculars-fill"></i></span><h3>Rastreie o animal</h3><p>Siga marcas, pegadas e indícios para aprender sobre território e comportamento.</p><strong><i class="bi bi-map-fill"></i> Novas pistas</strong><span class="card-action">Explorar mecânica ↗</span></button>
+<button class="mechanic-card reveal" data-key="threats" aria-pressed="false"><small>05 / CONSERVAÇÃO</small><div class="mechanic-art"><i class="bi bi-fire"></i><i class="bi bi-tree-fill"></i><i class="bi bi-shield-check"></i></div><span class="mechanic-icon"><i class="bi bi-shield-exclamation"></i></span><h3>Combata as ameaças</h3><p>Reconheça queimadas, caça, poluição e desmatamento e avalie soluções.</p><strong><i class="bi bi-stars"></i> Pontos e missões</strong><span class="card-action">Explorar mecânica ↗</span></button></div>
+<div class="mechanic-detail reveal" aria-live="polite"><span class="detail-icon"><i id="detailIcon" class="bi bi-puzzle-fill"></i></span><div><small>NA PRÁTICA</small><h3 id="detailTitle">Monte o habitat</h3><p id="detailText">Entenda como água, alimento, abrigo e vegetação se relacionam e sustentam a vida de uma espécie.</p></div></div></section>
+<section class="ez-section investigation" id="investigacao"><div class="investigation-layout"><div class="field-board reveal"><div class="board-heading"><span><i class="bi bi-clipboard2-pulse-fill"></i> REGISTRO DE CAMPO</span><b>MISSÃO 04</b></div><div class="field-map"><span class="contour c1"></span><span class="contour c2"></span><i class="bi bi-geo-alt-fill marker m1"></i><i class="bi bi-search marker m2"></i><i class="bi bi-paw-fill marker m3"></i><span class="map-path"></span><b>ÁREA DE OBSERVAÇÃO</b></div><div class="evidence"><div><i class="bi bi-check-circle-fill"></i><span><b>Pista registrada</b><small>Vestígios no habitat</small></span><em>+10 XP</em></div><div><i class="bi bi-exclamation-triangle-fill"></i><span><b>Ameaça identificada</b><small>Alteração da vegetação</small></span><em>ANÁLISE</em></div><div><i class="bi bi-journal-plus"></i><span><b>Nova informação</b><small>Adicionada ao diário</small></span><em>+1</em></div></div><div class="board-foot"><span><i class="bi bi-shield-check"></i> OBSERVAÇÃO EDUCATIVA</span><span>03/06 ETAPAS</span></div><span class="board-sticker"><i class="bi bi-fingerprint"></i> Pistas conectam histórias</span></div>
+<div class="investigation-copy reveal"><span class="eyebrow">03 / CURIOSIDADE É SUA FERRAMENTA</span><h2>Mecânicas de <em>investigação</em></h2><p>Uma missão é mais do que encontrar um animal. É observar o contexto, conectar evidências e compreender o que acontece no ambiente.</p><div class="investigation-list">
+<article class="investigation-step active"><b>01</b><div><h3>Receba uma missão</h3><p>Conheça a espécie, o bioma ou o problema ambiental.</p></div><i class="bi bi-flag-fill"></i></article>
+<article class="investigation-step"><b>02</b><div><h3>Explore o cenário</h3><p>Observe o habitat e interaja com elementos que revelam pistas.</p></div><i class="bi bi-binoculars-fill"></i></article>
+<article class="investigation-step"><b>03</b><div><h3>Colete pistas</h3><p>Registre sinais sobre o animal, o ambiente e as ameaças.</p></div><i class="bi bi-fingerprint"></i></article>
+<article class="investigation-step"><b>04</b><div><h3>Analise os dados</h3><p>Organize informações para compreender as relações entre espécie e habitat.</p></div><i class="bi bi-graph-up"></i></article>
+<article class="investigation-step"><b>05</b><div><h3>Tome uma decisão</h3><p>Escolha uma resposta e avalie suas possíveis consequências.</p></div><i class="bi bi-signpost-2-fill"></i></article>
+<article class="investigation-step"><b>06</b><div><h3>Conclua a investigação</h3><p>Revise o aprendizado e receba um resumo educativo da missão.</p></div><i class="bi bi-patch-check-fill"></i></article></div></div></div></section>
+<section class="ez-section book-section" id="livro"><header class="section-heading reveal"><span class="eyebrow">04 / SEU DIÁRIO DE DESCOBERTAS</span><h2>O Livro do <em>Explorador</em></h2><p>Cada descoberta registrada transforma conhecimento em consciência.</p></header><div class="book-layout">
+<div class="book-stage reveal"><div class="book-spark spark1">✦</div><div class="book-spark spark2">✧</div><div class="book-object" id="bookObject"><div class="book-cover"><span class="book-seal"><i class="bi bi-compass-fill"></i></span><small>EXTINÇÃO ZERO</small><strong>Livro do<br>Explorador</strong><div class="cover-art"><i class="bi bi-tree-fill"></i><i class="bi bi-paw-fill"></i><i class="bi bi-flower1"></i></div><em>BIODIVERSIDADE BRASILEIRA</em></div><div class="book-pages"></div></div><div class="book-controls"><button id="bookPrev" aria-label="Página anterior"><i class="bi bi-arrow-left"></i></button><b id="bookPage">01 / 04</b><button id="bookNext" aria-label="Próxima página"><i class="bi bi-arrow-right"></i></button></div><small class="book-hint">USE AS SETAS PARA FOLHEAR</small></div>
+<div class="book-content reveal"><div class="book-tabs" role="tablist"><button class="book-tab active" data-book="species" role="tab" aria-selected="true"><i class="bi bi-paw-fill"></i> Espécies</button><button class="book-tab" data-book="biomes" role="tab" aria-selected="false"><i class="bi bi-tree-fill"></i> Biomas</button><button class="book-tab" data-book="knowledge" role="tab" aria-selected="false"><i class="bi bi-lightbulb-fill"></i> Conhecimentos</button><button class="book-tab" data-book="awards" role="tab" aria-selected="false"><i class="bi bi-trophy-fill"></i> Conquistas</button></div>
+<div class="book-panel" data-panel="species"><small>CATÁLOGO DE CAMPO · 001</small><h3><i class="bi bi-paw-fill"></i> Espécies descobertas</h3><p>Guarde registros das espécies investigadas e consulte suas características.</p><ul><li>Nome popular e científico</li><li>Bioma, habitat e alimentação</li><li>Status de ameaça e curiosidades</li><li>Foto ou ilustração da espécie</li></ul><div class="book-progress"><span>COLEÇÃO DE DESCOBERTAS</span><b>SEU PROGRESSO</b><i><span></span></i></div></div>
+<div class="book-panel" data-panel="biomes" hidden><small>ATLAS NATURAL · 002</small><h3><i class="bi bi-tree-fill"></i> Biomas explorados</h3><p>Registre os ambientes visitados e entenda como cada território sustenta a vida.</p><ul><li>Mapa e características do bioma</li><li>Espécies encontradas</li><li>Ameaças identificadas</li><li>Progresso de exploração</li></ul><div class="biome-chips"><span>Amazônia</span><span>Cerrado</span><span>Caatinga</span><span>Mata Atlântica</span><span>Pantanal</span><span>Pampa</span></div></div>
+<div class="book-panel" data-panel="knowledge" hidden><small>NOTAS DE INVESTIGAÇÃO · 003</small><h3><i class="bi bi-lightbulb-fill"></i> Conhecimentos desbloqueados</h3><p>Reúna informações que explicam as ameaças ambientais e as possibilidades de preservação.</p><ul><li>Fatos sobre conservação</li><li>Explicações sobre ameaças</li><li>Práticas de preservação</li><li>Conteúdos das missões</li></ul></div>
+<div class="book-panel" data-panel="awards" hidden><small>MARCOS DA JORNADA · 004</small><h3><i class="bi bi-trophy-fill"></i> Conquistas</h3><p>Acompanhe os marcos alcançados durante sua jornada de aprendizagem.</p><ul><li>Missões concluídas</li><li>Espécies investigadas</li><li>Biomas explorados</li><li>Desafios e nível de conservacionista</li></ul></div></div></div></section>
+<section class="ez-section characters" id="personagens"><header class="section-heading reveal"><span class="eyebrow">05 / NINGUÉM EXPLORA SOZINHO</span><h2>Conheça os <em>personagens</em></h2><p>Conhecimento, observação e ação se encontram para proteger a biodiversidade.</p></header><div class="characters-layout"><div class="character-selector reveal" role="tablist"><button class="character-choice active" data-character="0" role="tab" aria-selected="true"><i class="bi bi-binoculars-fill"></i><span><b>Aurora</b><small>Exploradora</small></span><i class="bi bi-chevron-right"></i></button><button class="character-choice" data-character="1" role="tab" aria-selected="false"><i class="bi bi-journal-text"></i><span><b>Íris</b><small>Pesquisadora</small></span><i class="bi bi-chevron-right"></i></button><button class="character-choice" data-character="2" role="tab" aria-selected="false"><i class="bi bi-shield-leaf"></i><span><b>Caio</b><small>Guardião dos Biomas</small></span><i class="bi bi-chevron-right"></i></button></div>
+<article class="character-profile reveal" aria-live="polite"><div class="character-art" id="characterArt"><div class="character-sun"></div><i id="characterBigIcon" class="bi bi-binoculars-fill"></i><span id="characterRole">EXPLORADORA DA BIODIVERSIDADE</span><b class="star star1">✦</b><b class="star star2">✧</b></div><div class="character-info"><span class="eyebrow">SUA COMPANHIA DE CAMPO</span><h3 id="characterName">Aurora</h3><h4 id="characterTitle">Exploradora da Biodiversidade</h4><p id="characterStory">Aurora cresceu cercada por histórias sobre animais brasileiros e desenvolveu grande curiosidade pela natureza. Ela percorre os biomas registrando espécies, observando comportamentos e ajudando a construir o Livro do Explorador.</p><div class="character-skill"><i id="characterSkillIcon" class="bi bi-eye-fill"></i><span><small>HABILIDADE PRINCIPAL</small><b id="characterSkill">Observação e registro de descobertas</b></span></div><blockquote id="characterQuote">“Cada detalhe da natureza conta uma história.”</blockquote><div class="character-controls"><span id="characterDots">● ○ ○</span><button id="characterPrev" aria-label="Personagem anterior"><i class="bi bi-arrow-left"></i></button><button id="characterNext" aria-label="Próximo personagem"><i class="bi bi-arrow-right"></i></button></div></div></article></div></section>
+<section class="download" id="download"><div class="download-decor"><i class="bi bi-leaf-fill"></i><i class="bi bi-paw-fill"></i><i class="bi bi-stars"></i></div><div class="download-inner reveal"><span class="eyebrow">SUA MISSÃO ESTÁ ESPERANDO</span><h2>Pronto para começar<br><em>sua missão?</em></h2><p>Entre nessa jornada de descobertas e veja a biodiversidade brasileira com outros olhos.</p><div class="download-actions"><a class="ez-btn primary" href="#livro"><i class="bi bi-phone"></i> Conheça o protótipo <i class="bi bi-arrow-up-right"></i></a><a class="ez-btn ghost" href="#jornada"><i class="bi bi-compass"></i> Ver como funciona</a></div><small><i class="bi bi-info-circle"></i> O app ainda não tem links de lojas confirmados; os botões levam às seções demonstrativas.</small></div></section>
+</main>
+<footer class="site-footer"><div class="footer-container"><div class="footer-brand"><div class="footer-logo"><a href="index.html" class="logo"><img src="assets/img/logo.svg" alt="Extinção Zero"></a></div><p>Projeto acadêmico da Fatec Carapicuíba.<br>Conhecer é o primeiro passo para preservar.</p></div><div class="footer-navigation"><h4>NAVEGAÇÃO</h4><div class="footer-links"><div><a href="index.html">Início</a><a href="#personagens">Personagens</a><a href="#livro">Livro</a></div><div><a href="#jornada">Como funciona</a><a href="#mecanicas">Jogabilidade</a><a href="preservar.html">Preservar</a></div></div></div><div class="footer-sources"><h4>FONTES DE DADOS</h4><p>ICMBio/MMA · IUCN Red List · IBGE · INPE/PRODES · MapBiomas</p></div></div><div class="footer-bottom"><p>© 2026 Extinção Zero — Fatec Carapicuíba. Projeto educativo sem fins lucrativos.</p><p>Dados com finalidade educativa. Consulte as fontes originais.</p></div></footer>
+<script src="js/common.js"></script><script src="js/app-page.js"></script>
+</body></html>

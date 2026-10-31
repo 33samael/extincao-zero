@@ -12,72 +12,39 @@
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/preservar.css">
+    <link rel="stylesheet" href="css/field-identity.css">
+    <link rel="stylesheet" href="css/ux-foundation.css">
 </head>
 
-<body>
+<body class="field-identity">
 
     <!-- =====================================================
          NAVBAR
     ====================================================== -->
 
     <header class="navbar">
-
         <div class="nav-container">
-
-            <a href="index.html" class="logo">
-                <img src="assets/img/logo.svg" alt="Extinção Zero">
-            </a>
-
-            <nav class="nav-menu">
-
-                <a href="index.html" class="nav-link">
-                    Início
-                </a>
-
-                <a href="app.html" class="nav-link">
-                    O App
-                </a>
-
-                <a href="#acoes" class="nav-link nav-dropdown">
-                    Explorar
-                    <i class="bi bi-chevron-down"></i>
-                </a>
-
-                <a href="preservar.html" class="nav-link active">
-                    Preservar
-                </a>
-
-                <a href="loja.html" class="nav-link">
-                    Loja
-                </a>
-
+            <a href="index.html" class="logo"><img src="assets/img/logo.svg" alt="Extinção Zero"></a>
+            <nav class="nav-menu" aria-label="Navegação principal">
+                <a href="index.html" class="nav-link">Início</a>
+                <a href="app.html" class="nav-link">O App</a>
+                <div class="nav-explore">
+                    <button class="nav-link nav-dropdown" type="button" aria-expanded="false" aria-controls="explore-menu">Explorar <i class="bi bi-chevron-down"></i></button>
+                    <div class="nav-submenu" id="explore-menu">
+                        <a class="nav-link" href="dashboard.html"><i class="bi bi-bar-chart-line"></i> Dashboard</a>
+                        <a class="nav-link" href="biomas.html"><i class="bi bi-tree"></i> Biomas</a>
+                        <a class="nav-link" href="mostruario.html"><i class="bi bi-journal-richtext"></i> Mostruário</a>
+                    </div>
+                </div>
+                <a href="preservar.html" class="nav-link">Preservar</a>
+                <a href="loja.html" class="nav-link">Loja</a>
             </nav>
-
-            <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
-                <i class="bi bi-list"></i>
-            </button>
-
             <div class="nav-actions">
-
-                <a href="loja.html"
-                    class="nav-button"
-                    aria-label="Loja">
-                    <i class="bi bi-bag"></i>
-                </a>
-
-                <button
-                    class="nav-button"
-                    id="theme-button"
-                    aria-label="Alterar tema">
-
-                    <i class="bi bi-sun"></i>
-
-                </button>
-
+                <a class="nav-action cart-trigger" href="loja.html#cart" aria-label="Abrir carrinho na loja"><i class="bi bi-cart"></i><span class="cart-count" data-cart-count>0</span></a>
+                <button class="nav-button" id="theme-button" type="button" aria-label="Alterar tema"><i class="bi bi-sun"></i></button>
             </div>
-
+            <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="primary-navigation"><i class="bi bi-list"></i></button>
         </div>
-
     </header>
 
 
@@ -1007,7 +974,7 @@
         <div class="footer-brand">
 
             <div class="footer-logo">
-                <a href="#" class="logo">
+                <a href="index.html" class="logo">
                 <img src="assets/img/logo.svg" alt="Extinção Zero">
             </a>
             </div>
@@ -1030,14 +997,14 @@
 
                 <div>
                     <a href="index.html">Início</a>
-                    <a href="#especies">Espécies</a>
-                    <a href="#dados">Dados</a>
+                    <a href="mostruario.html">Espécies</a>
+                    <a href="dashboard.html">Dados</a>
                     <a href="loja.html">Loja</a>
                 </div>
 
                 <div>
                     <a href="app.html">O App</a>
-                    <a href="#biomas">Biomas</a>
+                    <a href="biomas.html">Biomas</a>
                     <a href="preservar.html">Preservar</a>
                 </div>
 

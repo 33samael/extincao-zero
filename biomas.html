@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Guia de campo dos seis biomas continentais brasileiros.">
+    <title>Biomas brasileiros | Extinção Zero</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/explorar.css">
+    <link rel="stylesheet" href="css/field-identity.css">
+    <link rel="stylesheet" href="css/ux-foundation.css">
+</head>
+<body class="field-identity">
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo"><img src="assets/img/logo.svg" alt="Extinção Zero"></a>
+            <nav class="nav-menu" aria-label="Navegação principal">
+                <a href="index.html" class="nav-link">Início</a>
+                <a href="app.html" class="nav-link">O App</a>
+                <div class="nav-explore">
+                    <button class="nav-link nav-dropdown" type="button" aria-expanded="false" aria-controls="explore-menu">Explorar <i class="bi bi-chevron-down"></i></button>
+                    <div class="nav-submenu" id="explore-menu">
+                        <a class="nav-link" href="dashboard.html"><i class="bi bi-bar-chart-line"></i> Dashboard</a>
+                        <a class="nav-link" href="biomas.html"><i class="bi bi-tree"></i> Biomas</a>
+                        <a class="nav-link" href="mostruario.html"><i class="bi bi-journal-richtext"></i> Mostruário</a>
+                    </div>
+                </div>
+                <a href="preservar.html" class="nav-link">Preservar</a>
+                <a href="loja.html" class="nav-link">Loja</a>
+            </nav>
+            <div class="nav-actions">
+                <a class="nav-action cart-trigger" href="loja.html#cart" aria-label="Abrir carrinho na loja"><i class="bi bi-cart"></i><span class="cart-count" data-cart-count>0</span></a>
+                <button class="nav-button" id="theme-button" type="button" aria-label="Alterar tema"><i class="bi bi-sun"></i></button>
+            </div>
+            <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="primary-navigation"><i class="bi bi-list"></i></button>
+        </div>
+    </header>
+    <main class="field-guide">
+        <section class="field-hero biome-hero">
+            <span class="field-eyebrow"><i class="bi bi-compass"></i> CADERNO DE CAMPO · BRASIL</span>
+            <h1>Seis paisagens.<br><em>Milhares de vidas.</em></h1>
+            <p>Conheça os biomas continentais brasileiros: ambientes distintos, conectados por água, clima, espécies e histórias de conservação.</p>
+            <a class="field-button" href="#biome-atlas">Abrir o atlas <i class="bi bi-arrow-down-right"></i></a>
+            <img class="field-hero-image" src="assets/img/amazonia.jpg" alt="Floresta tropical brasileira vista entre a vegetação" fetchpriority="high">
+            <span class="field-stamp"><i class="bi bi-map"></i> ATLAS DE EXPLORAÇÃO <small>IBGE · 2019</small></span>
+        </section>
+        <section class="atlas-section" id="biome-atlas">
+            <div class="field-section-heading">
+                <span class="field-eyebrow">01 / TERRITÓRIO</span>
+                <h2>Um país, <em>seis biomas.</em></h2>
+                <p>As áreas abaixo são aproximações baseadas na delimitação do IBGE. Um limite cartográfico não apaga a diversidade local nem as conexões entre ecossistemas.</p>
+            </div>
+            <div class="atlas-grid">
+                <article class="atlas-entry atlas-amazonia">
+                    <img src="assets/img/amazonia.jpg" alt="Floresta e copa de árvores da Amazônia" loading="lazy">
+                    <div class="atlas-copy"><span>01 · NORTE</span><h3>Amazônia</h3><strong>≈ 49,3% do território brasileiro</strong><p>Maior bioma do país. Florestas, rios e áreas alagáveis sustentam uma biodiversidade extraordinária.</p><a href="dashboard.html#biomas">Ver dados do bioma <i class="bi bi-arrow-up-right"></i></a></div>
+                </article>
+                <article class="atlas-entry atlas-cerrado">
+                    <img src="assets/img/lobo-guara.png" alt="Lobo-guará em paisagem de vegetação aberta" loading="lazy">
+                    <div class="atlas-copy"><span>02 · PLANALTO CENTRAL</span><h3>Cerrado</h3><strong>≈ 23,9% do território brasileiro</strong><p>Savana rica em espécies e nascentes que alimentam importantes bacias hidrográficas.</p><a href="dashboard.html#biomas">Ver dados do bioma <i class="bi bi-arrow-up-right"></i></a></div>
+                </article>
+                <article class="atlas-entry atlas-mata">
+                    <img src="assets/img/mico.png" alt="Mico-leão-dourado, espécie da Mata Atlântica" loading="lazy">
+                    <div class="atlas-copy"><span>03 · LITORAL E INTERIOR</span><h3>Mata Atlântica</h3><strong>≈ 13,0% do território brasileiro</strong><p>Florestas e ecossistemas associados, marcados por alto endemismo e intensa pressão de ocupação.</p><a href="dashboard.html#biomas">Ver dados do bioma <i class="bi bi-arrow-up-right"></i></a></div>
+                </article>
+                <article class="atlas-entry atlas-caatinga">
+                    <div class="atlas-landscape landscape-caatinga" role="img" aria-label="Ilustração de vegetação e solo do semiárido"></div>
+                    <div class="atlas-copy"><span>04 · NORDESTE</span><h3>Caatinga</h3><strong>≈ 9,9% do território brasileiro</strong><p>Bioma exclusivamente brasileiro, com espécies adaptadas à sazonalidade e às condições semiáridas.</p><a href="dashboard.html#biomas">Ver dados do bioma <i class="bi bi-arrow-up-right"></i></a></div>
+                </article>
+                <article class="atlas-entry atlas-pampa">
+                    <div class="atlas-landscape landscape-grass" role="img" aria-label="Paisagem ilustrada de campos nativos do Pampa"></div>
+                    <div class="atlas-copy"><span>05 · EXTREMO SUL</span><h3>Pampa</h3><strong>≈ 2,1% do território brasileiro</strong><p>Campos nativos e mosaicos de ambientes campestres, importantes para a fauna e a flora do Sul.</p><a href="dashboard.html#biomas">Ver dados do bioma <i class="bi bi-arrow-up-right"></i></a></div>
+                </article>
+                <article class="atlas-entry atlas-pantanal">
+                    <img src="assets/img/onca.jpg" alt="Onça-pintada em ambiente natural brasileiro" loading="lazy">
+                    <div class="atlas-copy"><span>06 · CENTRO-OESTE</span><h3>Pantanal</h3><strong>≈ 1,8% do território brasileiro</strong><p>Grande planície de inundação, onde os pulsos sazonais da água moldam habitats e ciclos de vida.</p><a href="dashboard.html#biomas">Ver dados do bioma <i class="bi bi-arrow-up-right"></i></a></div>
+                </article>
+            </div>
+            <p class="field-source"><i class="bi bi-journal-text"></i> Fonte das áreas e delimitações: <a href="https://www.ibge.gov.br/geociencias/informacoes-ambientais/vegetacao/15842-biomas.html" target="_blank" rel="noopener noreferrer">IBGE — Biomas e Sistema Costeiro-Marinho do Brasil</a>. Imagens ilustram espécies e paisagens e não substituem mapas oficiais.</p>
+        </section>
+        <aside class="field-next"><span>PRÓXIMA PARADA</span><div><h2>Quem vive por aqui?</h2><p>Consulte fichas de espécies e categorias de conservação.</p></div><a href="mostruario.html">Abrir o mostruário <i class="bi bi-arrow-up-right"></i></a></aside>
+    </main>
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-brand"><div class="footer-logo"><a href="index.html" class="logo"><img src="assets/img/logo.svg" alt="Extinção Zero"></a></div><p>Projeto acadêmico da Fatec Carapicuíba.<br>Conhecer é o primeiro passo para preservar.</p></div>
+            <div class="footer-navigation"><h4>NAVEGAÇÃO</h4><div class="footer-links"><div><a href="index.html">Início</a><a href="app.html">O App</a><a href="dashboard.html">Dashboard</a><a href="biomas.html">Biomas</a></div><div><a href="mostruario.html">Mostruário</a><a href="preservar.html">Preservar</a><a href="loja.html">Loja</a></div></div></div>
+            <div class="footer-sources"><h4>FONTES DE DADOS</h4><p>ICMBio/MMA · IUCN Red List · IBGE · INPE/PRODES · MapBiomas</p></div>
+        </div>
+        <div class="footer-bottom"><p>© 2026 Extinção Zero — Fatec Carapicuíba. Projeto educativo sem fins lucrativos.</p><p>Dados com finalidade educativa. Consulte as fontes originais.</p></div>
+    </footer>
+    <script src="js/common.js"></script>
+</body>
+</html>
