@@ -1,0 +1,1149 @@
+.dashboard {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 132px 20px 28px;
+}
+
+.dashboard-hero {
+    min-height: 405px;
+    display: grid;
+    grid-template-columns: 1.4fr 0.7fr;
+    align-items: center;
+    gap: 60px;
+    padding: 35px 0 48px;
+}
+
+.dashboard-intro {
+    max-width: 720px;
+}
+
+.dashboard-eyebrow,
+.section-kicker,
+.stat-kicker,
+.overview-label {
+    color: var(--green);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.7px;
+}
+
+.dashboard-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+}
+
+.dashboard-eyebrow > span:first-child {
+    width: 30px;
+    height: 1px;
+    background: var(--green);
+}
+
+.eyebrow-year {
+    margin-left: 3px;
+    padding-left: 13px;
+    color: var(--text-muted);
+    border-left: 1px solid var(--border);
+    font-size: 9px;
+}
+
+.dashboard-intro h1 {
+    margin-top: 25px;
+    font-size: clamp(46px, 6vw, 76px);
+    font-weight: 800;
+    letter-spacing: -3.6px;
+    line-height: .98;
+}
+
+.dashboard-intro h1 em,
+.section-heading h2 em {
+    color: var(--green);
+    font-style: normal;
+}
+
+.dashboard-intro p {
+    max-width: 610px;
+    margin-top: 23px;
+    color: var(--text-soft);
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.dashboard-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 13px;
+    margin-top: 25px;
+    padding: 12px 17px;
+    border: 1px solid rgba(156, 255, 39, .45);
+    border-radius: 4px;
+    color: var(--green);
+    font-size: 13px;
+    font-weight: 700;
+    transition: .2s ease;
+}
+
+.dashboard-cta:hover {
+    transform: translateY(-2px);
+    background: rgba(156, 255, 39, .08);
+}
+
+.hero-stat {
+    position: relative;
+    min-height: 280px;
+    overflow: hidden;
+    padding: 29px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: linear-gradient(145deg, rgba(156, 255, 39, .09), transparent 60%), var(--surface);
+}
+
+.hero-stat-icon,
+.overview-icon {
+    display: grid;
+    width: 42px;
+    height: 42px;
+    place-items: center;
+    border: 1px solid rgba(156, 255, 39, .28);
+    border-radius: 50%;
+    color: var(--green);
+}
+
+.hero-stat .stat-kicker {
+    display: block;
+    margin-top: 25px;
+    color: var(--text-muted);
+}
+
+.hero-stat > strong {
+    display: block;
+    margin-top: 4px;
+    color: var(--green);
+    font-size: clamp(50px, 6vw, 68px);
+    letter-spacing: -3px;
+    line-height: 1.05;
+}
+
+.hero-stat-label,
+.hero-stat-source {
+    display: block;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-stat-label {
+    color: var(--text);
+    font-size: 15px;
+}
+
+.hero-stat-source {
+    margin-top: 11px;
+    color: var(--text-muted);
+    font-size: 11px;
+}
+
+.stat-decoration {
+    position: absolute;
+    right: 22px;
+    bottom: -26px;
+    color: rgba(156, 255, 39, .08);
+    font-size: 130px;
+    transform: rotate(-24deg);
+}
+
+.overview-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin: 14px 0 92px;
+}
+
+.overview-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    min-height: 130px;
+    padding: 20px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: var(--surface);
+}
+
+.overview-card > div {
+    min-width: 0;
+}
+
+.overview-label {
+    display: block;
+    margin-top: 1px;
+    color: var(--text-muted);
+    font-size: 9px;
+}
+
+.overview-card strong {
+    display: block;
+    margin-top: 7px;
+    color: var(--text);
+    font-size: 25px;
+    letter-spacing: -.7px;
+}
+
+.overview-card strong small {
+    color: var(--text-soft);
+    font-size: 14px;
+}
+
+.overview-card p {
+    margin-top: 5px;
+    color: var(--text-muted);
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.dashboard-section {
+    scroll-margin-top: 110px;
+    margin-bottom: 92px;
+}
+
+.section-heading {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 35px;
+    margin-bottom: 27px;
+}
+
+.section-kicker {
+    color: var(--text-muted);
+}
+
+.section-heading h2 {
+    margin-top: 9px;
+    font-size: clamp(30px, 4vw, 43px);
+    letter-spacing: -1.6px;
+}
+
+.section-heading > p {
+    max-width: 390px;
+    color: var(--text-soft);
+    font-size: 13px;
+    line-height: 1.65;
+}
+
+.biome-panel {
+    display: grid;
+    grid-template-columns: .85fr 1.15fr;
+    gap: 34px;
+    padding: 29px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--surface);
+}
+
+.biome-chart-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 350px;
+    padding: 12px;
+    border-right: 1px solid var(--border);
+}
+
+.biome-donut {
+    display: grid;
+    width: min(245px, 70vw);
+    aspect-ratio: 1;
+    place-items: center;
+    border-radius: 50%;
+    background: conic-gradient(
+        #9cff27 0% 49.3%,
+        #d5b65b 49.3% 73.2%,
+        #54b876 73.2% 86.2%,
+        #e5a152 86.2% 96.1%,
+        #84a9a0 96.1% 98.2%,
+        #74b9d4 98.2% 100%
+    );
+    transform: rotate(-90deg);
+}
+
+.donut-center {
+    display: flex;
+    width: 67%;
+    height: 67%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    background: var(--surface);
+    transform: rotate(90deg);
+}
+
+.donut-center strong {
+    color: var(--text);
+    font-size: 45px;
+    line-height: 1;
+}
+
+.donut-center span {
+    margin-top: 7px;
+    color: var(--text-muted);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.chart-caption {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 22px;
+    color: var(--text-soft);
+    font-size: 11px;
+}
+
+.legend-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--green);
+}
+
+.chart-note {
+    margin-top: 7px;
+    color: var(--text-muted);
+    font-size: 10px;
+}
+
+.biome-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 17px;
+}
+
+.biome-row-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 7px;
+}
+
+.biome-name {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: var(--text);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.biome-name i {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--biome-color);
+}
+
+.biome-row-top strong {
+    color: var(--text);
+    font-size: 12px;
+}
+
+.biome-track {
+    height: 4px;
+    overflow: hidden;
+    border-radius: 4px;
+    background: rgba(135, 154, 139, .15);
+}
+
+.biome-track span {
+    display: block;
+    width: var(--biome-share);
+    height: 100%;
+    border-radius: inherit;
+    background: var(--biome-color);
+}
+
+.biome-area {
+    display: block;
+    margin-top: 5px;
+    color: var(--text-muted);
+    font-size: 10px;
+}
+
+.source-line {
+    margin-top: 13px;
+    color: var(--text-muted);
+    font-size: 11px;
+    line-height: 1.65;
+}
+
+.source-line > i {
+    margin-right: 4px;
+    color: var(--green);
+}
+
+.source-line a,
+.species-source {
+    color: var(--green);
+    text-decoration: underline;
+    text-decoration-color: rgba(156, 255, 39, .35);
+    text-underline-offset: 3px;
+}
+
+.source-line a:hover,
+.species-source:hover {
+    text-decoration-color: currentColor;
+}
+
+.species-section {
+    margin-bottom: 60px;
+}
+
+.species-heading {
+    align-items: center;
+}
+
+.filter-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--text-soft);
+    font-size: 12px;
+}
+
+.filter-label select {
+    min-width: 175px;
+    padding: 10px 32px 10px 12px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background: var(--surface);
+    color: var(--text);
+    font: inherit;
+}
+
+.species-context {
+    max-width: 860px;
+    margin: -10px 0 24px;
+    color: var(--text-soft);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.species-context strong {
+    color: var(--text);
+}
+
+.species-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 15px;
+}
+
+.species-card {
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    background: var(--surface);
+    transition: transform .2s ease, border-color .2s ease;
+}
+
+.species-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(156, 255, 39, .48);
+}
+
+.species-card[hidden],
+.empty-filter[hidden] {
+    display: none;
+}
+
+.species-image {
+    position: relative;
+    height: 170px;
+    overflow: hidden;
+    background: var(--surface-light);
+}
+
+.species-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .35s ease;
+}
+
+.species-card:hover .species-image img {
+    transform: scale(1.04);
+}
+
+.species-order {
+    position: absolute;
+    right: 11px;
+    bottom: 9px;
+    color: white;
+    font-size: 11px;
+    font-weight: 800;
+    text-shadow: 0 1px 7px #000;
+}
+
+.species-content {
+    padding: 17px 15px 16px;
+}
+
+.species-biome {
+    color: var(--green);
+    font-size: 10px;
+}
+
+.species-biome i {
+    margin-right: 3px;
+}
+
+.species-content h3 {
+    margin-top: 8px;
+    color: var(--text);
+    font-size: 17px;
+    letter-spacing: -.3px;
+}
+
+.species-content > em {
+    display: block;
+    margin-top: 3px;
+    color: var(--text-muted);
+    font-size: 11px;
+}
+
+.status-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 17px;
+}
+
+.status-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 8px;
+    border: 1px solid currentColor;
+    border-radius: 3px;
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.status-badge small {
+    color: var(--text-soft);
+    font-size: 9px;
+    font-weight: 500;
+}
+
+.status-badge.endangered,
+.legend-status.endangered {
+    color: #ff8a72;
+}
+
+.status-badge.vulnerable,
+.legend-status.vulnerable {
+    color: #f0ba65;
+}
+
+.status-badge.near-threatened,
+.legend-status.near-threatened {
+    color: #d8cf69;
+}
+
+.species-source {
+    display: inline-block;
+    margin-top: 15px;
+    font-size: 10px;
+}
+
+.empty-filter {
+    grid-column: 1 / -1;
+    padding: 35px;
+    color: var(--text-muted);
+    text-align: center;
+}
+
+.status-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-top: 20px;
+    color: var(--text-muted);
+    font-size: 10px;
+}
+
+.status-legend > span {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.legend-status {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: currentColor;
+}
+
+.dashboard-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0 7px;
+    border-top: 1px solid var(--border);
+    color: var(--text-muted);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.dashboard-footer a {
+    color: var(--text-soft);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0;
+}
+
+.dashboard-footer a:hover {
+    color: var(--green);
+}
+
+body.light-theme .hero-stat,
+body.light-theme .overview-card,
+body.light-theme .biome-panel,
+body.light-theme .species-card,
+body.light-theme .filter-label select {
+    background-color: rgba(255, 255, 255, .78);
+}
+
+body.light-theme .donut-center {
+    background: #fff;
+}
+
+body.light-theme .status-badge small {
+    color: #59625a;
+}
+
+body.light-theme .species-order {
+    text-shadow: 0 1px 7px rgba(0, 0, 0, .8);
+}
+
+@media (max-width: 900px) {
+    .dashboard-hero {
+        grid-template-columns: 1fr .75fr;
+        gap: 25px;
+    }
+
+    .overview-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .overview-card {
+        gap: 11px;
+        padding: 16px 13px;
+    }
+
+    .overview-card strong {
+        font-size: 21px;
+    }
+
+    .biome-panel {
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .species-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 650px) {
+    .dashboard {
+        padding: 112px 16px 24px;
+    }
+
+    .dashboard-hero {
+        grid-template-columns: 1fr;
+        gap: 27px;
+        padding-top: 24px;
+    }
+
+    .dashboard-intro h1 {
+        letter-spacing: -2.3px;
+    }
+
+    .dashboard-intro p {
+        font-size: 14px;
+    }
+
+    .hero-stat {
+        min-height: auto;
+        padding: 21px;
+    }
+
+    .hero-stat .stat-kicker {
+        margin-top: 18px;
+    }
+
+    .overview-grid {
+        grid-template-columns: 1fr;
+        margin-bottom: 65px;
+    }
+
+    .overview-card {
+        min-height: 105px;
+        padding: 17px;
+    }
+
+    .section-heading,
+    .species-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .section-heading > p {
+        font-size: 12px;
+    }
+
+    .biome-panel {
+        grid-template-columns: 1fr;
+        padding: 15px;
+    }
+
+    .biome-chart-card {
+        min-height: 285px;
+        border-right: 0;
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 22px;
+    }
+
+    .biome-list {
+        padding: 5px 3px 7px;
+    }
+
+    .filter-label {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 7px;
+    }
+
+    .filter-label select {
+        width: min(100%, 320px);
+    }
+
+    .species-context {
+        margin-top: 0;
+    }
+
+    .species-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 10px;
+    }
+
+    .species-image {
+        height: 130px;
+    }
+
+    .species-content {
+        padding: 13px 11px;
+    }
+
+    .species-content h3 {
+        font-size: 15px;
+    }
+
+    .status-badge {
+        flex-wrap: wrap;
+        gap: 4px 7px;
+    }
+
+    .status-badge small {
+        font-size: 8px;
+    }
+
+    .status-legend {
+        gap: 10px;
+    }
+
+    .dashboard-footer {
+        gap: 12px;
+        align-items: flex-start;
+    }
+}
+
+    .dashboard {
+        --background: #020806;
+        --background-soft: #07110d;
+        --surface: #101b14;
+        --surface-light: #17251a;
+        --border: rgba(220, 216, 169, .2);
+        --text: #f2efd9;
+        --text-soft: #c2c9b6;
+        --text-muted: #a1aa92;
+        --field-gold: #e2bd65;
+        --field-line: rgba(220, 216, 169, .2);
+        --green: #bad36b;
+    }
+
+    body.light-theme .dashboard {
+        --background: #efe6cc;
+        --background-soft: #f2ead6;
+        --surface: #f5edda;
+        --surface-light: #e5d5ad;
+        --border: rgba(67, 81, 46, .24);
+        --text: #283622;
+        --text-soft: #4c5841;
+        --text-muted: #59664b;
+        --field-gold: #8a6523;
+        --field-line: rgba(67, 81, 46, .24);
+        --green: #5b7434;
+    }
+
+    .dashboard-hero {
+        position: relative;
+        isolation: isolate;
+        padding-inline: clamp(12px, 3vw, 38px);
+    }
+
+    .dashboard-hero::before {
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 57%;
+        content: "";
+        background:
+            linear-gradient(90deg, var(--background) 0%, rgba(2, 8, 6, .78) 35%, rgba(2, 8, 6, .14) 100%),
+            url("../assets/img/amazonia.jpg") center / cover;
+        opacity: .8;
+        pointer-events: none;
+    }
+
+    body.light-theme .dashboard-hero::before {
+        background:
+            linear-gradient(90deg, #f2f6ed 0%, rgba(242, 246, 237, .78) 35%, rgba(242, 246, 237, .12) 100%),
+            url("../assets/img/amazonia.jpg") center / cover;
+        opacity: .7;
+    }
+
+    .dashboard-eyebrow {
+        color: var(--field-gold);
+        font-size: 9px;
+        letter-spacing: .14em;
+    }
+
+    .dashboard-intro h1,
+    .section-heading h2 {
+        font-family: Georgia, "Times New Roman", serif;
+        font-weight: 700;
+    }
+
+    .dashboard-cta {
+        border-color: rgba(226, 189, 101, .55);
+        color: var(--field-gold);
+    }
+
+    .dashboard-cta:hover {
+        background: rgba(226, 189, 101, .09);
+    }
+
+    .hero-stat {
+        border-radius: 0;
+        border-top: 2px solid var(--field-gold);
+        background: linear-gradient(145deg, rgba(186, 211, 107, .08), transparent 60%), var(--surface);
+    }
+
+    .hero-stat::before {
+        position: absolute;
+        inset: auto 0 0;
+        height: 58%;
+        content: "";
+        background: linear-gradient(0deg, rgba(5, 15, 9, .48), transparent), url("../assets/img/onca.jpg") center 42% / cover;
+        mask-image: linear-gradient(0deg, #000 0%, transparent 100%);
+        opacity: .43;
+        pointer-events: none;
+    }
+
+    body.light-theme .hero-stat::before {
+        opacity: .18;
+    }
+
+    .hero-stat-icon,
+    .overview-icon {
+        border-radius: 0;
+    }
+
+    .overview-grid {
+        gap: 0;
+        border-top: 1px solid var(--field-line);
+        border-bottom: 1px solid var(--field-line);
+    }
+
+    .overview-card {
+        min-height: 125px;
+        border: 0;
+        border-right: 1px solid var(--field-line);
+        border-radius: 0;
+        background:
+            repeating-linear-gradient(0deg, transparent 0 26px, rgba(206, 196, 148, .035) 27px, transparent 28px),
+            var(--surface);
+    }
+
+    .overview-card:last-child {
+        border-right: 0;
+    }
+
+    .overview-card strong {
+        font-family: Georgia, "Times New Roman", serif;
+    }
+
+    .dashboard-section {
+        position: relative;
+    }
+
+    .section-kicker {
+        color: var(--field-gold);
+        letter-spacing: .14em;
+    }
+
+    .biome-panel,
+    .threats-panel {
+        border-radius: 0;
+        border-top: 2px solid var(--field-gold);
+        background:
+            repeating-linear-gradient(0deg, transparent 0 29px, rgba(206, 196, 148, .025) 30px, transparent 31px),
+            var(--surface);
+    }
+
+    .species-card {
+        border-radius: 0;
+    }
+
+    .species-tools {
+        border-radius: 0;
+        border-left-color: var(--field-gold);
+    }
+
+    @media (max-width: 650px) {
+        .dashboard-hero {
+            padding-inline: 0;
+        }
+
+        .dashboard-hero::before {
+            top: 0;
+            right: -16px;
+            bottom: 45%;
+            width: calc(100% + 32px);
+            opacity: .45;
+            background-position: center 40%;
+        }
+
+        body.light-theme .dashboard-hero::before {
+            opacity: .4;
+        }
+
+        .overview-grid {
+            gap: 0;
+        }
+
+        .overview-card {
+            border-right: 0;
+            border-bottom: 1px solid var(--field-line);
+        }
+
+        .overview-card:last-child {
+            border-bottom: 0;
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+    .dashboard *,
+    .dashboard *::before,
+    .dashboard *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+    }
+}
+
+.species-tools {
+    display: grid;
+    grid-template-columns: minmax(220px, 1.6fr) repeat(3, minmax(150px, .8fr));
+    align-items: end;
+    gap: 12px;
+    margin: 0 0 23px;
+    padding: 15px;
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--green);
+    background: var(--surface);
+}
+
+.species-search {
+    display: flex;
+    min-height: 41px;
+    align-items: center;
+    gap: 10px;
+    padding: 0 12px;
+    border: 1px solid var(--border);
+    background: var(--background-soft);
+    color: var(--green);
+}
+
+.species-search input {
+    width: 100%;
+    min-width: 0;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: var(--text);
+    font: inherit;
+    font-size: 12px;
+}
+
+.species-search input::placeholder {
+    color: var(--text-muted);
+}
+
+.species-tools .filter-label {
+    display: grid;
+    gap: 6px;
+    color: var(--text-muted);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .04em;
+}
+
+.species-tools .filter-label select {
+    width: 100%;
+    min-width: 0;
+    min-height: 41px;
+    padding: 8px 28px 8px 10px;
+    border-radius: 0;
+    background: var(--background-soft);
+    font-size: 11px;
+}
+
+.threats-panel {
+    margin-top: 42px;
+    padding: clamp(20px, 3vw, 34px);
+    border: 1px solid var(--border);
+    border-top: 3px solid #d89c57;
+    background:
+        linear-gradient(90deg, rgba(216, 156, 87, .06), transparent 48%),
+        var(--surface);
+}
+
+.threats-heading {
+    max-width: 670px;
+}
+
+.threats-heading h3 {
+    margin: 9px 0 8px;
+    font-size: clamp(23px, 3vw, 32px);
+    letter-spacing: -.8px;
+}
+
+.threats-heading p,
+.threat-item p {
+    color: var(--text-soft);
+    font-size: 12px;
+    line-height: 1.65;
+}
+
+.threats-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 28px;
+    margin-top: 22px;
+    border-top: 1px solid var(--border);
+}
+
+.threat-item {
+    display: grid;
+    grid-template-columns: 40px 1fr auto;
+    align-items: start;
+    gap: 13px;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.threat-mark {
+    display: grid;
+    width: 38px;
+    height: 38px;
+    place-items: center;
+    border: 1px solid rgba(216, 156, 87, .38);
+    color: #d89c57;
+}
+
+.threat-item h4 {
+    margin: 2px 0 5px;
+    font-size: 13px;
+}
+
+.threat-item p {
+    margin: 0;
+    font-size: 11px;
+}
+
+.threat-index {
+    color: var(--text-muted);
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.empty-filter a {
+    color: var(--green);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+body.light-theme .species-tools,
+body.light-theme .threats-panel {
+    background-color: rgba(255, 255, 255, .76);
+}
+
+body.light-theme .species-search,
+body.light-theme .species-tools .filter-label select {
+    background-color: #f2f6ed;
+}
+
+body.light-theme .threat-mark {
+    color: #925a25;
+}
+
+@media (max-width: 850px) {
+    .species-tools {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .species-search {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 600px) {
+    .species-tools {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        padding: 11px;
+    }
+
+    .species-tools .filter-label {
+        font-size: 9px;
+    }
+
+    .threats-list {
+        grid-template-columns: 1fr;
+    }
+
+    .threat-item {
+        gap: 10px;
+    }
+}

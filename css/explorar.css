@@ -1,0 +1,580 @@
+.field-guide {
+    --field-bg: #101a11;
+    --field-surface: #17251a;
+    --field-paper: #e9dfc0;
+    --field-text: #f2efd9;
+    --field-muted: #b8c0a8;
+    --field-green: #bad36b;
+    --field-gold: #e2bd65;
+    --field-line: rgba(220, 216, 169, .2);
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 112px 24px 28px;
+    color: var(--field-text);
+}
+
+body.light-theme .field-guide {
+    --field-bg: #efe6cc;
+    --field-surface: #f5edda;
+    --field-paper: #e5d5ad;
+    --field-text: #283622;
+    --field-muted: #59664b;
+    --field-green: #5b7434;
+    --field-gold: #8a6523;
+    --field-line: rgba(67, 81, 46, .24);
+}
+
+.field-hero {
+    position: relative;
+    display: flex;
+    min-height: 440px;
+    overflow: hidden;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: clamp(32px, 6vw, 70px);
+    border: 1px solid var(--field-line);
+    isolation: isolate;
+    background: var(--field-bg);
+}
+
+.field-hero::after {
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    content: "";
+    background: linear-gradient(90deg, rgba(7, 18, 11, .96) 0%, rgba(8, 21, 13, .8) 48%, rgba(7, 18, 11, .2) 100%);
+}
+
+.field-hero-image {
+    position: absolute;
+    z-index: -2;
+    inset: 0 0 0 auto;
+    width: 72%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.field-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    color: var(--field-gold);
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: .14em;
+}
+
+.field-hero h1 {
+    max-width: 680px;
+    margin: 20px 0 14px;
+    color: #f4f0d8;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(43px, 6vw, 72px);
+    letter-spacing: -.055em;
+    line-height: .98;
+}
+
+.field-hero h1 em,
+.field-section-heading h2 em {
+    color: var(--field-green);
+    font-style: normal;
+}
+
+.field-hero > p {
+    max-width: 535px;
+    margin: 0;
+    color: #d0d5c3;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.field-button {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+    gap: 12px;
+    margin-top: 23px;
+    padding: 0 15px;
+    border: 1px solid rgba(229, 200, 109, .56);
+    background: rgba(12, 28, 18, .76);
+    color: #f0d782;
+    font-size: 12px;
+    font-weight: 800;
+    transition: background .2s ease, transform .2s ease;
+}
+
+.field-button:hover {
+    transform: translateY(-2px);
+    background: rgba(42, 64, 33, .92);
+}
+
+.field-stamp {
+    position: absolute;
+    right: 24px;
+    bottom: 22px;
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    gap: 4px 9px;
+    padding: 10px 13px;
+    border: 1px solid rgba(235, 223, 171, .48);
+    background: rgba(14, 30, 18, .83);
+    color: #ecda9a;
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: .08em;
+}
+
+.field-stamp i {
+    grid-row: span 2;
+    font-size: 19px;
+}
+
+.field-stamp small {
+    color: #c2cdb1;
+    font-size: 8px;
+}
+
+.atlas-section,
+.specimens-section {
+    padding: 78px 0 56px;
+}
+
+.field-section-heading {
+    max-width: 700px;
+    margin-bottom: 28px;
+}
+
+.field-section-heading h2 {
+    margin: 10px 0;
+    color: var(--field-text);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(31px, 4vw, 46px);
+    letter-spacing: -.045em;
+}
+
+.field-section-heading > p {
+    max-width: 630px;
+    margin: 0;
+    color: var(--field-muted);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.atlas-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 15px;
+}
+
+.atlas-entry {
+    position: relative;
+    min-height: 350px;
+    overflow: hidden;
+    border: 1px solid var(--field-line);
+    background: var(--field-surface);
+    isolation: isolate;
+}
+
+.atlas-entry > img,
+.atlas-landscape {
+    position: absolute;
+    z-index: -2;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .5s ease;
+}
+
+.atlas-entry:hover > img {
+    transform: scale(1.045);
+}
+
+.atlas-entry::after {
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    content: "";
+    background: linear-gradient(0deg, rgba(7, 18, 11, .98) 0%, rgba(9, 22, 13, .82) 46%, rgba(7, 18, 11, .06) 100%);
+}
+
+.atlas-copy {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 19px;
+}
+
+.atlas-copy > span,
+.specimen-number {
+    color: var(--field-gold);
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: .12em;
+}
+
+.atlas-copy h3 {
+    margin: 7px 0 4px;
+    color: #fff4d9;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 27px;
+}
+
+.atlas-copy > strong {
+    color: #d3dfae;
+    font-size: 11px;
+}
+
+.atlas-copy p {
+    margin: 10px 0;
+    color: #d2d5c4;
+    font-size: 11px;
+    line-height: 1.55;
+}
+
+.atlas-copy a,
+.specimen-copy > a {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: #d5df9a;
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.atlas-copy a:hover,
+.specimen-copy > a:hover {
+    color: #fff0a5;
+}
+
+.atlas-landscape {
+    background-color: #6d7950;
+}
+
+.landscape-grass {
+    background:
+        radial-gradient(ellipse at 15% 35%, rgba(215, 190, 110, .42) 0 2%, transparent 2.5%),
+        linear-gradient(176deg, transparent 0 39%, rgba(207, 179, 108, .75) 40% 42%, transparent 43%),
+        linear-gradient(165deg, transparent 0 53%, rgba(130, 137, 75, .92) 54% 58%, transparent 59%),
+        repeating-linear-gradient(80deg, transparent 0 16px, rgba(217, 202, 142, .35) 17px 18px, transparent 19px 31px),
+        linear-gradient(180deg, #68784a 0%, #a1945e 49%, #484a2b 100%);
+}
+
+.landscape-caatinga {
+    background:
+        radial-gradient(ellipse at 30% 74%, #916d42 0 5%, transparent 5.5%),
+        radial-gradient(ellipse at 65% 78%, #c2a36b 0 3%, transparent 3.5%),
+        repeating-linear-gradient(112deg, transparent 0 27px, rgba(206, 173, 105, .5) 28px 30px, transparent 31px 43px),
+        linear-gradient(180deg, #b88955 0%, #d4b879 45%, #80603b 100%);
+}
+
+.field-source {
+    margin: 18px 0 0;
+    color: var(--field-muted);
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+.field-source > i {
+    margin-right: 4px;
+    color: var(--field-green);
+}
+
+.field-source a {
+    color: var(--field-green);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.field-next {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 24px;
+    padding: 22px;
+    border-top: 2px solid var(--field-gold);
+    border-bottom: 1px solid var(--field-line);
+    background: var(--field-surface);
+}
+
+.field-next > span {
+    color: var(--field-gold);
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: .11em;
+}
+
+.field-next h2 {
+    margin: 0 0 4px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 21px;
+}
+
+.field-next p {
+    margin: 0;
+    color: var(--field-muted);
+    font-size: 11px;
+}
+
+.field-next > a {
+    padding: 11px 13px;
+    border: 1px solid var(--field-line);
+    color: var(--field-text);
+    font-size: 11px;
+    font-weight: 750;
+}
+
+.field-next > a:hover {
+    border-color: var(--field-green);
+    color: var(--field-green);
+}
+
+.field-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+    margin-top: 26px;
+    padding-top: 17px;
+    border-top: 1px solid var(--field-line);
+    color: var(--field-muted);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: .1em;
+}
+
+.field-footer a {
+    color: var(--field-text);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0;
+}
+
+.specimen-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 17px;
+}
+
+.specimen-entry {
+    display: grid;
+    grid-template-columns: minmax(160px, .78fr) 1.22fr;
+    min-height: 295px;
+    border: 1px solid var(--field-line);
+    background: var(--field-surface);
+}
+
+.specimen-entry figure {
+    position: relative;
+    min-height: 100%;
+    margin: 0;
+    overflow: hidden;
+    background: var(--field-bg);
+}
+
+.specimen-entry figure img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .45s ease;
+}
+
+.specimen-entry:hover figure img {
+    transform: scale(1.05);
+}
+
+.specimen-tag {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    padding: 6px 8px;
+    background: rgba(12, 26, 16, .87);
+    color: #e3d692;
+    font-size: 8px;
+    font-weight: 900;
+    letter-spacing: .09em;
+}
+
+.specimen-copy {
+    padding: 19px;
+}
+
+.specimen-copy h3 {
+    margin: 8px 0 3px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 21px;
+}
+
+.specimen-copy > em {
+    color: var(--field-muted);
+    font-size: 11px;
+}
+
+.specimen-copy > p {
+    margin: 13px 0;
+    color: var(--field-muted);
+    font-size: 11px;
+    line-height: 1.55;
+}
+
+.specimen-status {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 13px;
+}
+
+.specimen-status span {
+    padding: 5px 7px;
+    border: 1px solid #d47e6d;
+    color: #e69580;
+    font-size: 9px;
+    font-weight: 900;
+}
+
+.specimen-status.vulnerable span {
+    border-color: #d1a552;
+    color: #e0bd70;
+}
+
+.category-key {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 20px;
+    margin-top: 22px;
+    padding: 14px 0;
+    border-top: 1px solid var(--field-line);
+    border-bottom: 1px solid var(--field-line);
+    color: var(--field-muted);
+    font-size: 10px;
+}
+
+.category-key b {
+    margin-right: 4px;
+    color: var(--field-gold);
+}
+
+body.light-theme .field-hero::after {
+    background: linear-gradient(90deg, rgba(239, 230, 204, .98) 0%, rgba(239, 230, 204, .91) 48%, rgba(41, 54, 33, .17) 100%);
+}
+
+body.light-theme .field-hero h1 {
+    color: #293622;
+}
+
+body.light-theme .field-hero > p {
+    color: #43503c;
+}
+
+body.light-theme .field-button {
+    border-color: #6b7b43;
+    background: rgba(248, 240, 219, .92);
+    color: #41582b;
+}
+
+body.light-theme .field-stamp {
+    border-color: rgba(235, 223, 171, .68);
+    background: rgba(21, 42, 26, .86);
+}
+
+body.light-theme .atlas-entry::after {
+    background: linear-gradient(0deg, rgba(14, 28, 17, .97) 0%, rgba(14, 28, 17, .77) 49%, rgba(14, 28, 17, .04) 100%);
+}
+
+body.light-theme .atlas-entry,
+body.light-theme .specimen-entry,
+body.light-theme .field-next {
+    box-shadow: 0 8px 22px rgba(53, 55, 33, .08);
+}
+
+@media (max-width: 900px) {
+    .atlas-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .specimen-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 650px) {
+    .field-guide {
+        padding: 96px 16px 22px;
+    }
+
+    .field-hero {
+        min-height: 430px;
+        padding: 26px;
+        justify-content: flex-start;
+    }
+
+    .field-hero-image {
+        width: 100%;
+        opacity: .58;
+    }
+
+    .field-hero::after {
+        background: linear-gradient(90deg, rgba(7, 18, 11, .92), rgba(8, 21, 13, .68)), linear-gradient(0deg, rgba(7, 18, 11, .7), transparent);
+    }
+
+    body.light-theme .field-hero::after {
+        background: linear-gradient(90deg, rgba(239, 230, 204, .94), rgba(239, 230, 204, .75)), linear-gradient(0deg, rgba(239, 230, 204, .5), transparent);
+    }
+
+    .field-hero h1 {
+        margin-top: 20px;
+        font-size: clamp(41px, 11vw, 58px);
+    }
+
+    .field-hero > p {
+        font-size: 13px;
+    }
+
+    .field-stamp {
+        right: 12px;
+        bottom: 12px;
+    }
+
+    .atlas-section,
+    .specimens-section {
+        padding: 60px 0 40px;
+    }
+
+    .atlas-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .atlas-entry {
+        min-height: 330px;
+    }
+
+    .specimen-entry {
+        grid-template-columns: minmax(115px, .72fr) 1.28fr;
+    }
+
+    .specimen-copy {
+        padding: 13px;
+    }
+
+    .specimen-copy h3 {
+        font-size: 18px;
+    }
+
+    .field-next {
+        grid-template-columns: 1fr;
+        gap: 9px;
+    }
+
+    .field-next > a {
+        justify-self: start;
+    }
+
+    .field-footer {
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,555 @@
+.field-identity {
+    --background: #0b1710;
+    --background-soft: #122319;
+    --surface: #192d1f;
+    --surface-light: #213825;
+    --border: rgba(200, 226, 165, .18);
+    --green: #b8f33a;
+    --green-light: #b8f33a;
+    --text: #f2f0d8;
+    --text-soft: #b9c5ae;
+    --text-muted: #a1af98;
+    --orange: #f08b42;
+    --explore-gold: #f2c84b;
+    --explore-moss: #b8f33a;
+    color: var(--text);
+    background-color: var(--background);
+    background-image:
+        radial-gradient(ellipse at 82% 13%, rgba(104, 139, 64, .08), transparent 25%),
+        radial-gradient(circle, rgba(184, 243, 58, .055) 1px, transparent 1px);
+    background-size: auto, 28px 28px;
+}
+
+body.light-theme.field-identity {
+    --background: #eee5cd;
+    --background-soft: #e5d9b9;
+    --surface: #f8f0db;
+    --surface-light: #e9dfc3;
+    --border: rgba(67, 83, 45, .2);
+    --green: #58772a;
+    --green-light: #58772a;
+    --text: #27351e;
+    --text-soft: #59664b;
+    --text-muted: #6b765f;
+    --orange: #c96b2b;
+    --explore-gold: #dba92e;
+    --explore-moss: #58772a;
+    background-color: var(--background);
+    background-image:
+        radial-gradient(ellipse at 82% 13%, rgba(104, 139, 64, .09), transparent 25%),
+        radial-gradient(circle, rgba(67, 83, 45, .09) 1px, transparent 1px);
+}
+
+.field-identity .field-guide {
+    --field-bg: #0b1710;
+    --field-surface: #192d1f;
+    --field-paper: #e9dfc3;
+    --field-text: #f2f0d8;
+    --field-muted: #b9c5ae;
+    --field-green: #b8f33a;
+    --field-gold: #f2c84b;
+    --field-line: rgba(200, 226, 165, .18);
+}
+
+body.light-theme.field-identity .field-guide {
+    --field-bg: #eee5cd;
+    --field-surface: #f8f0db;
+    --field-paper: #e5d9b9;
+    --field-text: #27351e;
+    --field-muted: #59664b;
+    --field-green: #58772a;
+    --field-gold: #8a6523;
+    --field-line: rgba(67, 83, 45, .2);
+}
+
+.field-identity h1,
+.field-identity h2,
+.field-identity h3 {
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+.field-identity .hero-tag,
+.field-identity .section-tag,
+.field-identity .tag-title {
+    color: var(--explore-gold);
+}
+
+.field-identity .tag-line,
+.field-identity .section-tag > span {
+    background: var(--explore-gold);
+}
+
+.field-identity .hero h1 span,
+.field-identity .hero-content h1 span {
+    color: var(--explore-moss);
+}
+
+.field-identity .btn-primary,
+.field-identity .problem-button,
+.field-identity .hero-button {
+    min-height: 44px;
+    border: 1px solid var(--explore-gold);
+    border-radius: 12px;
+    background: var(--explore-moss);
+    color: #182514;
+    box-shadow: 0 7px 20px rgba(9, 21, 10, .2);
+}
+
+.field-identity .btn-primary:hover,
+.field-identity .problem-button:hover,
+.field-identity .hero-button:hover {
+    background: var(--explore-gold);
+    color: #182514;
+}
+
+.field-identity .btn-secondary {
+    border-radius: 12px;
+    border-color: rgba(226, 189, 101, .55);
+}
+
+.field-identity .btn-secondary:hover {
+    border-color: var(--explore-moss);
+    color: var(--explore-moss);
+}
+
+.field-identity .nav-link.active {
+    color: var(--explore-moss);
+    background: rgba(184, 243, 58, .12);
+}
+
+body.light-theme.field-identity .nav-link.active {
+    color: #58772a;
+    background: rgba(88, 119, 42, .12);
+}
+
+body.light-theme.field-identity .navbar {
+    background: rgba(238, 229, 205, .92);
+    border-bottom-color: rgba(67, 83, 45, .18);
+}
+
+body.light-theme.field-identity .nav-link {
+    color: #59664b;
+}
+
+body.light-theme.field-identity .nav-link:hover {
+    color: #27351e;
+    background: rgba(67, 83, 45, .07);
+}
+
+body.light-theme.field-identity .nav-menu {
+    background: rgba(238, 229, 205, .98);
+}
+
+.field-identity .hero {
+    position: relative;
+    isolation: isolate;
+}
+
+.field-identity .hero::before {
+    position: absolute;
+    z-index: -1;
+    top: 82px;
+    right: 0;
+    bottom: 0;
+    width: min(49%, 760px);
+    content: "";
+    background:
+        linear-gradient(90deg, #020806 0%, rgba(2, 8, 6, .5) 30%, rgba(2, 8, 6, .06) 100%),
+        url("../assets/img/amazonia.jpg") center / cover;
+    opacity: .48;
+    pointer-events: none;
+}
+
+body.light-theme.field-identity .hero::before {
+    background:
+        linear-gradient(90deg, #f2f6ed 0%, rgba(242, 246, 237, .62) 30%, rgba(242, 246, 237, .08) 100%),
+        url("../assets/img/amazonia.jpg") center / cover;
+    opacity: .62;
+}
+
+.field-identity .hero-tag {
+    letter-spacing: .14em;
+}
+
+.field-identity .phone {
+    border-radius: 24px;
+    border-color: rgba(226, 189, 101, .5);
+    box-shadow: 0 24px 65px rgba(0, 0, 0, .42);
+}
+
+.field-identity .floating-tag {
+    border-color: rgba(226, 189, 101, .4);
+    border-radius: 12px;
+    background: rgba(17, 35, 21, .92);
+}
+
+.field-identity .preserve-hero {
+    isolation: isolate;
+    border-top: 1px solid rgba(226, 189, 101, .28);
+    border-bottom: 1px solid rgba(226, 189, 101, .28);
+}
+
+.field-identity .preserve-hero::before {
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    content: "";
+    background:
+        linear-gradient(90deg, rgba(11, 23, 16, .94) 0%, rgba(18, 35, 25, .75) 50%, rgba(11, 23, 16, .4) 100%),
+        url("../assets/img/amazonia.jpg") center 52% / cover;
+}
+
+.field-identity .preserve-hero .hero-content h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(48px, 6vw, 78px);
+    letter-spacing: -.045em;
+}
+
+.field-identity .preserve-hero .hero-content h1 span {
+    color: var(--explore-moss);
+}
+
+.field-identity .preserve-hero .hero-decoration {
+    border: 1px solid rgba(226, 189, 101, .28);
+    border-radius: 48% 52% 46% 54%;
+    background:
+        linear-gradient(0deg, rgba(11, 23, 16, .65), rgba(11, 23, 16, .12)),
+        url("../assets/img/onca.jpg") center 38% / cover;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, .28);
+}
+
+.field-identity .preserve-hero .hero-orbit {
+    display: none;
+}
+
+.field-identity .preserve-hero .hero-icon {
+    border: 1px solid rgba(226, 189, 101, .55);
+    border-radius: 12px;
+    background: rgba(20, 42, 25, .9);
+    color: var(--explore-moss);
+    box-shadow: 0 0 42px rgba(186, 211, 107, .12);
+}
+
+.field-identity .preserve-hero .floating-icon {
+    border: 1px solid rgba(226, 189, 101, .42);
+    border-radius: 12px;
+    background: rgba(17, 35, 21, .92);
+    color: var(--explore-moss);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, .28);
+}
+
+.field-identity .help-card,
+.field-identity .contribution-card {
+    border-radius: 14px;
+    border-color: rgba(226, 189, 101, .2);
+}
+
+.field-identity .help-card {
+    background-image: repeating-linear-gradient(0deg, transparent 0 28px, rgba(206, 196, 148, .03) 29px, transparent 30px);
+}
+
+.field-identity .store-hero {
+    border-bottom: 1px solid rgba(226, 189, 101, .3);
+    background:
+        linear-gradient(90deg, #0b1710 0%, rgba(11, 23, 16, .94) 39%, rgba(11, 23, 16, .52) 100%),
+        url("../assets/img/amazonia.jpg") center / cover;
+}
+
+body.light-theme.field-identity .store-hero {
+    background:
+        linear-gradient(90deg, rgba(238, 229, 205, .97) 0%, rgba(238, 229, 205, .91) 39%, rgba(238, 229, 205, .5) 100%),
+        url("../assets/img/amazonia.jpg") center / cover;
+}
+
+.field-identity .store-hero .hero-button {
+    background: var(--explore-moss);
+    color: #182514;
+}
+
+.field-identity .store-hero .hero-text h1 span,
+.field-identity .store-hero .hero-floating-card > span {
+    color: var(--explore-moss);
+}
+
+.field-identity .store-hero .hero-text p {
+    color: #c9d1c2;
+}
+
+.field-identity .store-hero .hero-circle {
+    border: 1px dashed rgba(226, 189, 101, .48);
+    border-radius: 48% 52% 43% 57%;
+    box-shadow: 0 0 0 20px rgba(226, 189, 101, .05), 0 0 0 42px rgba(226, 189, 101, .035);
+}
+
+.field-identity .store-hero .hero-animal {
+    border: 1px solid rgba(226, 189, 101, .54);
+    border-radius: 16px;
+    transform: rotate(2deg);
+}
+
+.field-identity .store-hero .hero-floating-card {
+    border: 1px solid rgba(226, 189, 101, .4);
+    border-radius: 12px;
+}
+
+.field-identity .products-section,
+.field-identity .categories-section {
+    background-image: repeating-linear-gradient(0deg, transparent 0 30px, rgba(206, 196, 148, .025) 31px, transparent 32px);
+}
+
+.field-identity .product-card,
+.field-identity .category-button {
+    border-radius: 12px;
+}
+
+.field-identity .category-button.active {
+    border-color: var(--explore-moss);
+    background: var(--explore-moss);
+    box-shadow: 0 8px 25px rgba(91, 116, 52, .18);
+    color: #182514;
+}
+
+.field-identity .product-category,
+.field-identity .product-price {
+    color: var(--explore-moss);
+}
+
+.field-identity .product-card {
+    border-color: rgba(226, 189, 101, .2);
+}
+
+.field-identity .product-card:hover {
+    border-color: var(--explore-gold);
+}
+
+.field-identity .atlas-entry,
+.field-identity .field-next,
+.field-identity .field-dossier,
+.field-identity .field-note,
+.field-identity .biome-panel,
+.field-identity .threats-panel,
+.field-identity .overview-card,
+.field-identity .hero-stat,
+.field-identity .product-card {
+    box-shadow: 0 14px 35px rgba(0, 0, 0, .2);
+}
+
+.field-identity .atlas-copy h3,
+.field-identity .field-section-heading h2,
+.field-identity .field-next h2,
+.field-identity .specimen-heading h2 {
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+.field-identity .field-button {
+    border-radius: 10px;
+    border-color: rgba(242, 200, 75, .56);
+    background: rgba(18, 35, 25, .9);
+    color: #f2c84b;
+}
+
+body.light-theme.field-identity .field-button {
+    border-color: #8a6523;
+    background: rgba(248, 240, 219, .95);
+    color: #41582b;
+}
+
+.field-identity .atlas-entry,
+.field-identity .atlas-copy {
+    border-radius: 14px;
+}
+
+.field-identity .dossier-tab.active,
+.field-identity .dossier-tab:hover {
+    background: rgba(184, 243, 58, .1);
+}
+
+.field-identity .field-button,
+.field-identity .field-next > a,
+.field-identity .dashboard-cta,
+.field-identity .species-arrow,
+.field-identity .rotation-toggle,
+.field-identity .dossier-tab,
+.field-identity .category-button {
+    border-radius: 10px;
+}
+
+.field-identity .field-next,
+.field-identity .field-dossier,
+.field-identity .field-note,
+.field-identity .biome-panel,
+.field-identity .threats-panel,
+.field-identity .overview-card,
+.field-identity .hero-stat,
+.field-identity .product-card,
+.field-identity .atlas-entry {
+    border-radius: 14px;
+}
+
+.field-identity .field-hero::after {
+    background: linear-gradient(90deg, rgba(11, 23, 16, .96) 0%, rgba(18, 35, 25, .78) 48%, rgba(11, 23, 16, .2) 100%);
+}
+
+.field-identity .field-hero h1 {
+    color: #f2f0d8;
+}
+
+.field-identity .field-hero > p {
+    color: #d0d8c6;
+}
+
+body.light-theme.field-identity .field-hero::after {
+    background: linear-gradient(90deg, rgba(238, 229, 205, .97) 0%, rgba(238, 229, 205, .89) 48%, rgba(39, 53, 30, .16) 100%);
+}
+
+body.light-theme.field-identity .field-hero h1 {
+    color: #27351e;
+}
+
+body.light-theme.field-identity .field-hero > p {
+    color: #46513d;
+}
+
+.field-identity .atlas-entry {
+    overflow: hidden;
+}
+
+.field-identity .atlas-copy {
+    border-radius: 0 0 14px 14px;
+}
+
+.field-identity .specimen-stage {
+    border-color: rgba(242, 200, 75, .35);
+    border-radius: 14px;
+    box-shadow: inset 0 0 0 7px rgba(11, 23, 16, .38), 0 16px 34px rgba(0, 0, 0, .22);
+}
+
+body.light-theme.field-identity .specimen-stage {
+    border-color: rgba(91, 116, 52, .35);
+}
+
+.field-identity .dashboard {
+    --background: #0b1710;
+    --background-soft: #122319;
+    --surface: #192d1f;
+    --surface-light: #213825;
+    --border: rgba(200, 226, 165, .18);
+    --green: #b8f33a;
+    --text: #f2f0d8;
+    --text-soft: #b9c5ae;
+    --text-muted: #a1af98;
+    --field-gold: #f2c84b;
+    --field-line: rgba(200, 226, 165, .18);
+}
+
+body.light-theme.field-identity .dashboard {
+    --background: #eee5cd;
+    --background-soft: #e5d9b9;
+    --surface: #f8f0db;
+    --surface-light: #e9dfc3;
+    --border: rgba(67, 83, 45, .2);
+    --green: #58772a;
+    --text: #27351e;
+    --text-soft: #59664b;
+    --text-muted: #6b765f;
+    --field-gold: #8a6523;
+    --field-line: rgba(67, 83, 45, .2);
+}
+
+body.light-theme.field-identity .hero-stat,
+body.light-theme.field-identity .overview-card,
+body.light-theme.field-identity .biome-panel,
+body.light-theme.field-identity .species-card,
+body.light-theme.field-identity .filter-label select,
+body.light-theme.field-identity .donut-center,
+body.light-theme.field-identity .species-tools,
+body.light-theme.field-identity .threats-panel {
+    background-color: var(--surface);
+}
+
+.field-identity .dashboard-hero::before {
+    background:
+        linear-gradient(90deg, var(--background) 0%, rgba(11, 23, 16, .78) 35%, rgba(11, 23, 16, .14) 100%),
+        url("../assets/img/amazonia.jpg") center / cover;
+}
+
+body.light-theme.field-identity .dashboard-hero::before {
+    background:
+        linear-gradient(90deg, var(--background) 0%, rgba(238, 229, 205, .78) 35%, rgba(238, 229, 205, .12) 100%),
+        url("../assets/img/amazonia.jpg") center / cover;
+}
+
+.field-identity .dashboard-cta,
+.field-identity .species-arrow,
+.field-identity .rotation-toggle,
+.field-identity .dossier-tab,
+.field-identity .category-button {
+    border-radius: 10px;
+}
+
+.field-identity .overview-card {
+    border-radius: 0;
+}
+
+.field-identity .overview-card:first-child {
+    border-radius: 14px 0 0 14px;
+}
+
+.field-identity .overview-card:last-child {
+    border-radius: 0 14px 14px 0;
+}
+
+body.light-theme.field-identity .preserve-hero::before {
+    background:
+        linear-gradient(90deg, rgba(239, 230, 204, .95) 0%, rgba(239, 230, 204, .82) 50%, rgba(239, 230, 204, .45) 100%),
+        url("../assets/img/amazonia.jpg") center 52% / cover;
+}
+
+body.light-theme.field-identity .preserve-hero .hero-content {
+    color: #283622;
+}
+
+body.light-theme.field-identity .preserve-hero .hero-content p {
+    color: #4c5841;
+}
+
+body.light-theme.field-identity .store-hero .hero-text p {
+    color: #46513d;
+}
+
+body.light-theme.field-identity .hero-floating-card > span {
+    background: rgba(91, 116, 52, .15);
+}
+
+@media (max-width: 650px) {
+    .field-identity .hero::before {
+        top: 82px;
+        width: 100%;
+        opacity: .3;
+    }
+
+    body.light-theme.field-identity .hero::before {
+        opacity: .38;
+    }
+
+    .field-identity .preserve-hero {
+        padding-inline: 18px;
+    }
+
+    .field-identity .preserve-hero .hero-decoration {
+        width: min(100%, 380px);
+    }
+
+    .field-identity .store-hero {
+        background-position: center;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .field-identity .hero-icon,
+    .field-identity .floating-icon,
+    .field-identity .hero-animal,
+    .field-identity .hero-floating-card {
+        animation: none !important;
+    }
+}

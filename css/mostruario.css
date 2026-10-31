@@ -1,0 +1,900 @@
+.specimen-guide {
+    --field-bg: #101a11;
+    --field-surface: #17251a;
+    --field-text: #f2efd9;
+    --field-muted: #b8c0a8;
+    --field-green: #bad36b;
+    --field-gold: #e2bd65;
+    --field-line: rgba(220, 216, 169, .2);
+}
+
+body.light-theme .specimen-guide {
+    --field-bg: #efe6cc;
+    --field-surface: #f5edda;
+    --field-text: #283622;
+    --field-muted: #59664b;
+    --field-green: #5b7434;
+    --field-gold: #8a6523;
+    --field-line: rgba(67, 81, 46, .24);
+}
+
+.specimen-hero {
+    min-height: 370px;
+}
+
+.specimen-explorer {
+    padding: 56px 0 30px;
+    scroll-margin-top: 110px;
+}
+
+.specimen-heading {
+    position: relative;
+    margin-bottom: 22px;
+    text-align: center;
+}
+
+.specimen-index {
+    color: var(--field-gold);
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: .15em;
+}
+
+.specimen-heading h2 {
+    margin: 7px 0 2px;
+    color: var(--field-text);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(35px, 4.7vw, 54px);
+    letter-spacing: -.05em;
+}
+
+.specimen-heading > p {
+    margin: 0;
+    color: var(--field-muted);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 14px;
+    font-style: italic;
+}
+
+.specimen-layout {
+    display: grid;
+    grid-template-columns: minmax(190px, .8fr) minmax(340px, 1.45fr) minmax(210px, .85fr);
+    align-items: center;
+    gap: 21px;
+}
+
+.field-note {
+    position: relative;
+    min-width: 0;
+    padding: 19px;
+    border: 1px solid var(--field-line);
+    border-top: 2px solid var(--field-gold);
+    background:
+        repeating-linear-gradient(0deg, transparent 0 26px, rgba(206, 196, 148, .04) 27px, transparent 28px),
+        var(--field-surface);
+    box-shadow: 0 13px 24px rgba(0, 0, 0, .12);
+}
+
+.note-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: var(--field-gold);
+    font-size: 8px;
+    font-weight: 900;
+    letter-spacing: .1em;
+}
+
+.field-note h3 {
+    margin: 22px 0 7px;
+    color: var(--field-text);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 23px;
+}
+
+.field-note > p {
+    min-height: 58px;
+    margin: 0;
+    color: var(--field-muted);
+    font-size: 11px;
+    line-height: 1.65;
+}
+
+.note-coordinate {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-top: 18px;
+    padding-top: 12px;
+    border-top: 1px dashed var(--field-line);
+    color: var(--field-green);
+    font-size: 10px;
+    line-height: 1.5;
+}
+
+.note-number {
+    position: absolute;
+    right: 13px;
+    bottom: 9px;
+    color: var(--field-muted);
+    font-size: 8px;
+    font-weight: 900;
+    opacity: .7;
+}
+
+.specimen-stage {
+    position: relative;
+    display: grid;
+    min-width: 0;
+    min-height: 395px;
+    place-items: center;
+    overflow: hidden;
+    border: 1px solid var(--field-line);
+    isolation: isolate;
+    background:
+        linear-gradient(180deg, rgba(10, 25, 15, .08), rgba(8, 19, 12, .6)),
+        url("../assets/img/amazonia.jpg") center 52% / cover;
+    box-shadow: inset 0 0 0 7px rgba(13, 27, 17, .38), 0 16px 34px rgba(0, 0, 0, .22);
+}
+
+.specimen-stage::before,
+.specimen-stage::after {
+    position: absolute;
+    z-index: -1;
+    content: "";
+    pointer-events: none;
+}
+
+.specimen-stage::before {
+    inset: 0;
+    background: linear-gradient(130deg, rgba(10, 24, 15, .38), rgba(10, 22, 15, .05) 44%, rgba(9, 20, 12, .48));
+}
+
+.specimen-stage::after {
+    right: -16%;
+    bottom: -30%;
+    width: 68%;
+    height: 62%;
+    border: 1px solid rgba(225, 205, 132, .35);
+    border-radius: 70% 0 0;
+    background: url("../assets/img/amazonia.jpg") right bottom / cover;
+    filter: brightness(.48);
+    opacity: .72;
+}
+
+.stage-coordinate {
+    position: absolute;
+    z-index: 4;
+    top: 14px;
+    left: 14px;
+    padding: 7px 9px;
+    border: 1px solid rgba(226, 189, 101, .5);
+    background: rgba(13, 29, 18, .84);
+    color: #e9d58d;
+    font-size: 8px;
+    font-weight: 900;
+    letter-spacing: .1em;
+}
+
+.stage-contours {
+    position: absolute;
+    z-index: -1;
+    width: 75%;
+    height: 75%;
+    border: 1px dashed rgba(226, 213, 159, .44);
+    border-radius: 46% 54% 40% 60%;
+    box-shadow: 0 0 0 19px rgba(226, 213, 159, .05), 0 0 0 40px rgba(226, 213, 159, .035);
+    transform: rotate(-19deg);
+}
+
+.stage-marker {
+    position: absolute;
+    z-index: 3;
+    display: grid;
+    width: 29px;
+    height: 29px;
+    place-items: center;
+    border: 1px solid #f4d68b;
+    border-radius: 50%;
+    background: #1b3321;
+    color: #f1d98e;
+    box-shadow: 0 0 0 5px rgba(231, 212, 144, .12);
+}
+
+.stage-marker-one {
+    top: 27%;
+    left: 14%;
+}
+
+.stage-marker-two {
+    right: 12%;
+    bottom: 28%;
+    color: #f0a36a;
+}
+
+.animal-model {
+    position: relative;
+    margin: 0;
+    width: min(78%, 380px);
+    height: 285px;
+    margin: 0;
+    cursor: grab;
+    touch-action: pan-y;
+    perspective: 850px;
+    transform: perspective(850px) rotateX(var(--manual-x, 0deg)) rotateY(var(--manual-y, 0deg));
+    transform-style: preserve-3d;
+    will-change: transform;
+    animation: specimenTurn 14s ease-in-out infinite;
+    transition: filter .25s ease;
+    filter: drop-shadow(0 24px 15px rgba(0, 0, 0, .42));
+}
+
+.animal-model:active {
+    cursor: grabbing;
+}
+
+.animal-model.manual-mode {
+    animation: none;
+}
+
+.animal-model.is-dragging {
+    transition: none;
+}
+
+.animal-frame {
+    position: absolute;
+    z-index: -1;
+    inset: 7% -3% 8%;
+    border: 1px solid rgba(237, 218, 161, .7);
+    background: rgba(18, 36, 22, .12);
+    transform: translateZ(-16px) rotate(-2deg);
+}
+
+.animal-model > img,
+.animal-fallback > img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+#species-image {
+    mask-image: linear-gradient(180deg, #000 0 83%, transparent 100%);
+    filter: saturate(.85) contrast(1.06);
+    mix-blend-mode: screen;
+}
+
+body.light-theme #species-image {
+    mix-blend-mode: normal;
+}
+
+.animal-model[data-species="mico"] #species-image,
+.animal-model[data-species="lobo"] #species-image,
+.animal-model[data-species="arara"] #species-image {
+    border: 0;
+    object-fit: cover;
+}
+
+.animal-model[data-species="mico"] #species-image {
+    border-radius: 50%;
+    object-position: center;
+    mask-image: radial-gradient(ellipse at center, #000 61%, transparent 80%);
+}
+
+.animal-model[data-species="lobo"] #species-image {
+    object-position: center 42%;
+    mask-image: linear-gradient(180deg, #000 0 82%, transparent 100%);
+}
+
+.animal-model[data-species="arara"] #species-image {
+    object-position: center 30%;
+    mask-image: radial-gradient(ellipse at center, #000 62%, transparent 84%);
+}
+
+.animal-fallback {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+}
+
+.animal-fallback[hidden] {
+    display: none;
+}
+
+.animal-fallback img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 1px solid rgba(237, 218, 161, .7);
+}
+
+.animal-fallback small {
+    position: absolute;
+    right: 0;
+    bottom: -22px;
+    color: #eadb9e;
+    font-size: 8px;
+    font-weight: 900;
+    letter-spacing: .1em;
+}
+
+.animal-model figcaption {
+    position: absolute;
+    right: 0;
+    bottom: -17px;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    color: #e8dfbc;
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: .08em;
+    text-shadow: 0 1px 5px #101a11;
+}
+
+.animal-model figcaption span:last-child {
+    color: #d1c28c;
+    font-size: 7px;
+}
+
+.stage-leaf {
+    position: absolute;
+    z-index: 2;
+    bottom: -25px;
+    width: 100px;
+    height: 145px;
+    pointer-events: none;
+}
+
+.stage-leaf::before,
+.stage-leaf::after {
+    position: absolute;
+    bottom: 0;
+    left: 40%;
+    width: 48px;
+    height: 105px;
+    content: "";
+    border: 1px solid rgba(218, 226, 163, .4);
+    border-radius: 95% 5% 85% 8%;
+    background: url("../assets/img/amazonia.jpg") center / 250% auto;
+    box-shadow: inset 0 0 15px rgba(8, 20, 12, .42);
+    transform: rotate(-31deg);
+    transform-origin: bottom;
+}
+
+.stage-leaf::after {
+    left: 8%;
+    width: 37px;
+    height: 76px;
+    background-position: right center;
+    transform: rotate(27deg) scaleX(-1);
+}
+
+.stage-leaf-left { left: -15px; }
+.stage-leaf-right { right: -25px; transform: scale(.8) rotate(12deg); }
+
+.rotation-toggle {
+    position: absolute;
+    z-index: 4;
+    right: 13px;
+    bottom: 13px;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    min-height: 34px;
+    padding: 0 9px;
+    border: 1px solid rgba(233, 219, 166, .5);
+    background: rgba(13, 29, 18, .86);
+    color: #f0dfaa;
+    cursor: pointer;
+    font-size: 9px;
+    font-weight: 800;
+}
+
+.rotation-toggle:hover {
+    border-color: #d3df9a;
+    color: #d3df9a;
+}
+
+.rotation-toggle:disabled {
+    cursor: not-allowed;
+    opacity: .75;
+}
+
+.rotation-toggle[aria-pressed="true"] i {
+    animation: rotateIcon 8s linear infinite;
+}
+
+.drag-hint {
+    position: absolute;
+    z-index: 3;
+    bottom: 20px;
+    left: 15px;
+    color: #eee5c8;
+    font-size: 8px;
+    text-shadow: 0 1px 5px #101a11;
+}
+
+.risk-heading {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 26px 0 20px;
+}
+
+.risk-symbol {
+    display: grid;
+    width: 35px;
+    height: 35px;
+    flex: 0 0 35px;
+    place-items: center;
+    border: 2px solid currentColor;
+    border-radius: 50%;
+    color: #e49a67;
+    font-size: 17px;
+    font-weight: 900;
+}
+
+.risk-heading > div > span,
+.risk-heading > div > strong {
+    display: block;
+}
+
+.risk-heading > div > span,
+.risk-global > span {
+    color: var(--field-muted);
+    font-size: 8px;
+    font-weight: 900;
+    letter-spacing: .08em;
+}
+
+.risk-heading > div > strong {
+    margin-top: 4px;
+    color: #e49a67;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 21px;
+}
+
+.risk-meter {
+    margin: 0 0 19px;
+}
+
+.risk-scale {
+    position: relative;
+    height: 12px;
+    background: linear-gradient(90deg, #6e9b69 0 25%, #d5b853 25% 50%, #e59354 50% 75%, #ca6555 75% 100%);
+}
+
+.risk-fill {
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 55%;
+    background: rgba(14, 25, 16, .82);
+    transition: width .35s ease;
+}
+
+.risk-pin {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 55%;
+    width: 17px;
+    height: 17px;
+    border: 3px solid #f4eed4;
+    border-radius: 50%;
+    background: #e59354;
+    box-shadow: 0 1px 5px #1118;
+    transform: translate(-50%, -50%);
+    transition: left .35s ease, background .35s ease;
+}
+
+.risk-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 6px;
+    color: var(--field-muted);
+    font-size: 8px;
+}
+
+.risk-global {
+    display: grid;
+    gap: 6px;
+    padding-top: 13px;
+    border-top: 1px dashed var(--field-line);
+}
+
+.risk-global strong {
+    color: var(--field-text);
+    font-size: 11px;
+}
+
+.risk-legend {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px 22px;
+    margin: 19px 0 37px;
+    color: var(--field-muted);
+    font-size: 9px;
+}
+
+.risk-legend > span {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.legend-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.legend-dot.critically { background: #bd514c; }
+.legend-dot.endangered { background: #ca6555; }
+.legend-dot.vulnerable { background: #e59354; }
+.legend-dot.near-threatened { background: #d5b853; }
+
+.specimen-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 15px;
+}
+
+.species-arrow {
+    display: grid;
+    width: 40px;
+    height: 40px;
+    place-items: center;
+    border: 1px solid var(--field-line);
+    background: var(--field-surface);
+    color: var(--field-green);
+    cursor: pointer;
+    transition: background .2s ease, color .2s ease, transform .2s ease;
+}
+
+.species-arrow:hover {
+    transform: translateY(-2px);
+    background: var(--field-green);
+    color: var(--field-bg);
+}
+
+.species-pager {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--field-muted);
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: .1em;
+}
+
+.species-pager #pager-current {
+    color: var(--field-gold);
+}
+
+.pager-line {
+    width: 55px;
+    height: 1px;
+    background: var(--field-line);
+}
+
+.field-dossier {
+    display: grid;
+    grid-template-columns: .72fr 1fr 1.2fr;
+    align-items: stretch;
+    gap: 22px;
+    padding: 24px;
+    border: 1px solid var(--field-line);
+    border-top: 2px solid var(--field-gold);
+    background:
+        repeating-linear-gradient(0deg, transparent 0 29px, rgba(206, 196, 148, .035) 30px, transparent 31px),
+        var(--field-surface);
+}
+
+.dossier-intro h3 {
+    margin: 10px 0;
+    color: var(--field-text);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 26px;
+    line-height: 1.04;
+}
+
+.dossier-intro h3 em {
+    color: var(--field-green);
+    font-style: normal;
+}
+
+.dossier-intro > p {
+    margin: 0;
+    color: var(--field-muted);
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+.dossier-tabs {
+    display: grid;
+    align-content: start;
+    gap: 5px;
+}
+
+.dossier-tab {
+    display: flex;
+    min-height: 39px;
+    align-items: center;
+    gap: 10px;
+    padding: 7px 10px;
+    border: 1px solid transparent;
+    border-bottom-color: var(--field-line);
+    background: transparent;
+    color: var(--field-muted);
+    cursor: pointer;
+    text-align: left;
+    font-size: 11px;
+    transition: background .2s ease, color .2s ease, border-color .2s ease;
+}
+
+.dossier-tab i {
+    width: 18px;
+    color: var(--field-gold);
+}
+
+.dossier-tab:hover,
+.dossier-tab.active {
+    border-color: var(--field-line);
+    background: rgba(186, 211, 107, .1);
+    color: var(--field-text);
+}
+
+.dossier-tab.active {
+    box-shadow: inset 2px 0 var(--field-green);
+}
+
+.dossier-panel {
+    min-height: 180px;
+    padding: 16px 18px;
+    border-left: 1px solid var(--field-line);
+}
+
+.dossier-panel[hidden] {
+    display: none;
+}
+
+.panel-number {
+    color: var(--field-gold);
+    font-size: 8px;
+    font-weight: 900;
+    letter-spacing: .1em;
+}
+
+.dossier-panel h4 {
+    margin: 10px 0 8px;
+    color: var(--field-text);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 21px;
+}
+
+.dossier-panel p {
+    margin: 0;
+    color: var(--field-muted);
+    font-size: 12px;
+    line-height: 1.75;
+}
+
+body.light-theme .specimen-stage {
+    box-shadow: inset 0 0 0 7px rgba(239, 230, 204, .3), 0 16px 34px rgba(53, 55, 33, .14);
+}
+
+body.light-theme .specimen-stage::before {
+    background: linear-gradient(130deg, rgba(34, 48, 29, .26), rgba(34, 48, 29, .02) 44%, rgba(34, 48, 29, .36));
+}
+
+body.light-theme .risk-fill {
+    background: rgba(245, 237, 218, .78);
+}
+
+body.light-theme .field-note,
+body.light-theme .field-dossier {
+    box-shadow: 0 13px 24px rgba(53, 55, 33, .08);
+}
+
+@keyframes specimenTurn {
+    0%, 100% { transform: perspective(850px) rotateX(0deg) rotateY(-3deg); }
+    50% { transform: perspective(850px) rotateX(1deg) rotateY(3deg); }
+}
+
+@keyframes rotateIcon {
+    to { transform: rotate(360deg); }
+}
+
+@media (max-width: 980px) {
+    .specimen-layout {
+        grid-template-columns: minmax(180px, .8fr) minmax(300px, 1.2fr);
+    }
+
+    .specimen-stage {
+        grid-column: 2;
+        grid-row: 1 / span 2;
+    }
+
+    .field-note {
+        padding: 15px;
+    }
+
+    .field-note h3 {
+        margin-top: 15px;
+        font-size: 20px;
+    }
+
+    .field-dossier {
+        grid-template-columns: .8fr 1fr;
+    }
+
+    .dossier-panel {
+        grid-column: 1 / -1;
+        min-height: 0;
+        border-top: 1px solid var(--field-line);
+        border-left: 0;
+    }
+}
+
+@media (max-width: 650px) {
+    .specimen-explorer {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .specimen-guide .field-hero {
+        min-height: 365px;
+    }
+
+    .specimen-explorer {
+        padding-top: 38px;
+    }
+
+    .specimen-heading h2 {
+        font-size: 37px;
+    }
+
+    .specimen-layout {
+        display: contents;
+    }
+
+    .specimen-stage {
+        order: 0;
+        width: 100%;
+        min-height: 365px;
+    }
+
+    .specimen-heading {
+        order: 1;
+        margin: 15px 0 5px;
+        text-align: left;
+    }
+
+    .specimen-heading h2 {
+        margin: 4px 0 0;
+    }
+
+    .specimen-heading > p {
+        margin-top: 2px;
+    }
+
+    .habitat-note {
+        display: none;
+    }
+
+    .status-note {
+        order: 2;
+        padding: 15px;
+    }
+
+    .status-note .risk-heading {
+        margin: 14px 0;
+    }
+
+    .animal-model {
+        width: min(78%, 335px);
+        height: 265px;
+    }
+
+    .stage-marker-one {
+        left: 8%;
+    }
+
+    .stage-marker-two {
+        right: 7%;
+    }
+
+    .rotation-toggle {
+        right: 9px;
+        bottom: 9px;
+    }
+
+    .drag-hint {
+        bottom: 17px;
+    }
+
+    .specimen-controls {
+        order: 5;
+        margin: 14px 0 19px;
+    }
+
+    .risk-legend {
+        order: 4;
+        justify-content: flex-start;
+        gap: 8px 13px;
+        margin: 0 0 25px;
+        font-size: 8px;
+    }
+
+    .field-dossier {
+        order: 3;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        padding: 17px;
+    }
+
+    .dossier-intro h3 br {
+        display: none;
+    }
+
+    .dossier-tabs {
+        gap: 0;
+        border-top: 1px solid var(--field-line);
+    }
+
+    .dossier-tab {
+        min-height: 46px;
+        border-right: 0;
+        border-left: 0;
+        border-bottom: 1px solid var(--field-line);
+        font-size: 12px;
+    }
+
+    .dossier-tab::after {
+        margin-left: auto;
+        color: var(--field-muted);
+        content: "+";
+        font-size: 17px;
+        font-weight: 400;
+    }
+
+    .dossier-tab.active::after {
+        content: "-";
+    }
+
+    .dossier-panel {
+        min-height: 0;
+        padding: 13px 12px 17px;
+        border-top: 0;
+        border-bottom: 1px solid var(--field-line);
+    }
+
+    .dossier-panel h4 {
+        display: none;
+    }
+
+    .dossier-panel p {
+        font-size: 12px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .animal-model,
+    .rotation-toggle[aria-pressed="true"] i {
+        animation: none !important;
+    }
+
+    .animal-model {
+        transform: none;
+        transition: none;
+    }
+}

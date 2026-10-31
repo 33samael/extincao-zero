@@ -777,18 +777,6 @@
     object-fit: contain;
 }
 
-@media (max-width: 900px) {
-    .organization-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
-
-@media (max-width: 600px) {
-    .organization-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
 .organizations-section {
 
     border-top:
@@ -804,6 +792,18 @@
         repeat(3, 1fr);
 
     gap: 18px;
+}
+
+@media (max-width: 900px) {
+    .organization-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .organization-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
 }
 
 
