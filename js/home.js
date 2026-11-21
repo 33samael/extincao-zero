@@ -25,13 +25,15 @@ const pauseButton = document.getElementById("carousel-pause");
 if (slides.length && dots.length === slides.length) {
 	let currentSlide = 0;
 	let carouselInterval;
-	let isPaused = false;
+	let isPaused = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 	function showSlide(index) {
 		slides.forEach(slide => slide.classList.remove("active"));
-		dots.forEach(dot => dot.classList.remove("active"));
+		dots.forEach((dot, dotIndex) => {
+			dot.classList.toggle("active", dotIndex === index);
+			dot.setAttribute("aria-pressed", String(dotIndex === index));
+		});
 		slides[index].classList.add("active");
-		dots[index].classList.add("active");
 		currentSlide = index;
 	}
 
@@ -41,6 +43,7 @@ if (slides.length && dots.length === slides.length) {
 
 	function startCarousel() {
 		clearInterval(carouselInterval);
+		if (isPaused) return;
 		carouselInterval = setInterval(() => {
 			if (!isPaused) moveSlide(1);
 		}, 6000);
@@ -70,7 +73,16 @@ if (slides.length && dots.length === slides.length) {
 		if (icon) {
 			icon.className = isPaused ? "bi bi-play" : "bi bi-pause";
 		}
+		pauseButton.setAttribute(
+			"aria-label",
+			isPaused ? "Retomar rotação dos destaques" : "Pausar rotação dos destaques"
+		);
 	});
+
+	if (isPaused && pauseButton) {
+		pauseButton.querySelector("i")?.classList.replace("bi-pause", "bi-play");
+		pauseButton.setAttribute("aria-label", "Retomar rotação dos destaques");
+	}
 
 	showSlide(0);
 	startCarousel();

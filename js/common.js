@@ -55,12 +55,6 @@ document.querySelectorAll("footer.site-footer").forEach(footer => {
     footer.innerHTML = sharedFooterMarkup;
 });
 
-const screenIndicator = document.createElement("div");
-screenIndicator.className = "screen-indicator";
-screenIndicator.textContent = "Modo atual:";
-screenIndicator.setAttribute("aria-hidden", "true");
-document.body.append(screenIndicator);
-
 const themeButtons = document.querySelectorAll(
     '#theme-button, #mobile-theme-button'
 );

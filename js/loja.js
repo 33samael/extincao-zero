@@ -263,6 +263,15 @@ const checkoutForm =
 const checkoutFeedback =
     document.getElementById("checkoutFeedback");
 
+const checkoutPostalCodeInput =
+    document.getElementById("checkoutPostalCode");
+
+const checkoutAddressInput =
+    document.getElementById("checkoutAddress");
+
+const checkoutCityInput =
+    document.getElementById("checkoutCity");
+
 const cancelCheckoutButton =
     document.getElementById("cancelCheckout");
 
@@ -635,19 +644,112 @@ if (cancelCheckoutButton && checkoutForm) {
 }
 
 if (checkoutForm) {
+    let postalCodeRequestId = 0;
+    let postalCodeLookupPending = false;
+    let lastAutofilledAddress = "";
+    let lastAutofilledCity = "";
+
+    checkoutPostalCodeInput?.addEventListener("input", async () => {
+        const requestId = ++postalCodeRequestId;
+        const postalCode = checkoutPostalCodeInput.value.replace(/\D/g, "");
+        postalCodeLookupPending = false;
+        checkoutFeedback?.removeAttribute("data-state");
+        if (checkoutFeedback) checkoutFeedback.textContent = "";
+
+        if (postalCode.length !== 8) return;
+
+        postalCodeLookupPending = true;
+        if (checkoutFeedback) {
+            checkoutFeedback.dataset.state = "info";
+            checkoutFeedback.textContent = "Consultando CEP...";
+        }
+
+        try {
+            const response = await fetch(
+                `https://viacep.com.br/ws/${postalCode}/json/`
+            );
+
+            if (!response.ok) {
+                throw new Error(`Consulta de CEP retornou HTTP ${response.status}.`);
+            }
+
+            const addressData = await response.json();
+            if (requestId !== postalCodeRequestId) return;
+
+            postalCodeLookupPending = false;
+            if (addressData.erro || !addressData.localidade) {
+                if (checkoutFeedback) {
+                    checkoutFeedback.dataset.state = "error";
+                    checkoutFeedback.textContent = "CEP não encontrado. Confira o número e tente novamente.";
+                }
+                return;
+            }
+
+            const street = typeof addressData.logradouro === "string"
+                ? addressData.logradouro.trim()
+                : "";
+            const city = addressData.localidade.trim();
+
+            if (
+                checkoutAddressInput &&
+                (!checkoutAddressInput.value || checkoutAddressInput.value === lastAutofilledAddress)
+            ) {
+                checkoutAddressInput.value = street;
+            }
+            if (
+                checkoutCityInput &&
+                (!checkoutCityInput.value || checkoutCityInput.value === lastAutofilledCity)
+            ) {
+                checkoutCityInput.value = city;
+            }
+
+            lastAutofilledAddress = street;
+            lastAutofilledCity = city;
+
+            if (checkoutFeedback) {
+                checkoutFeedback.dataset.state = street ? "success" : "info";
+                checkoutFeedback.textContent = street
+                    ? "Endereço e cidade preenchidos. Complete o número e o complemento."
+                    : "Cidade preenchida. Este CEP não informa o logradouro; complete o endereço.";
+            }
+        } catch (error) {
+            if (requestId !== postalCodeRequestId) return;
+
+            postalCodeLookupPending = false;
+            console.error("Não foi possível consultar o CEP.", error);
+            if (checkoutFeedback) {
+                checkoutFeedback.dataset.state = "error";
+                checkoutFeedback.textContent = "Não foi possível consultar o CEP agora. Tente novamente ou preencha os dados manualmente.";
+            }
+        }
+    });
+
     checkoutForm.addEventListener("submit", event => {
         event.preventDefault();
+
+        if (postalCodeLookupPending) {
+            if (checkoutFeedback) {
+                checkoutFeedback.dataset.state = "info";
+                checkoutFeedback.textContent = "Aguarde a consulta do CEP antes de validar o pedido.";
+            }
+            return;
+        }
 
         if (!checkoutForm.reportValidity()) return;
 
         if (checkoutFeedback) {
+            checkoutFeedback.dataset.state = "success";
             checkoutFeedback.textContent =
                 "Dados validados. O pagamento não é processado nesta demonstração.";
         }
     });
 
-    checkoutForm.addEventListener("input", () => {
-        if (checkoutFeedback) checkoutFeedback.textContent = "";
+    checkoutForm.addEventListener("input", event => {
+        if (event.target === checkoutPostalCodeInput) return;
+        if (checkoutFeedback) {
+            checkoutFeedback.removeAttribute("data-state");
+            checkoutFeedback.textContent = "";
+        }
     });
 }
 
