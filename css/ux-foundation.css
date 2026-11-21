@@ -1,5 +1,5 @@
-:root {
-    --focus-ring: #b8f33a;
+﻿:root {
+    --focus-ring: #bed66e;
     --mobile-gutter: 16px;
 }
 
@@ -7,43 +7,67 @@ html {
     scroll-padding-top: 120px;
 }
 
-.screen-indicator {
-    position: fixed;
-    right: 16px;
-    bottom: 16px;
-    z-index: 1200;
-    padding: 8px 16px;
-    border-radius: 20px;
-    background: #ff4757;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, .1);
-    color: #fff;
-    font-size: 14px;
-    font-weight: 700;
+body {
+    font-family: var(--font-body, "Segoe UI", Arial, sans-serif);
+    font-size: 16px;
 }
 
-.screen-indicator::after {
-    content: " (Mobile)";
+body h1 {
+    line-height: 1.08;
 }
 
-@media (min-width: 768px) and (max-width: 1023px) {
-    .screen-indicator {
-        background: #ffd43b;
-        color: #302600;
-    }
-
-    .screen-indicator::after {
-        content: " (Tablet)";
-    }
+body h2 {
+    line-height: 1.15;
 }
 
-@media (min-width: 1024px) {
-    .screen-indicator {
-        background: #2ed573;
-    }
+body h3 {
+    line-height: 1.2;
+}
 
-    .screen-indicator::after {
-        content: " (Tela Grande / Desktop)";
-    }
+body h1 {
+    font-size: var(--title-size-xl) !important;
+}
+
+body h2 {
+    font-size: var(--title-size-lg) !important;
+}
+
+body h3 {
+    font-size: var(--title-size-md) !important;
+}
+
+body h4 {
+    font-size: var(--title-size-sm) !important;
+}
+
+body h5 {
+    font-size: var(--title-size-xs) !important;
+}
+
+body h6 {
+    font-size: 1rem !important;
+}
+
+.field-identity h1,
+.field-identity h2 {
+    font-family: var(--font-heading, var(--font-body, "Segoe UI", Arial, sans-serif));
+}
+
+.field-identity h1 {
+    line-height: 1.08;
+}
+
+.field-identity h2 {
+    line-height: 1.15;
+}
+
+.field-identity h3 {
+    font-family: var(--font-heading, var(--font-body, "Segoe UI", Arial, sans-serif));
+}
+
+.ez-app .book-cover strong,
+.ez-app .character-info blockquote {
+    font-family: var(--font-heading);
 }
 
 button,
@@ -51,6 +75,158 @@ input,
 select,
 textarea {
     font: inherit;
+}
+
+input,
+select,
+textarea {
+    min-height: 44px;
+}
+
+.btn-primary,
+.problem-button,
+.hero-button,
+.dashboard-cta,
+.checkout-button,
+.organization-button,
+.ez-app .ez-btn.primary {
+    min-height: var(--control-height);
+    padding: 0 var(--control-padding-inline);
+    border: 1px solid transparent;
+    border-radius: var(--control-radius);
+    background: var(--control-primary-background);
+    box-shadow: var(--control-primary-shadow);
+    color: var(--control-primary-color);
+    animation: none;
+    font-size: var(--control-font-size);
+    font-weight: var(--control-font-weight);
+    line-height: 1.2;
+    transition: transform .25s ease, box-shadow .25s ease, background-color .25s ease;
+}
+
+.btn-primary:hover,
+.problem-button:hover,
+.hero-button:hover,
+.dashboard-cta:hover,
+.checkout-button:hover,
+.organization-button:hover,
+.ez-app .ez-btn.primary:hover {
+    transform: translateY(-3px);
+    background: var(--control-primary-hover);
+    box-shadow: 0 2px 0 #667e37, 0 13px 28px rgba(0, 0, 0, .26);
+    color: var(--control-primary-color);
+}
+
+body.light-theme .btn-primary,
+body.light-theme .problem-button,
+body.light-theme .hero-button,
+body.light-theme .dashboard-cta,
+body.light-theme .checkout-button,
+body.light-theme .organization-button,
+body.light-theme .store-hero .hero-button,
+body.light-theme .ez-app .ez-btn.primary {
+    border-color: transparent;
+    background: var(--control-primary-background);
+    box-shadow: var(--control-primary-shadow);
+    color: var(--control-primary-color);
+}
+
+body.light-theme .btn-primary:hover,
+body.light-theme .problem-button:hover,
+body.light-theme .hero-button:hover,
+body.light-theme .dashboard-cta:hover,
+body.light-theme .checkout-button:hover,
+body.light-theme .organization-button:hover,
+body.light-theme.field-identity .store-hero .hero-button:hover,
+body.light-theme .ez-app .ez-btn.primary:hover {
+    background: var(--control-primary-hover);
+    box-shadow: 0 2px 0 #667e37, 0 13px 28px rgba(0, 0, 0, .26);
+    color: var(--control-primary-color);
+}
+
+.field-identity .store-hero .hero-button {
+    min-height: var(--control-height);
+    padding: 0 var(--control-padding-inline);
+    border-radius: var(--control-radius);
+    font-size: var(--control-font-size);
+    font-weight: var(--control-font-weight);
+}
+
+.field-identity .btn-secondary,
+.field-identity .store-button,
+.field-identity .field-button,
+.field-identity .filter-reset,
+.field-identity .species-search-more,
+.field-identity .salve-updates-controls button {
+    min-height: var(--control-height);
+    padding: 0 var(--control-padding-inline);
+    border-radius: var(--control-radius);
+    font-size: var(--control-font-size);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.field-identity .btn-secondary,
+.field-identity .store-button,
+.field-identity .field-button,
+.field-identity .filter-reset,
+.field-identity .species-search-more,
+.field-identity .salve-updates-controls button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.field-identity .category-button {
+    min-height: 44px;
+    border-radius: var(--control-radius);
+    font-size: var(--control-font-size);
+    font-weight: 700;
+}
+
+.field-identity .checkout-submit {
+    min-height: var(--control-height);
+    border-radius: var(--control-radius);
+    font-size: var(--control-font-size);
+    font-weight: var(--control-font-weight);
+}
+
+body:not(.light-theme) .ez-app .ez-btn.primary {
+    background: var(--control-primary-background);
+    box-shadow: var(--control-primary-shadow);
+    color: var(--control-primary-color);
+}
+
+body:not(.light-theme) .ez-app .ez-btn.primary:hover {
+    background: var(--control-primary-hover);
+    box-shadow: 0 2px 0 #667e37, 0 13px 28px rgba(0, 0, 0, .26);
+}
+
+.ez-app .ez-btn.ghost,
+.field-identity .btn-secondary,
+.field-identity .filter-reset,
+.field-identity .species-search-more {
+    border-radius: var(--control-radius);
+}
+
+button {
+    min-width: 44px;
+    min-height: 44px;
+}
+
+.field-identity button,
+.ez-app button {
+    min-width: 44px;
+    min-height: 44px;
+}
+
+.field-identity .reference-card a,
+.field-identity .species-source,
+.field-identity .team-social {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
 }
 
 button:focus-visible,
@@ -235,7 +411,7 @@ button[aria-busy="true"]::after {
 
 .navbar .nav-menu .nav-link.active,
 .navbar .nav-menu .nav-link[aria-current="page"] {
-    color: #b8f33a;
+    color: #bed66e;
     background: rgba(184, 243, 58, .12);
 }
 
@@ -399,6 +575,14 @@ body.light-theme .site-breadcrumb a {
     color: var(--green);
     font-size: 13px;
     line-height: 1.4;
+}
+
+.checkout-feedback[data-state="error"] {
+    color: #ef6a62;
+}
+
+.checkout-feedback[data-state="info"] {
+    color: var(--text-soft);
 }
 
 .checkout-form-actions {
@@ -628,44 +812,26 @@ body.light-theme .site-breadcrumb a {
 }
 
 @media (max-width: 767px) {
-    body h1 {
-        font-size: 40px !important;
-        line-height: 1.08;
+    .field-identity input,
+    .field-identity select,
+    .field-identity textarea {
+        font-size: 16px;
     }
 
-    body h2 {
-        font-size: 30px !important;
-        line-height: 1.15;
+    .footer-links a {
+        display: inline-flex;
+        min-height: 44px;
+        align-items: center;
     }
 
-    body h3 {
-        font-size: 21px !important;
-        line-height: 1.2;
+    .field-identity .hero-buttons,
+    .field-identity .store-buttons {
+        flex-wrap: wrap;
     }
 
-    body p {
-        font-size: min(16px, 1em) !important;
-    }
-}
-
-@media (min-width: 768px) and (max-width: 1023px) {
-    body h1 {
-        font-size: 48px !important;
-        line-height: 1.08;
-    }
-
-    body h2 {
-        font-size: 38px !important;
-        line-height: 1.15;
-    }
-
-    body h3 {
-        font-size: 25px !important;
-        line-height: 1.2;
-    }
-
-    body p {
-        font-size: min(17px, 1em) !important;
+    .field-identity .hero-buttons > *,
+    .field-identity .store-buttons > * {
+        max-width: 100%;
     }
 }
 

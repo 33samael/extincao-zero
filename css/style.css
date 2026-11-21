@@ -1,4 +1,4 @@
-/* =========================
+﻿/* =========================
    RESET
 ========================= */
 
@@ -142,7 +142,7 @@ body.light-theme .nav-action:hover {
     position: relative;
 }
 
-/* AÇÕES */
+/* AÃ‡Ã•ES */
 
 .nav-actions {
     display: flex;
@@ -218,8 +218,8 @@ body.light-theme .nav-action:hover {
 
     --border: rgba(200, 226, 165, 0.18);
 
-    --green: #b8f33a;
-    --green-light: #b8f33a;
+    --green: #bed66e;
+    --green-light: #bed66e;
 
     --text: #f2f0d8;
     --text-soft: #b9c5ae;
@@ -227,6 +227,93 @@ body.light-theme .nav-action:hover {
 
     --orange: #f08b42;
 
+    --font-body: "Segoe UI", Arial, sans-serif;
+    --font-heading: var(--font-body);
+    --control-height: 52px;
+    --control-radius: 4px;
+    --control-padding-inline: 20px;
+    --control-font-size: 16px;
+    --control-font-weight: 850;
+    --control-primary-background: #c0d676;
+    --control-primary-hover: #d1e68a;
+    --control-primary-color: #172316;
+    --control-primary-shadow: 0 4px 0 #667e37, 0 11px 24px rgba(0, 0, 0, .2);
+
+    --title-size-xl: clamp(2rem, 4vw, 3rem);
+    --title-size-lg: clamp(1.65rem, 3vw, 2.25rem);
+    --title-size-md: clamp(1.3rem, 2.2vw, 1.75rem);
+    --title-size-sm: clamp(1.15rem, 1.6vw, 1.375rem);
+    --title-size-xs: clamp(1.05rem, 1.3vw, 1.125rem);
+    --body-size: 1rem;
+    --body-size-lg: 1.125rem;
+    --small-size: 0.875rem;
+
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: var(--body-size);
+    line-height: 1.6;
+}
+
+body.light-theme {
+    --control-primary-background: #607435;
+    --control-primary-hover: #52662d;
+    --control-primary-color: #fff;
+    --control-primary-shadow: 0 4px 0 #405326, 0 11px 24px rgba(50, 50, 29, .2);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0 0 1rem;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+    color: inherit;
+}
+
+h1 {
+    font-size: var(--title-size-xl);
+}
+
+h2 {
+    font-size: var(--title-size-lg);
+}
+
+h3 {
+    font-size: var(--title-size-md);
+}
+
+h4,
+h5,
+h6 {
+    font-size: 1.2rem;
+}
+
+p,
+li,
+span,
+small,
+a,
+button,
+input,
+textarea,
+select {
+    font-family: var(--font-body);
+}
+
+p {
+    font-size: var(--body-size);
+    line-height: 1.6;
+}
+
+small {
+    font-size: var(--small-size);
 }
 
 /* =========================
@@ -300,7 +387,7 @@ body.light-theme .nav-action:hover {
 /* ITEM ATIVO */
 
 .nav-link.active {
-    color: #b8f33a;
+    color: #bed66e;
 
     background: #192d1f;
 }
@@ -319,7 +406,7 @@ body.light-theme .nav-action:hover {
 
 
 /* =========================
-   BOTÕES DIREITA
+   BOTÃ•ES DIREITA
 ========================= */
 
 .nav-actions {
@@ -354,10 +441,10 @@ body.light-theme .nav-action:hover {
 .nav-button:hover {
     background: rgba(255, 255, 255, 0.07);
     border-color: rgba(184, 243, 58, 0.4);
-    color: #b8f33a;
+    color: #bed66e;
 }
 
-/* ÍCONES DA NAVBAR */
+/* ÃCONES DA NAVBAR */
 
 .nav-button i {
     font-size: 18px;
@@ -429,7 +516,7 @@ body.light-theme .nav-action:hover {
 }
 
 .nav-submenu .nav-link i {
-    color: #b8f33a;
+    color: #bed66e;
 }
 
 .nav-submenu .nav-link:hover,
@@ -583,7 +670,7 @@ body.light-theme .nav-submenu .nav-link.active {
         font-size: 12px;
     }
 
-    /* BOTÕES DENTRO DO MENU */
+    /* BOTÃ•ES DENTRO DO MENU */
     .nav-actions {
         width: 100%;
         margin: 8px 0 0;
@@ -609,7 +696,7 @@ body.light-theme .nav-submenu .nav-link.active {
 
 
 /* ========================================
-   TEMA CLARO — MENU MOBILE
+   TEMA CLARO â€” MENU MOBILE
 ======================================== */
 
 body.light-theme .nav-menu {
@@ -768,7 +855,7 @@ body.light-theme .menu-toggle {
 
 
 /* ========================================
-   TÍTULOS
+   TÃTULOS
 ======================================== */
 
 .footer-navigation h4,
@@ -786,7 +873,7 @@ body.light-theme .menu-toggle {
 
 
 /* ========================================
-   NAVEGAÇÃO
+   NAVEGAÃ‡ÃƒO
 ======================================== */
 
 .footer-links {

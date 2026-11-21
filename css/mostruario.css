@@ -43,7 +43,7 @@ body.light-theme .specimen-guide {
 .specimen-heading h2 {
     margin: 7px 0 2px;
     color: var(--field-text);
-    font-family: Georgia, "Times New Roman", serif;
+    font-family: var(--font-heading);
     font-size: clamp(35px, 4.7vw, 54px);
     letter-spacing: -.05em;
 }
@@ -51,7 +51,7 @@ body.light-theme .specimen-guide {
 .specimen-heading > p {
     margin: 0;
     color: var(--field-muted);
-    font-family: Georgia, "Times New Roman", serif;
+    font-family: var(--font-heading);
     font-size: 14px;
     font-style: italic;
 }
@@ -88,7 +88,7 @@ body.light-theme .specimen-guide {
 .field-note h3 {
     margin: 22px 0 7px;
     color: var(--field-text);
-    font-family: Georgia, "Times New Roman", serif;
+    font-family: var(--font-heading);
     font-size: 23px;
 }
 
@@ -126,14 +126,14 @@ body.light-theme .specimen-guide {
     position: relative;
     display: grid;
     min-width: 0;
-    min-height: 395px;
+    min-height: 510px;
     place-items: center;
     overflow: hidden;
     border: 1px solid var(--field-line);
     isolation: isolate;
     background:
         linear-gradient(180deg, rgba(10, 25, 15, .08), rgba(8, 19, 12, .6)),
-        url("../assets/img/amazonia.jpg") center 52% / cover;
+        url("../assets/img/amazonia.jpg") center 52% / contain no-repeat;
     box-shadow: inset 0 0 0 7px rgba(13, 27, 17, .38), 0 16px 34px rgba(0, 0, 0, .22);
 }
 
@@ -215,8 +215,8 @@ body.light-theme .specimen-guide {
 .animal-model {
     position: relative;
     margin: 0;
-    width: min(78%, 380px);
-    height: 285px;
+    width: min(86%, 480px);
+    height: 390px;
     margin: 0;
     cursor: grab;
     touch-action: pan-y;
@@ -455,7 +455,7 @@ body.light-theme #species-image {
 .risk-heading > div > strong {
     margin-top: 4px;
     color: #e49a67;
-    font-family: Georgia, "Times New Roman", serif;
+    font-family: var(--font-heading);
     font-size: 21px;
 }
 
@@ -538,6 +538,7 @@ body.light-theme #species-image {
 .legend-dot.endangered { background: #ca6555; }
 .legend-dot.vulnerable { background: #e59354; }
 .legend-dot.near-threatened { background: #d5b853; }
+.legend-dot.least-concern { background: #7fa875; }
 
 .specimen-controls {
     display: flex;
@@ -601,7 +602,7 @@ body.light-theme #species-image {
 .dossier-intro h3 {
     margin: 10px 0;
     color: var(--field-text);
-    font-family: Georgia, "Times New Roman", serif;
+    font-family: var(--font-heading);
     font-size: 26px;
     line-height: 1.04;
 }
@@ -676,7 +677,7 @@ body.light-theme #species-image {
 .dossier-panel h4 {
     margin: 10px 0 8px;
     color: var(--field-text);
-    font-family: Georgia, "Times New Roman", serif;
+    font-family: var(--font-heading);
     font-size: 21px;
 }
 
@@ -769,7 +770,7 @@ body.light-theme .field-dossier {
     .specimen-stage {
         order: 0;
         width: 100%;
-        min-height: 365px;
+        min-height: 430px;
     }
 
     .specimen-heading {
@@ -800,8 +801,8 @@ body.light-theme .field-dossier {
     }
 
     .animal-model {
-        width: min(78%, 335px);
-        height: 265px;
+        width: min(90%, 400px);
+        height: 360px;
     }
 
     .stage-marker-one {
@@ -898,3 +899,84 @@ body.light-theme .field-dossier {
         transition: none;
     }
 }
+```
+
+/* Visualizador 3D Sketchfab */
+.animal-model.is-3d {
+    width: min(94%, 620px);
+    height: 350px;
+    cursor: default;
+    animation: none;
+    transform: none;
+    filter: none;
+    perspective: none;
+}
+.animal-model.is-3d .animal-frame {
+    inset: 2% 0 8%;
+    transform: none;
+    border-color: rgba(237, 218, 161, .45);
+    pointer-events: none;
+}
+.species-3d {
+    display: block;
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    outline: 0;
+    background: transparent !important;
+    color-scheme: dark;
+}
+.species-3d[hidden] {
+    display: none;
+}
+.animal-model.is-3d > img,
+.animal-model.is-3d .animal-fallback {
+    display: none;
+}
+.animal-model.is-3d figcaption {
+    bottom: -8px;
+    z-index: 2;
+    pointer-events: none;
+}
+.animal-model:not(.is-3d) .species-3d {
+    display: none;
+}
+@media (max-width: 650px) {
+    .animal-model.is-3d {
+        width: 100%;
+        height: 360px;
+    }
+}
+/* O visualizador Sketchfab deve se integrar ao cenário, sem um painel CSS próprio. */
+.animal-model.is-3d {
+    background: transparent;
+    overflow: visible;
+}
+.animal-model.is-3d .species-3d {
+    background: transparent !important;
+    border: 0;
+    box-shadow: none;
+}
+
+
+/* Modelos GLB locais renderizados com <model-viewer> */
+.species-glb {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+    background: transparent;
+    --poster-color: transparent;
+    --progress-bar-color: #a8ee19;
+}
+.species-glb[hidden] { display: none; }
+.animal-model.is-3d .species-glb {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+}
+.animal-model.is-3d .species-glb[hidden] { display: none; }
+.animal-model.is-3d .species-3d[hidden] { display: none; }

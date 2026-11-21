@@ -52,8 +52,8 @@ body.light-theme .field-guide {
     inset: 0 0 0 auto;
     width: 72%;
     height: 100%;
-    object-fit: cover;
-    object-position: center;
+    object-fit: contain;
+    object-position: right center;
 }
 
 .field-eyebrow {
@@ -70,7 +70,7 @@ body.light-theme .field-guide {
     max-width: 680px;
     margin: 20px 0 14px;
     color: #f4f0d8;
-    font-family: Georgia, "Times New Roman", serif;
+    font-family: var(--font-heading);
     font-size: clamp(43px, 6vw, 72px);
     letter-spacing: -.055em;
     line-height: .98;
@@ -150,7 +150,7 @@ body.light-theme .field-guide {
 .field-section-heading h2 {
     margin: 10px 0;
     color: var(--field-text);
-    font-family: Georgia, "Times New Roman", serif;
+    font-family: var(--font-heading);
     font-size: clamp(31px, 4vw, 46px);
     letter-spacing: -.045em;
 }
@@ -220,7 +220,7 @@ body.light-theme .field-guide {
 .atlas-copy h3 {
     margin: 7px 0 4px;
     color: #fff4d9;
-    font-family: Georgia, "Times New Roman", serif;
+    font-family: var(--font-heading);
     font-size: 27px;
 }
 
@@ -310,7 +310,7 @@ body.light-theme .field-guide {
 
 .field-next h2 {
     margin: 0 0 4px;
-    font-family: Georgia, "Times New Roman", serif;
+    font-family: var(--font-heading);
     font-size: 21px;
 }
 
@@ -406,7 +406,7 @@ body.light-theme .field-guide {
 
 .specimen-copy h3 {
     margin: 8px 0 3px;
-    font-family: Georgia, "Times New Roman", serif;
+    font-family: var(--font-heading);
     font-size: 21px;
 }
 

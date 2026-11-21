@@ -1,0 +1,642 @@
+.biome-atlas-nav {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0 0 24px;
+}
+
+.biome-atlas-nav a {
+    padding: 9px 13px;
+    border: 1px solid var(--field-line);
+    background: rgba(15, 29, 19, .82);
+    color: var(--field-muted);
+    font-size: 11px;
+    font-weight: 800;
+    transition: border-color .2s ease, color .2s ease, background .2s ease;
+}
+
+.biome-atlas-nav a:hover,
+.biome-atlas-nav a[aria-current="location"] {
+    border-color: var(--field-gold);
+    background: rgba(30, 48, 30, .92);
+    color: var(--field-gold);
+}
+
+.biome-hero {
+    position: relative;
+    min-height: clamp(470px, 68vh, 680px);
+}
+
+.biome-hero h1 {
+    max-width: 640px;
+    line-height: .88;
+}
+
+.biome-hero > p {
+    max-width: 490px;
+}
+
+.biome-hero .field-hero-image {
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 52%;
+    opacity: .68;
+}
+
+.biome-hero::after {
+    background:
+        linear-gradient(90deg, rgba(7, 18, 11, .94) 0%, rgba(8, 21, 13, .77) 38%, rgba(7, 18, 11, .28) 100%),
+        linear-gradient(0deg, rgba(7, 18, 11, .28), transparent 60%);
+}
+
+.biome-map-card {
+    position: relative;
+    z-index: 1;
+    margin: 20px 0 0;
+    padding: clamp(18px, 3vw, 32px);
+    border: 1px solid var(--field-line);
+    background: var(--field-surface);
+    box-shadow: 0 16px 38px rgba(0, 0, 0, .18);
+}
+
+.biome-map-heading {
+    max-width: 700px;
+    margin: 0 auto 18px;
+    text-align: center;
+}
+
+.biome-map-heading h2 {
+    margin: 10px 0;
+    color: var(--field-text);
+    font: 700 clamp(25px, 4vw, 38px)/1.1 var(--font-heading);
+    letter-spacing: -.04em;
+}
+
+.biome-map-heading h2 em {
+    color: var(--field-green);
+    font-style: normal;
+}
+
+.biome-map-heading p {
+    margin: 0;
+    color: var(--field-muted);
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.biome-map-card figure {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.biome-map-card img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--field-line);
+}
+
+.biome-map-card figcaption {
+    margin-top: 9px;
+    color: var(--field-muted);
+    font-size: 10px;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.biome-hero-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 24px;
+}
+
+.biome-hero-stats span {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 7px;
+    padding: 9px 12px;
+    border: 1px solid rgba(229, 200, 109, .38);
+    background: rgba(12, 28, 18, .72);
+    color: #d0d8c6;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.biome-hero-stats strong {
+    color: #f2c84b;
+    font: 700 17px/1 var(--font-heading);
+}
+
+.biome-video-stage {
+    position: fixed;
+    z-index: 0;
+    inset: 0;
+    overflow: hidden;
+    background: #101a11;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .6s ease;
+}
+
+.biome-video-stage.is-visible {
+    opacity: 1;
+}
+
+.biome-video-stage::before {
+    position: absolute;
+    z-index: 0;
+    inset: 0;
+    content: "";
+    background: #101a11 var(--biome-poster) center / cover no-repeat;
+}
+
+.biome-video-stage video,
+.biome-video-shade {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.biome-video-stage video {
+    z-index: 1;
+    object-fit: cover;
+    object-position: center;
+}
+
+.biome-video-stage.video-unavailable video {
+    opacity: 0;
+}
+
+.biome-video-stage video,
+.biome-video-stage::before {
+    transition: opacity .35s ease;
+}
+
+.biome-video-shade {
+    z-index: 2;
+    background:
+        linear-gradient(90deg, rgba(7, 17, 11, .83) 0%, rgba(7, 17, 11, .58) 58%, rgba(7, 17, 11, .38) 100%),
+        linear-gradient(0deg, rgba(7, 17, 11, .5), transparent 55%);
+}
+
+.biome-field-guide > *:not(.biome-video-stage) {
+    position: relative;
+    z-index: 1;
+}
+
+.biome-field-guide .atlas-section {
+    padding-top: 68px;
+}
+
+.biome-journey-meter {
+    position: sticky;
+    z-index: 4;
+    top: 82px;
+    display: grid;
+    grid-template-columns: auto minmax(140px, .75fr) minmax(90px, 1fr) auto;
+    align-items: center;
+    gap: 14px;
+    margin: 0 0 20px;
+    padding: 12px 15px;
+    border: 1px solid rgba(220, 216, 169, .24);
+    background: rgba(10, 23, 14, .94);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, .2);
+    backdrop-filter: blur(12px);
+}
+
+.biome-journey-count {
+    color: var(--field-gold);
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: .1em;
+    white-space: nowrap;
+}
+
+.biome-journey-meter > strong {
+    overflow: hidden;
+    color: var(--field-text);
+    font: 700 16px/1.2 var(--font-heading);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.biome-journey-track {
+    height: 3px;
+    overflow: hidden;
+    background: rgba(220, 216, 169, .2);
+}
+
+.biome-journey-track > span {
+    display: block;
+    width: 0;
+    height: 100%;
+    background: var(--field-gold);
+    transition: width .45s ease;
+}
+
+.biome-journey-hint {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--field-muted);
+    font-size: 9px;
+    white-space: nowrap;
+}
+
+.biome-stops {
+    display: grid;
+    gap: 28px;
+}
+
+.biome-stop {
+    display: grid;
+    min-height: max(690px, calc(100svh - 110px));
+    grid-template-columns: minmax(0, 1.65fr) minmax(210px, .7fr);
+    align-items: center;
+    gap: clamp(18px, 3vw, 42px);
+    scroll-margin-top: 105px;
+}
+
+.biome-stop-copy,
+.biome-stop-image {
+    transition: border-color .45s ease, box-shadow .45s ease;
+}
+
+.biome-stop[data-active] .biome-stop-copy,
+.biome-stop[data-active] .biome-stop-image {
+    border-color: rgba(242, 200, 75, .48);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, .3), 0 0 35px rgba(186, 211, 107, .08);
+}
+
+.biome-stop[data-active] .biome-stop-image {
+    transform: none;
+}
+
+.biome-stop-copy {
+    padding: clamp(18px, 3vw, 34px);
+    border: 1px solid rgba(220, 216, 169, .28);
+    background: rgba(10, 23, 14, .84);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, .24);
+    backdrop-filter: blur(12px);
+}
+
+.biome-stop-kicker {
+    color: var(--field-gold);
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: .13em;
+    line-height: 1.6;
+}
+
+.biome-stop h3 {
+    margin: 8px 0 10px;
+    color: #f2f0d8;
+    font: 700 clamp(38px, 5vw, 58px)/1 var(--font-heading);
+    letter-spacing: -.05em;
+}
+
+.biome-lead {
+    max-width: 720px;
+    margin: 0;
+    color: #d3ddcb;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.biome-facts {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+    margin: 20px 0;
+}
+
+.biome-facts > div {
+    display: grid;
+    min-height: 64px;
+    align-content: center;
+    gap: 5px;
+    padding: 10px 12px;
+    border-left: 2px solid var(--field-gold);
+    background: rgba(224, 223, 190, .07);
+}
+
+.biome-facts span {
+    color: #bfcbb7;
+    font-size: 10px;
+    line-height: 1.35;
+}
+
+.biome-facts strong {
+    color: #f1e7c7;
+    font-size: 12px;
+    line-height: 1.35;
+}
+
+.biome-detail-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.biome-detail-grid section {
+    padding: 13px 14px;
+    border: 1px solid rgba(220, 216, 169, .15);
+    background: rgba(5, 16, 9, .42);
+}
+
+.biome-detail-grid h4 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 0 7px;
+    color: #e9d99d;
+    font-size: 12px;
+}
+
+.biome-detail-grid h4 i {
+    color: var(--field-green);
+    font-size: 14px;
+}
+
+.biome-detail-grid p {
+    margin: 0;
+    color: #cbd4c4;
+    font-size: 11px;
+    line-height: 1.65;
+}
+
+.biome-data-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 16px;
+    color: #efdc9f;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.biome-data-link:hover {
+    color: #fff3c0;
+}
+
+.biome-stop-image {
+    margin: 0;
+    padding: 8px;
+    border: 1px solid rgba(220, 216, 169, .34);
+    background: rgba(10, 23, 14, .76);
+    box-shadow: 0 18px 50px rgba(0, 0, 0, .24);
+    backdrop-filter: blur(8px);
+}
+
+.biome-stop-image img {
+    display: block;
+    width: 100%;
+    max-height: min(52vh, 500px);
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+}
+
+.biome-stop-image figcaption {
+    padding: 10px 6px 3px;
+    color: #d0d8c6;
+    font-size: 10px;
+    line-height: 1.5;
+}
+
+.biome-atlas-source {
+    position: relative;
+    z-index: 1;
+    padding: 18px;
+    border: 1px solid rgba(220, 216, 169, .2);
+    background: rgba(10, 23, 14, .88);
+}
+
+.biome-atlas-source a {
+    color: #efdc9f;
+}
+
+.biome-field-guide + .site-footer {
+    position: relative;
+    z-index: 2;
+}
+
+body.light-theme .biome-atlas-nav a {
+    border-color: rgba(67, 81, 46, .42);
+    background: rgba(248, 240, 219, .92);
+    color: #39462f;
+}
+
+body.light-theme .biome-atlas-nav a:hover,
+body.light-theme .biome-atlas-nav a[aria-current="location"] {
+    border-color: #8a6523;
+    color: #60491e;
+}
+
+body.light-theme .biome-journey-meter {
+    border-color: rgba(67, 81, 46, .22);
+    background: rgba(238, 229, 205, .96);
+}
+
+body.light-theme .biome-hero::after {
+    background:
+        linear-gradient(90deg, rgba(238, 229, 205, .94) 0%, rgba(238, 229, 205, .78) 40%, rgba(238, 229, 205, .22) 100%),
+        linear-gradient(0deg, rgba(238, 229, 205, .18), transparent 60%);
+}
+
+body.light-theme .biome-hero h1 {
+    color: #27351e;
+}
+
+body.light-theme .biome-hero > p {
+    color: #46513d;
+}
+
+body.light-theme .biome-hero-stats span {
+    border-color: rgba(67, 81, 46, .24);
+    background: rgba(248, 240, 219, .86);
+    color: #46513d;
+}
+
+body.light-theme .biome-hero-stats strong {
+    color: #5b7434;
+}
+
+body.light-theme .biome-hero .field-stamp {
+    border-color: rgba(67, 81, 46, .28);
+    background: rgba(238, 229, 205, .9);
+    color: #60491e;
+}
+
+body.light-theme .biome-hero .field-stamp small {
+    color: #59664b;
+}
+
+body.light-theme .biome-stop-copy,
+body.light-theme .biome-stop-image,
+body.light-theme .biome-atlas-source {
+    border-color: rgba(238, 229, 205, .72);
+    background: rgba(238, 229, 205, .91);
+}
+
+body.light-theme .biome-stop h3 {
+    color: #27351e;
+}
+
+body.light-theme .biome-lead,
+body.light-theme .biome-facts span,
+body.light-theme .biome-detail-grid p,
+body.light-theme .biome-stop-image figcaption {
+    color: #46513d;
+}
+
+body.light-theme .biome-facts strong,
+body.light-theme .biome-detail-grid h4,
+body.light-theme .biome-data-link,
+body.light-theme .biome-atlas-source a {
+    color: #41582b;
+}
+
+body.light-theme .biome-detail-grid section,
+body.light-theme .biome-facts > div {
+    border-color: rgba(67, 81, 46, .2);
+    background: rgba(255, 255, 255, .42);
+}
+
+body.light-theme .biome-video-shade {
+    background:
+        linear-gradient(90deg, rgba(12, 24, 15, .55) 0%, rgba(12, 24, 15, .38) 58%, rgba(12, 24, 15, .28) 100%),
+        linear-gradient(0deg, rgba(12, 24, 15, .32), transparent 55%);
+}
+
+@media (max-width: 800px) {
+    .biome-hero {
+        top: auto;
+    }
+
+    .biome-journey-meter {
+        top: 72px;
+        grid-template-columns: auto minmax(90px, 1fr) minmax(50px, .7fr);
+        gap: 10px;
+        padding: 10px 12px;
+    }
+
+    .biome-journey-hint {
+        display: none;
+    }
+
+    .biome-stop {
+        min-height: 0;
+        grid-template-columns: minmax(0, 1fr);
+        padding: 8px 0 22px;
+    }
+
+    .biome-stop-image {
+        position: relative;
+        top: auto;
+        width: min(100%, 430px);
+        justify-self: center;
+    }
+
+    .biome-stop-image img {
+        max-height: 42vh;
+        aspect-ratio: 16 / 9;
+    }
+
+    .biome-video-shade {
+        background: rgba(7, 17, 11, .72);
+    }
+}
+
+@media (max-width: 520px) {
+    .biome-hero {
+        min-height: 520px;
+        padding: 30px 22px;
+    }
+
+    .biome-hero h1 {
+    }
+
+    .biome-hero .field-hero-image {
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        opacity: .68;
+    }
+
+    .biome-hero::after {
+        background:
+            linear-gradient(90deg, rgba(7, 18, 11, .88), rgba(7, 18, 11, .42)),
+            linear-gradient(0deg, rgba(7, 18, 11, .22), rgba(7, 18, 11, .18));
+    }
+
+    body.light-theme .biome-hero::after {
+        background:
+            linear-gradient(90deg, rgba(238, 229, 205, .9), rgba(238, 229, 205, .48)),
+            linear-gradient(0deg, rgba(238, 229, 205, .25), rgba(238, 229, 205, .2));
+    }
+
+    .biome-hero .field-stamp {
+        right: 12px;
+        bottom: 12px;
+    }
+
+    .biome-hero-stats {
+        gap: 7px;
+        margin-top: 17px;
+    }
+
+    .biome-hero-stats span {
+        padding: 8px 9px;
+        font-size: 9px;
+    }
+
+    .biome-journey-meter {
+        grid-template-columns: auto minmax(0, 1fr);
+        gap: 6px 10px;
+    }
+
+    .biome-journey-meter > strong {
+        font-size: 14px;
+    }
+
+    .biome-journey-track {
+        grid-column: 1 / -1;
+    }
+
+    .biome-atlas-nav {
+        gap: 6px;
+    }
+
+    .biome-atlas-nav a {
+        padding: 8px 10px;
+        font-size: 10px;
+    }
+
+    .biome-facts {
+        grid-template-columns: 1fr;
+    }
+
+    .biome-facts > div {
+        min-height: 0;
+    }
+
+    .biome-detail-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .biome-video-stage {
+        display: none;
+    }
+}
