@@ -50,7 +50,7 @@
 
         <section class="specimen-explorer" id="specimen-explorer" aria-label="Explorador interativo de espécies">
             <div class="specimen-heading">
-                <span class="specimen-index" id="specimen-index">FICHA 01 / 04</span>
+                <span class="specimen-index" id="specimen-index">FICHA 01 / 05</span>
                 <h2 id="species-name">Onça-pintada</h2>
                 <p id="species-scientific">Panthera onca</p>
             </div>
@@ -69,14 +69,38 @@
                     <div class="stage-contours" aria-hidden="true"></div>
                     <span class="stage-marker stage-marker-one" aria-hidden="true"><i class="bi bi-geo-alt-fill"></i></span>
                     <span class="stage-marker stage-marker-two" aria-hidden="true"><i class="bi bi-crosshair"></i></span>
-                    <figure class="animal-model" id="animal-model" role="img" tabindex="0" aria-label="Imagem interativa da espécie selecionada. Arraste ou use as setas do teclado para inclinar a imagem.">
+                    <figure class="animal-model" id="animal-model" tabindex="0" aria-label="Visualizador interativo da espécie selecionada. Nos modelos 3D, arraste diretamente sobre o animal para girá-lo.">
                         <span class="animal-frame"></span>
+                        <iframe
+                            id="species-3d"
+                            class="species-3d"
+                            title="Modelo 3D interativo da espécie selecionada"
+                            allow="autoplay; fullscreen; xr-spatial-tracking"
+                            allowfullscreen
+                            mozallowfullscreen="true"
+                            webkitallowfullscreen="true"
+                            loading="lazy"
+                            hidden></iframe>
+                        <model-viewer
+                            id="species-glb"
+                            class="species-glb"
+                            alt="Modelo 3D da espécie selecionada"
+                            camera-controls
+                            auto-rotate
+                            rotation-per-second="18deg"
+                            shadow-intensity="0.7"
+                            exposure="1"
+                            interaction-prompt="none"
+                            environment-image="neutral"
+                            loading="lazy"
+                            reveal="auto"
+                            hidden></model-viewer>
                         <img id="species-image" src="assets/img/onca.jpg" alt="Onça-pintada" draggable="false" fetchpriority="high">
                         <span class="animal-fallback" id="animal-fallback" hidden aria-live="polite">
                             <img src="assets/img/fauna-fallback.svg" alt="Ilustração de fauna e vegetação brasileira">
                             <small>ILUSTRAÇÃO DE CAMPO</small>
                         </span>
-                        <figcaption><span id="species-image-caption">Panthera onca</span><span>ARQUIVO DE OBSERVAÇÃO</span></figcaption>
+                        <figcaption><span id="species-image-caption">Panthera onca</span><span id="species-viewer-caption">MODELO 3D · SKETCHFAB</span></figcaption>
                     </figure>
                     <span class="stage-leaf stage-leaf-left" aria-hidden="true"></span>
                     <span class="stage-leaf stage-leaf-right" aria-hidden="true"></span>
@@ -101,11 +125,12 @@
 
             <div class="specimen-controls" aria-label="Navegação entre espécies">
                 <button class="species-arrow" id="species-prev" type="button" aria-label="Espécie anterior"><i class="bi bi-arrow-left"></i></button>
-                <div class="species-pager" aria-live="polite"><span id="pager-current">01</span><span class="pager-line"></span><span>04</span></div>
+                <div class="species-pager" aria-live="polite"><span id="pager-current">01</span><span class="pager-line"></span><span id="pager-total">05</span></div>
                 <button class="species-arrow" id="species-next" type="button" aria-label="Próxima espécie"><i class="bi bi-arrow-right"></i></button>
             </div>
 
             <div class="risk-legend" aria-label="Legenda das categorias nacionais de ameaça">
+                <span><i class="legend-dot least-concern"></i>LC · Menos preocupante</span>
                 <span><i class="legend-dot critically"></i>CR · Criticamente em perigo</span>
                 <span><i class="legend-dot endangered"></i>EN · Em perigo</span>
                 <span><i class="legend-dot vulnerable"></i>VU · Vulnerável</span>
@@ -130,7 +155,7 @@
                 </div>
             </section>
 
-            <p class="field-source"><i class="bi bi-journal-text"></i> Status nacional: <a href="https://www.in.gov.br/en/web/dou/-/portaria-mma-n-148-de-7-de-junho-de-2022-406272733" target="_blank" rel="noopener noreferrer">Portaria MMA nº 148/2022</a>. Status global e informações de conservação: <a id="species-iucn-link" href="https://www.iucnredlist.org/search?query=Panthera%20onca&searchType=species" target="_blank" rel="noopener noreferrer">IUCN Red List</a> e <a href="https://www.gov.br/icmbio/pt-br/assuntos/biodiversidade/pan" target="_blank" rel="noopener noreferrer">Planos de Ação Nacional do ICMBio</a>. A barra representa a categoria, não uma probabilidade de extinção.</p>
+            <p class="field-source"><i class="bi bi-journal-text"></i> Status nacional e informações da espécie: <a id="species-icmbio-link" href="https://www.gov.br/icmbio/pt-br/assuntos/biodiversidade/fauna-brasileira/fauna-brasileira" target="_blank" rel="noopener noreferrer">referência do ICMBio</a>. Status global: <a id="species-iucn-link" href="https://www.iucnredlist.org/search?query=Panthera%20onca&searchType=species" target="_blank" rel="noopener noreferrer">IUCN Red List</a> e <a href="https://www.gov.br/icmbio/pt-br/assuntos/biodiversidade/pan" target="_blank" rel="noopener noreferrer">Planos de Ação Nacional do ICMBio</a>. A barra representa a categoria, não uma probabilidade de extinção.</p>
         </section>
 
         <aside class="field-next"><span>PRÓXIMA PARADA</span><div><h2>Observe o panorama.</h2><p>Compare espécies, biomas e as ameaças à fauna.</p></div><a href="dashboard.html">Abrir o dashboard <i class="bi bi-arrow-up-right"></i></a></aside>
@@ -143,6 +168,7 @@
         </div>
         <div class="footer-bottom"><p>© 2026 Extinção Zero — Fatec Carapicuíba. Projeto educativo sem fins lucrativos.</p><p>Dados com finalidade educativa. Consulte as fontes originais.</p></div>
     </footer>
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
     <script src="js/common.js"></script>
     <script src="js/mostruario.js"></script>
 </body>

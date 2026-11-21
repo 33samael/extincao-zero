@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/explorar.css">
     <link rel="stylesheet" href="css/field-identity.css">
+    <link rel="stylesheet" href="css/biomas.css">
     <link rel="stylesheet" href="css/ux-foundation.css">
 </head>
 <body class="field-identity">
@@ -36,48 +37,177 @@
             <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="primary-navigation"><i class="bi bi-list"></i></button>
         </div>
     </header>
-    <main class="field-guide">
+    <main class="field-guide biome-field-guide">
         <section class="field-hero biome-hero">
             <span class="field-eyebrow"><i class="bi bi-compass"></i> CADERNO DE CAMPO · BRASIL</span>
-            <h1>Seis paisagens.<br><em>Milhares de vidas.</em></h1>
-            <p>Conheça os biomas continentais brasileiros: ambientes distintos, conectados por água, clima, espécies e histórias de conservação.</p>
-            <a class="field-button" href="#biome-atlas">Abrir o atlas <i class="bi bi-arrow-down-right"></i></a>
-            <img class="field-hero-image" src="assets/img/amazonia.jpg" alt="Floresta tropical brasileira vista entre a vegetação" fetchpriority="high">
-            <span class="field-stamp"><i class="bi bi-map"></i> ATLAS DE EXPLORAÇÃO <small>IBGE · 2019</small></span>
+            <h1>Biomas do<br><em>Brasil.</em></h1>
+            <p>Seis paisagens, milhares de vidas. Explore os biomas brasileiros e descubra como clima, água, fauna e flora se conectam.</p>
+            <a class="field-button" href="#biome-atlas">Explorar os biomas <i class="bi bi-arrow-down-right"></i></a>
+            <div class="biome-hero-stats" aria-label="Resumo do atlas">
+                <span><strong>06</strong> biomas continentais</span>
+                <span><strong>01</strong> país de muitas paisagens</span>
+            </div>
+            <img class="field-hero-image" src="assets/img/amazonia.png" alt="Ilustração da Amazônia brasileira" fetchpriority="high">
+            <span class="field-stamp"><i class="bi bi-map"></i> ATLAS DE EXPLORAÇÃO <small>06 PARADAS</small></span>
+        </section>
+        <section class="biome-map-card" aria-labelledby="biome-map-title">
+            <div class="biome-map-heading">
+                <span class="field-eyebrow"><i class="bi bi-geo-alt"></i> VISÃO GERAL</span>
+                <h2 id="biome-map-title">Os biomas no <em>território brasileiro.</em></h2>
+                <p>Localize as seis grandes regiões naturais antes de começar a jornada pelo atlas.</p>
+            </div>
+            <figure>
+                <img src="assets/img/mapa-biomas.png" alt="Mapa dos biomas brasileiros: Amazônia, Cerrado, Caatinga, Mata Atlântica, Pantanal e Pampa, com sua distribuição pelos estados." loading="lazy">
+                <figcaption>Mapa ilustrativo dos biomas brasileiros. As fronteiras dos biomas não coincidem necessariamente com os limites estaduais.</figcaption>
+            </figure>
         </section>
         <section class="atlas-section" id="biome-atlas">
             <div class="field-section-heading">
                 <span class="field-eyebrow">01 / TERRITÓRIO</span>
                 <h2>Um país, <em>seis biomas.</em></h2>
-                <p>As áreas abaixo são aproximações baseadas na delimitação do IBGE. Um limite cartográfico não apaga a diversidade local nem as conexões entre ecossistemas.</p>
+                <p>Desça pelo atlas: a paisagem em vídeo acompanha cada parada. Conheça o clima, as águas, as formações vegetais, a fauna e os desafios de conservação de cada bioma.</p>
             </div>
-            <div class="atlas-grid">
-                <article class="atlas-entry atlas-amazonia">
-                    <img src="assets/img/amazonia.jpg" alt="Floresta e copa de árvores da Amazônia" loading="lazy">
-                    <div class="atlas-copy"><span>01 · NORTE</span><h3>Amazônia</h3><strong>≈ 49,3% do território brasileiro</strong><p>Maior bioma do país. Florestas, rios e áreas alagáveis sustentam uma biodiversidade extraordinária.</p><a href="dashboard.html#biomas">Ver dados do bioma <i class="bi bi-arrow-up-right"></i></a></div>
+            <nav class="biome-atlas-nav" aria-label="Ir direto a um bioma">
+                <a href="#bioma-amazonia">Amazônia</a>
+                <a href="#bioma-cerrado">Cerrado</a>
+                <a href="#bioma-mata-atlantica">Mata Atlântica</a>
+                <a href="#bioma-caatinga">Caatinga</a>
+                <a href="#bioma-pantanal">Pantanal</a>
+                <a href="#bioma-pampa">Pampa</a>
+            </nav>
+            <div class="biome-journey-meter" aria-label="Progresso no atlas">
+                <span class="biome-journey-count" id="biome-journey-count">00 / 06</span>
+                <strong id="biome-journey-name">Escolha uma paisagem</strong>
+                <span class="biome-journey-track" aria-hidden="true"><span id="biome-journey-progress"></span></span>
+                <span class="biome-journey-hint"><i class="bi bi-arrow-down"></i> continue explorando</span>
+            </div>
+            <div class="biome-video-stage" aria-hidden="true">
+                <video id="biome-background-video" muted loop playsinline preload="none"></video>
+                <span class="biome-video-shade"></span>
+            </div>
+            <div class="biome-stops" id="biome-stops">
+                <article class="biome-stop" id="bioma-amazonia" data-biome-name="Amazônia" data-video="assets/videos/video_amazonia.mp4" data-poster="assets/img/amazonia.png" aria-labelledby="amazonia-title">
+                    <div class="biome-stop-copy">
+                        <span class="biome-stop-kicker">02 / NORTE · A MAIOR FLORESTA TROPICAL</span>
+                        <h3 id="amazonia-title">Amazônia</h3>
+                        <p class="biome-lead">Uma paisagem de florestas, rios e áreas alagáveis, conectada por uma das maiores redes hidrográficas do planeta.</p>
+                        <div class="biome-facts">
+                            <div><span>Território brasileiro</span><strong>cerca de 49%</strong></div>
+                            <div><span>Espécies ameaçadas*</span><strong>221</strong></div>
+                            <div><span>Clima predominante</span><strong>Equatorial úmido</strong></div>
+                        </div>
+                        <div class="biome-detail-grid">
+                            <section><h4><i class="bi bi-cloud-rain"></i> Clima, relevo e águas</h4><p>Calor e umidade elevados durante boa parte do ano, com chuvas abundantes. A planície amazônica e os planaltos são atravessados por rios de grande porte; cheias sazonais expandem várzeas e igapós.</p></section>
+                            <section><h4><i class="bi bi-flower1"></i> Flora e formações</h4><p>Florestas de terra firme, várzea e igapó, além de campinaranas e vegetação aberta. Castanheira-do-brasil, seringueira, açaizeiro e sumaúma são exemplos de plantas importantes para os ecossistemas e para populações locais.</p></section>
+                            <section><h4><i class="bi bi-feather"></i> Fauna em destaque</h4><p>Onça-pintada, boto-cor-de-rosa, peixe-boi-da-Amazônia, harpia e primatas como o uacari ilustram a diversidade de ambientes terrestres e aquáticos. São exemplos, não uma lista completa da fauna.</p></section>
+                            <section><h4><i class="bi bi-shield-check"></i> Pressões e conservação</h4><p>Desmatamento, incêndios, garimpo, abertura de estradas e fragmentação afetam habitats e conectividade. Terras indígenas, unidades de conservação e manejo sustentável são peças importantes para manter a floresta em pé.</p></section>
+                        </div>
+                        <a class="biome-data-link" href="dashboard.html#painel-extincao">Ver dados de espécies ameaçadas <i class="bi bi-arrow-up-right"></i></a>
+                    </div>
+                    <figure class="biome-stop-image"><img src="assets/img/amazonia.png" alt="Ilustração da Amazônia brasileira" loading="lazy"><figcaption>Floresta e rios formam um mosaico de habitats amazônicos.</figcaption></figure>
                 </article>
-                <article class="atlas-entry atlas-cerrado">
-                    <img src="assets/img/lobo-guara.png" alt="Lobo-guará em paisagem de vegetação aberta" loading="lazy">
-                    <div class="atlas-copy"><span>02 · PLANALTO CENTRAL</span><h3>Cerrado</h3><strong>≈ 23,9% do território brasileiro</strong><p>Savana rica em espécies e nascentes que alimentam importantes bacias hidrográficas.</p><a href="dashboard.html#biomas">Ver dados do bioma <i class="bi bi-arrow-up-right"></i></a></div>
+                <article class="biome-stop" id="bioma-cerrado" data-biome-name="Cerrado" data-video="assets/videos/video_cerrado.mp4" data-poster="assets/img/cerrado.png" aria-labelledby="cerrado-title">
+                    <div class="biome-stop-copy">
+                        <span class="biome-stop-kicker">03 / PLANALTO CENTRAL · A SAVANA BRASILEIRA</span>
+                        <h3 id="cerrado-title">Cerrado</h3>
+                        <p class="biome-lead">Mosaico de campos, savanas e matas que abriga nascentes de grandes bacias hidrográficas brasileiras.</p>
+                        <div class="biome-facts">
+                            <div><span>Território brasileiro</span><strong>cerca de 24%</strong></div>
+                            <div><span>Espécies ameaçadas*</span><strong>298</strong></div>
+                            <div><span>Clima predominante</span><strong>Tropical sazonal</strong></div>
+                        </div>
+                        <div class="biome-detail-grid">
+                            <section><h4><i class="bi bi-sun"></i> Clima, relevo e águas</h4><p>O ano costuma alternar uma estação chuvosa e outra seca. Chapadas, planaltos e vales compõem o relevo; nascentes e rios do Cerrado contribuem para bacias como as do Tocantins-Araguaia, São Francisco e Paraná-Paraguai.</p></section>
+                            <section><h4><i class="bi bi-flower1"></i> Flora e formações</h4><p>Do campo limpo ao cerradão, a vegetação varia de gramíneas e ervas a árvores de casca espessa e raízes profundas. Pequi, barbatimão, ipês e buriti são exemplos de plantas adaptadas a diferentes solos e regimes de água.</p></section>
+                            <section><h4><i class="bi bi-feather"></i> Fauna em destaque</h4><p>Lobo-guará, tamanduá-bandeira, tatu-canastra, veado-campeiro e seriema vivem em paisagens abertas e em seus mosaicos de mata. A fauna depende da continuidade entre campos, veredas e matas de galeria.</p></section>
+                            <section><h4><i class="bi bi-shield-check"></i> Pressões e conservação</h4><p>A conversão de vegetação nativa, a expansão agropecuária, queimadas fora do regime natural e a alteração de cursos d’água ameaçam habitats. Conservar nascentes, corredores ecológicos e áreas campestres é essencial.</p></section>
+                        </div>
+                        <a class="biome-data-link" href="dashboard.html#painel-extincao">Ver dados de espécies ameaçadas <i class="bi bi-arrow-up-right"></i></a>
+                    </div>
+                    <figure class="biome-stop-image"><img src="assets/img/cerrado.png" alt="Ilustração do Cerrado brasileiro" loading="lazy"><figcaption>Campos, savanas e matas de galeria formam o mosaico do Cerrado.</figcaption></figure>
                 </article>
-                <article class="atlas-entry atlas-mata">
-                    <img src="assets/img/mico.png" alt="Mico-leão-dourado, espécie da Mata Atlântica" loading="lazy">
-                    <div class="atlas-copy"><span>03 · LITORAL E INTERIOR</span><h3>Mata Atlântica</h3><strong>≈ 13,0% do território brasileiro</strong><p>Florestas e ecossistemas associados, marcados por alto endemismo e intensa pressão de ocupação.</p><a href="dashboard.html#biomas">Ver dados do bioma <i class="bi bi-arrow-up-right"></i></a></div>
+                <article class="biome-stop" id="bioma-mata-atlantica" data-biome-name="Mata Atlântica" data-video="assets/videos/video_mata_atlantica.mp4" data-poster="assets/img/mata_atlantica.png" aria-labelledby="mata-title">
+                    <div class="biome-stop-copy">
+                        <span class="biome-stop-kicker">04 / LITORAL E INTERIOR · FLORESTAS E ECOSSISTEMAS ASSOCIADOS</span>
+                        <h3 id="mata-title">Mata Atlântica</h3>
+                        <p class="biome-lead">Um conjunto diverso de florestas e ecossistemas costeiros, com alto endemismo e presença marcante nas áreas mais povoadas do país.</p>
+                        <div class="biome-facts">
+                            <div><span>Território brasileiro</span><strong>cerca de 13%</strong></div>
+                            <div><span>Espécies ameaçadas*</span><strong>532</strong></div>
+                            <div><span>Clima predominante</span><strong>Tropical e subtropical</strong></div>
+                        </div>
+                        <div class="biome-detail-grid">
+                            <section><h4><i class="bi bi-cloud-rain"></i> Clima, relevo e águas</h4><p>Estende-se por latitudes e altitudes variadas, do litoral a planaltos interiores. O clima vai do tropical ao subtropical; serras e chuvas alimentam rios importantes e influenciam a disponibilidade de água para cidades.</p></section>
+                            <section><h4><i class="bi bi-flower1"></i> Flora e formações</h4><p>Floresta ombrófila densa, florestas estacionais, araucárias, restingas e manguezais integram o bioma e seus ecossistemas associados. Pau-brasil, jequitibá, palmito-juçara e araucária são exemplos emblemáticos.</p></section>
+                            <section><h4><i class="bi bi-feather"></i> Fauna em destaque</h4><p>Mico-leão-dourado, muriqui, jacutinga, anta e onça-pintada são exemplos de espécies que dependem de remanescentes florestais e da ligação entre fragmentos.</p></section>
+                            <section><h4><i class="bi bi-shield-check"></i> Pressões e conservação</h4><p>Histórico de desmatamento, fragmentação, urbanização, poluição e espécies invasoras pressiona a biodiversidade. Restaurar corredores, proteger nascentes e conservar remanescentes é decisivo para a recuperação do bioma.</p></section>
+                        </div>
+                        <a class="biome-data-link" href="dashboard.html#painel-extincao">Ver dados de espécies ameaçadas <i class="bi bi-arrow-up-right"></i></a>
+                    </div>
+                    <figure class="biome-stop-image"><img src="assets/img/mata_atlantica.png" alt="Ilustração da Mata Atlântica brasileira" loading="lazy"><figcaption>Florestas úmidas, restingas e manguezais compõem a diversidade atlântica.</figcaption></figure>
                 </article>
-                <article class="atlas-entry atlas-caatinga">
-                    <div class="atlas-landscape landscape-caatinga" role="img" aria-label="Ilustração de vegetação e solo do semiárido"></div>
-                    <div class="atlas-copy"><span>04 · NORDESTE</span><h3>Caatinga</h3><strong>≈ 9,9% do território brasileiro</strong><p>Bioma exclusivamente brasileiro, com espécies adaptadas à sazonalidade e às condições semiáridas.</p><a href="dashboard.html#biomas">Ver dados do bioma <i class="bi bi-arrow-up-right"></i></a></div>
+                <article class="biome-stop" id="bioma-caatinga" data-biome-name="Caatinga" data-video="assets/videos/video_caatinga.mp4" data-poster="assets/img/caatinga.png" aria-labelledby="caatinga-title">
+                    <div class="biome-stop-copy">
+                        <span class="biome-stop-kicker">05 / NORDESTE · O SEMIÁRIDO BRASILEIRO</span>
+                        <h3 id="caatinga-title">Caatinga</h3>
+                        <p class="biome-lead">Bioma exclusivamente brasileiro, com vida adaptada à irregularidade das chuvas e a longos períodos secos.</p>
+                        <div class="biome-facts">
+                            <div><span>Território brasileiro</span><strong>cerca de 10%</strong></div>
+                            <div><span>Espécies ameaçadas*</span><strong>114</strong></div>
+                            <div><span>Clima predominante</span><strong>Semiárido</strong></div>
+                        </div>
+                        <div class="biome-detail-grid">
+                            <section><h4><i class="bi bi-sun"></i> Clima, relevo e águas</h4><p>Chuvas escassas e irregulares, altas temperaturas e forte sazonalidade caracterizam grande parte da região. A paisagem reúne depressões, serras e planaltos; rios temporários e açudes têm papel importante no ciclo da água.</p></section>
+                            <section><h4><i class="bi bi-flower1"></i> Flora e formações</h4><p>Caatingas arbustivas e arbóreas, carrascos e formações rupestres variam conforme solo e altitude. Cactos, umbuzeiro, juazeiro e espécies que perdem as folhas na seca mostram diferentes estratégias para economizar água.</p></section>
+                            <section><h4><i class="bi bi-feather"></i> Fauna em destaque</h4><p>Tatu-bola, arara-azul-de-lear, soldadinho-do-araripe e mocó são exemplos da fauna regional. Muitas espécies utilizam refúgios específicos e respondem ao pulso das chuvas e à disponibilidade sazonal de alimento.</p></section>
+                            <section><h4><i class="bi bi-shield-check"></i> Pressões e conservação</h4><p>Desmatamento, extração de lenha, caça, sobrepastoreio e desertificação em áreas vulneráveis degradam habitats. Manejo sustentável da vegetação e da água, restauração e conservação de áreas naturais fortalecem a resiliência local.</p></section>
+                        </div>
+                        <a class="biome-data-link" href="dashboard.html#painel-extincao">Ver dados de espécies ameaçadas <i class="bi bi-arrow-up-right"></i></a>
+                    </div>
+                    <figure class="biome-stop-image"><img src="assets/img/caatinga.png" alt="Ilustração da Caatinga brasileira" loading="lazy"><figcaption>A vegetação da Caatinga responde às chuvas e à estação seca.</figcaption></figure>
                 </article>
-                <article class="atlas-entry atlas-pampa">
-                    <div class="atlas-landscape landscape-grass" role="img" aria-label="Paisagem ilustrada de campos nativos do Pampa"></div>
-                    <div class="atlas-copy"><span>05 · EXTREMO SUL</span><h3>Pampa</h3><strong>≈ 2,1% do território brasileiro</strong><p>Campos nativos e mosaicos de ambientes campestres, importantes para a fauna e a flora do Sul.</p><a href="dashboard.html#biomas">Ver dados do bioma <i class="bi bi-arrow-up-right"></i></a></div>
+                <article class="biome-stop" id="bioma-pantanal" data-biome-name="Pantanal" data-video="assets/videos/video_pantanal.mp4" data-poster="assets/img/pantanal.png" aria-labelledby="pantanal-title">
+                    <div class="biome-stop-copy">
+                        <span class="biome-stop-kicker">06 / CENTRO-OESTE · A PLANÍCIE DAS ÁGUAS</span>
+                        <h3 id="pantanal-title">Pantanal</h3>
+                        <p class="biome-lead">Uma grande planície inundável onde a alternância entre cheia e seca transforma a paisagem e conecta habitats.</p>
+                        <div class="biome-facts">
+                            <div><span>Território brasileiro</span><strong>cerca de 2%</strong></div>
+                            <div><span>Espécies ameaçadas*</span><strong>8</strong></div>
+                            <div><span>Clima predominante</span><strong>Tropical continental</strong></div>
+                        </div>
+                        <div class="biome-detail-grid">
+                            <section><h4><i class="bi bi-water"></i> Clima, relevo e águas</h4><p>Planície de baixa declividade na bacia do Alto Paraguai, influenciada por chuvas sazonais e pelo lento escoamento das águas. O pulso de inundação alterna campos alagados, baías, corixos e áreas secas.</p></section>
+                            <section><h4><i class="bi bi-flower1"></i> Flora e formações</h4><p>Campos inundáveis, matas ciliares, capões, cordilheiras e vegetação aquática formam um mosaico que também recebe influências de biomas vizinhos. Carandá, cambará e aguapé são exemplos de plantas associadas a diferentes condições de água.</p></section>
+                            <section><h4><i class="bi bi-feather"></i> Fauna em destaque</h4><p>Arara-azul-grande, tuiuiú, onça-pintada, ariranha e jacaré-do-pantanal encontram alimento e abrigo em ambientes que mudam com as cheias e vazantes.</p></section>
+                            <section><h4><i class="bi bi-shield-check"></i> Pressões e conservação</h4><p>Incêndios severos, alterações nos rios, desmatamento nas cabeceiras, assoreamento e expansão de atividades produtivas podem romper o ciclo das águas. Proteger a bacia inteira, inclusive áreas altas, é fundamental para o Pantanal.</p></section>
+                        </div>
+                        <a class="biome-data-link" href="dashboard.html#painel-extincao">Ver dados de espécies ameaçadas <i class="bi bi-arrow-up-right"></i></a>
+                    </div>
+                    <figure class="biome-stop-image"><img src="assets/img/pantanal.png" alt="Ilustração do Pantanal brasileiro" loading="lazy"><figcaption>Cheias e vazantes sustentam o mosaico de habitats pantaneiros.</figcaption></figure>
                 </article>
-                <article class="atlas-entry atlas-pantanal">
-                    <img src="assets/img/onca.jpg" alt="Onça-pintada em ambiente natural brasileiro" loading="lazy">
-                    <div class="atlas-copy"><span>06 · CENTRO-OESTE</span><h3>Pantanal</h3><strong>≈ 1,8% do território brasileiro</strong><p>Grande planície de inundação, onde os pulsos sazonais da água moldam habitats e ciclos de vida.</p><a href="dashboard.html#biomas">Ver dados do bioma <i class="bi bi-arrow-up-right"></i></a></div>
+                <article class="biome-stop" id="bioma-pampa" data-biome-name="Pampa" data-video="assets/videos/video_pampa.mp4" data-poster="assets/img/pampa.png" aria-labelledby="pampa-title">
+                    <div class="biome-stop-copy">
+                        <span class="biome-stop-kicker">07 / EXTREMO SUL · CAMPOS NATIVOS</span>
+                        <h3 id="pampa-title">Pampa</h3>
+                        <p class="biome-lead">Campos e outras formações campestres dominam a paisagem do único bioma brasileiro restrito a um estado: o Rio Grande do Sul.</p>
+                        <div class="biome-facts">
+                            <div><span>Território brasileiro</span><strong>cerca de 2%</strong></div>
+                            <div><span>Espécies ameaçadas*</span><strong>52</strong></div>
+                            <div><span>Clima predominante</span><strong>Subtropical</strong></div>
+                        </div>
+                        <div class="biome-detail-grid">
+                            <section><h4><i class="bi bi-cloud-sun"></i> Clima, relevo e águas</h4><p>Estações do ano bem marcadas, invernos frios e ocorrência de geadas caracterizam o clima subtropical. Coxilhas, planícies e áreas úmidas integram bacias como as dos rios Uruguai e Jacuí e o sistema da Lagoa dos Patos.</p></section>
+                            <section><h4><i class="bi bi-flower1"></i> Flora e formações</h4><p>Campos de gramíneas e outras plantas herbáceas se alternam com capões, matas ciliares, banhados e afloramentos rochosos. A diversidade de plantas campestres é elevada e depende da conservação do solo e do manejo adequado.</p></section>
+                            <section><h4><i class="bi bi-feather"></i> Fauna em destaque</h4><p>Veado-campeiro, graxaim-do-campo, tuco-tuco, ema e cardeal-amarelo são exemplos de espécies associadas a campos e áreas abertas. Aves campestres dependem da manutenção de áreas nativas conectadas.</p></section>
+                            <section><h4><i class="bi bi-shield-check"></i> Pressões e conservação</h4><p>Conversão dos campos para lavouras e silvicultura, fragmentação e manejo inadequado reduzem habitats nativos. Conservar campos não significa excluir usos sustentáveis: é importante compatibilizar produção, pecuária campestre e biodiversidade.</p></section>
+                        </div>
+                        <a class="biome-data-link" href="dashboard.html#painel-extincao">Ver dados de espécies ameaçadas <i class="bi bi-arrow-up-right"></i></a>
+                    </div>
+                    <figure class="biome-stop-image"><img src="assets/img/pampa.png" alt="Ilustração do Pampa brasileiro" loading="lazy"><figcaption>Campos nativos e banhados caracterizam parte da paisagem do Pampa.</figcaption></figure>
                 </article>
             </div>
-            <p class="field-source"><i class="bi bi-journal-text"></i> Fonte das áreas e delimitações: <a href="https://www.ibge.gov.br/geociencias/informacoes-ambientais/vegetacao/15842-biomas.html" target="_blank" rel="noopener noreferrer">IBGE — Biomas e Sistema Costeiro-Marinho do Brasil</a>. Imagens ilustram espécies e paisagens e não substituem mapas oficiais.</p>
+            <p class="field-source biome-atlas-source"><i class="bi bi-journal-text"></i> Áreas aproximadas e características gerais: <a href="https://www.ibge.gov.br/geociencias/informacoes-ambientais/vegetacao/15842-biomas.html" target="_blank" rel="noopener noreferrer">IBGE — Biomas e Sistema Costeiro-Marinho do Brasil</a>. Exemplos de espécies não são listas completas. *Contagem exclusiva do painel com base na busca por espécies CR, EN e VU no <a href="https://salve.icmbio.gov.br/" target="_blank" rel="noopener noreferrer">SALVE/ICMBio</a>, consultado em 18/11/2026: espécies com ocorrência em mais de um bioma são atribuídas ao primeiro da ordem Amazônia, Cerrado, Mata Atlântica, Caatinga, Pantanal e Pampa. Não são os totais oficiais de ocorrência por bioma.</p>
         </section>
         <aside class="field-next"><span>PRÓXIMA PARADA</span><div><h2>Quem vive por aqui?</h2><p>Consulte fichas de espécies e categorias de conservação.</p></div><a href="mostruario.html">Abrir o mostruário <i class="bi bi-arrow-up-right"></i></a></aside>
     </main>
@@ -90,5 +220,6 @@
         <div class="footer-bottom"><p>© 2026 Extinção Zero — Fatec Carapicuíba. Projeto educativo sem fins lucrativos.</p><p>Dados com finalidade educativa. Consulte as fontes originais.</p></div>
     </footer>
     <script src="js/common.js"></script>
+    <script src="js/biomas.js"></script>
 </body>
 </html>

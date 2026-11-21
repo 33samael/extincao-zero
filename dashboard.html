@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Painel de dados sobre os biomas brasileiros e espécies da fauna ameaçadas de extinção.">
-    <title>Dados da biodiversidade | Extinção Zero</title>
+    <title>Dados da Extinção | Extinção Zero</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/dashboard.css">
@@ -41,39 +41,159 @@
         <section class="dashboard-hero" aria-labelledby="dashboard-title">
             <div class="dashboard-intro">
                 <div class="dashboard-eyebrow"><span></span> PAINEL DE BIODIVERSIDADE <span class="eyebrow-year">DADOS OFICIAIS</span></div>
-                <h1 id="dashboard-title">A vida que<br><em>precisamos proteger.</em></h1>
-                <p>Explore a dimensão dos biomas brasileiros e conheça espécies da fauna ameaçadas. Os números vêm de fontes científicas e oficiais, com escopos e categorias identificados.</p>
-                <a class="dashboard-cta" href="#biomas">Explorar os dados <i class="bi bi-arrow-down-right"></i></a>
+                <h1 id="dashboard-title">Dados da<br><em>Extinção.</em></h1>
+                <p>Entenda a situação da biodiversidade brasileira através dos dados.</p>
+                <a class="dashboard-cta" href="#painel-extincao">Explorar os dados <i class="bi bi-arrow-down-right"></i></a>
             </div>
             <aside class="hero-stat" aria-label="Resumo da fauna brasileira ameaçada">
                 <div class="hero-stat-icon"><i class="bi bi-heart-pulse"></i></div>
                 <span class="stat-kicker">FAUNA BRASILEIRA</span>
-                <strong>1.249</strong>
-                <span class="hero-stat-label">espécies ameaçadas de extinção</span>
-                <span class="hero-stat-source">Lista nacional · ICMBio / MMA</span>
+                <strong>1.383</strong>
+                <span class="hero-stat-label">espécies ameaçadas (VU + EN + CR)</span>
+                <span class="hero-stat-source">SALVE · ICMBio · consulta em 18/11/2026</span>
                 <div class="stat-decoration" aria-hidden="true"><i class="bi bi-feather"></i></div>
             </aside>
         </section>
 
-        <section class="overview-grid" aria-label="Indicadores gerais">
-            <article class="overview-card">
-                <span class="overview-icon"><i class="bi bi-globe-americas"></i></span>
-                <div><span class="overview-label">BIOMAS CONTINENTAIS</span><strong>6</strong><p>Uma diversidade de paisagens e ecossistemas.</p></div>
-            </article>
-            <article class="overview-card">
-                <span class="overview-icon"><i class="bi bi-map"></i></span>
-                <div><span class="overview-label">TERRITÓRIO BRASILEIRO</span><strong>≈ 8,5 mi <small>km²</small></strong><p>Área total aproximada dos seis biomas.</p></div>
-            </article>
+        <section class="overview-grid" aria-label="Indicadores gerais da fauna brasileira">
             <article class="overview-card">
                 <span class="overview-icon"><i class="bi bi-journal-check"></i></span>
-                <div><span class="overview-label">REFERÊNCIA DE AMEAÇA</span><strong>ICMBio + IUCN</strong><p>Listas nacional e global, apresentadas separadamente.</p></div>
+                <div><span class="overview-label">ESPÉCIES AVALIADAS</span><strong data-indicator="evaluated">15.974</strong><p>Fauna avaliada pelo processo nacional do ICMBio.</p></div>
             </article>
+            <article class="overview-card">
+                <span class="overview-icon"><i class="bi bi-exclamation-triangle"></i></span>
+                <div><span class="overview-label">AMEAÇADAS</span><strong data-indicator="threatened">1.383</strong><p>Espécies nas categorias VU, EN ou CR da lista nacional.</p></div>
+            </article>
+            <article class="overview-card">
+                <span class="overview-icon"><i class="bi bi-heart-pulse"></i></span>
+                <div><span class="overview-label">CRITICAMENTE AMEAÇADAS</span><strong data-indicator="critical">361</strong><p>Espécies na categoria Criticamente em Perigo (CR).</p></div>
+            </article>
+            <article class="overview-card">
+                <span class="overview-icon"><i class="bi bi-globe-americas"></i></span>
+                <div><span class="overview-label">BIOMAS CONTINENTAIS AFETADOS</span><strong data-indicator="biomes">6</strong><p>Biomas com espécies ameaçadas registradas no SALVE.</p></div>
+            </article>
+        </section>
+
+        <section class="dashboard-section extinction-dashboard" id="painel-extincao" aria-labelledby="extinction-title">
+            <div class="section-heading">
+                <div>
+                    <span class="section-kicker">01 / PANORAMA NACIONAL</span>
+                    <h2 id="extinction-title">Situação das <em>espécies avaliadas.</em></h2>
+                </div>
+                <p>Os gráficos usam a lista nacional vigente. Como uma espécie pode ocorrer em mais de um bioma, a distribuição a atribui a apenas um, seguindo a ordem da lista.</p>
+            </div>
+
+            <form class="dashboard-filters" id="dashboard-filters" aria-label="Filtros do dashboard">
+                <label class="filter-label" for="biome-filter">Bioma
+                    <select id="biome-filter">
+                        <option value="todos">Todos os biomas</option>
+                        <option value="Amazônia">Amazônia</option>
+                        <option value="Cerrado">Cerrado</option>
+                        <option value="Mata Atlântica">Mata Atlântica</option>
+                        <option value="Caatinga">Caatinga</option>
+                        <option value="Pantanal">Pantanal</option>
+                        <option value="Pampa">Pampa</option>
+                        <option value="sem-bioma-continental">Costeiro-marinho / sem bioma continental</option>
+                    </select>
+                </label>
+                <label class="filter-label" for="taxon-filter">Grupo animal
+                    <select id="taxon-filter">
+                        <option value="todos">Todos os grupos</option>
+                        <option value="Mamíferos">Mamíferos</option>
+                        <option value="Aves">Aves</option>
+                        <option value="Répteis">Répteis</option>
+                        <option value="Anfíbios">Anfíbios</option>
+                        <option value="Peixes">Peixes</option>
+                        <option value="Invertebrados">Invertebrados</option>
+                    </select>
+                </label>
+                <label class="filter-label" for="state-filter">Estado
+                    <select id="state-filter">
+                        <option value="todos">Todos os estados</option>
+                    </select>
+                </label>
+                <label class="filter-label" for="risk-filter">Categoria nacional
+                    <select id="risk-filter">
+                        <option value="todos">Todas as categorias</option>
+                        <option value="CR">CR · Criticamente em perigo</option>
+                        <option value="EN">EN · Em perigo</option>
+                        <option value="VU">VU · Vulnerável</option>
+                    </select>
+                </label>
+                <label class="filter-label" for="period-filter">Ano da avaliação
+                    <select id="period-filter">
+                        <option value="todos">Todos os anos</option>
+                        <option value="2010-2014">2010–2014</option>
+                        <option value="2015-2019">2015–2019</option>
+                        <option value="2020-2024">2020–2024</option>
+                        <option value="2025-2029">2025–2029</option>
+                    </select>
+                </label>
+                <button class="filter-reset" id="clear-filters" type="reset"><i class="bi bi-arrow-counterclockwise"></i> Limpar filtros</button>
+            </form>
+            <p class="filter-summary" id="filter-summary" aria-live="polite"></p>
+
+            <div class="dashboard-charts">
+                <article class="data-panel status-panel">
+                    <div class="data-panel-heading"><span class="section-kicker">02 / CATEGORIA NACIONAL</span><h3>Status de conservação</h3></div>
+                    <div class="status-chart-layout">
+                        <div class="status-donut" id="status-donut" role="img" aria-label="Distribuição por categoria nacional"><div class="donut-center"><strong id="status-total">1.383</strong><span>ESPÉCIES</span></div></div>
+                        <ul class="status-chart-legend" id="status-chart-legend"></ul>
+                    </div>
+                    <p class="chart-note">Esta lista contém espécies ameaçadas; LC e NT não fazem parte deste conjunto.</p>
+                </article>
+                <article class="data-panel">
+                    <div class="data-panel-heading"><span class="section-kicker">03 / GRUPO TAXONÔMICO</span><h3>Espécies por grupo</h3></div>
+                    <div class="dashboard-bars" id="group-bars" aria-label="Espécies ameaçadas por grupo animal"></div>
+                </article>
+                <article class="data-panel">
+                    <div class="data-panel-heading"><span class="section-kicker">04 / DISTRIBUIÇÃO</span><h3>Espécies ameaçadas por bioma</h3></div>
+                    <div class="dashboard-bars" id="biome-bars" aria-label="Espécies ameaçadas por bioma"></div>
+                    <ul class="biome-color-legend" aria-label="Legenda de cores dos biomas">
+                        <li style="--biome-color:#97af41"><i aria-hidden="true"></i>Amazônia</li>
+                        <li style="--biome-color:#f9b558"><i aria-hidden="true"></i>Cerrado</li>
+                        <li style="--biome-color:#71bf97"><i aria-hidden="true"></i>Mata Atlântica</li>
+                        <li style="--biome-color:#fde588"><i aria-hidden="true"></i>Caatinga</li>
+                        <li style="--biome-color:#78968d"><i aria-hidden="true"></i>Pantanal</li>
+                        <li style="--biome-color:#f4e1bc"><i aria-hidden="true"></i>Pampa</li>
+                    </ul>
+                    <ul class="biome-color-legend" aria-label="Legenda da categoria sem bioma continental">
+                        <li style="--biome-color:#8b9b9f"><i aria-hidden="true"></i>Costeiro-marinho / sem bioma continental</li>
+                    </ul>
+                    <p class="chart-note">Cada espécie é contada uma única vez, no primeiro bioma disponível nesta ordem: Amazônia, Cerrado, Mata Atlântica, Caatinga, Pantanal e Pampa. Espécies apenas costeiro-marinhas ou sem bioma continental ficam na categoria separada; o total é 1.383.</p>
+                </article>
+                <article class="data-panel">
+                    <div class="data-panel-heading"><span class="section-kicker">05 / ANO DE AVALIAÇÃO</span><h3>Avaliações na lista vigente</h3></div>
+                    <div class="timeline-chart" id="assessment-timeline" aria-label="Avaliações de espécies ameaçadas por ano"></div>
+                    <p class="chart-note">Mostra o ano da avaliação das espécies que constam na lista atual — não é uma série histórica do total de espécies ameaçadas.</p>
+                </article>
+            </div>
+
+            <article class="data-panel risk-map-panel">
+                <div class="data-panel-heading"><span class="section-kicker">06 / DISTRIBUIÇÃO GEOGRÁFICA</span><h3>Registros por bioma brasileiro</h3><p>Selecione uma região para filtrar o painel.</p></div>
+                <div class="risk-map-layout">
+                    <div class="biome-map">
+                        <img class="biome-map-image" src="assets/img/brasil.png" alt="Mapa ilustrado dos biomas brasileiros. Clique sobre uma região para filtrar ou use os cartões abaixo.">
+                    </div>
+                    <div class="risk-map-details" id="risk-map-details"></div>
+                </div>
+                <ul class="biome-color-legend" aria-label="Legenda de cores dos biomas no mapa">
+                    <li style="--biome-color:#97af41"><i aria-hidden="true"></i>Amazônia</li>
+                    <li style="--biome-color:#f9b558"><i aria-hidden="true"></i>Cerrado</li>
+                    <li style="--biome-color:#71bf97"><i aria-hidden="true"></i>Mata Atlântica</li>
+                    <li style="--biome-color:#fde588"><i aria-hidden="true"></i>Caatinga</li>
+                    <li style="--biome-color:#78968d"><i aria-hidden="true"></i>Pantanal</li>
+                    <li style="--biome-color:#f4e1bc"><i aria-hidden="true"></i>Pampa</li>
+                </ul>
+                <p class="chart-note">A distribuição atribui cada espécie a um único bioma pela ordem indicada no gráfico acima. A categoria costeiro-marinha / sem bioma continental aparece apenas no gráfico, não no mapa.</p>
+            </article>
+            <p class="source-line dashboard-data-source"><i class="bi bi-journal-text"></i> Fonte oficial: <a href="https://salve.icmbio.gov.br/" target="_blank" rel="noopener noreferrer">SALVE — Sistema de Avaliação do Risco de Extinção da Biodiversidade (ICMBio)</a>. A busca de espécies e os indicadores de categorias deste painel consultam a lista pública do SALVE e são sincronizados a cada 24 horas enquanto o dashboard estiver aberto, ou ao reabri-lo. Também é possível consultar manualmente pelo botão de atualização. A consulta é feita neste navegador; o histórico de mudanças fica salvo localmente. Os filtros detalhados por grupo, UF e período ainda usam a base local do painel. A listagem resumida não contém todos os dados ecológicos: consulte a ficha SALVE vinculada a cada espécie.</p>
         </section>
 
         <section class="dashboard-section" id="biomas" aria-labelledby="biomes-title">
             <div class="section-heading">
                 <div>
-                    <span class="section-kicker">01 / TERRITÓRIO</span>
+                    <span class="section-kicker">07 / TERRITÓRIO</span>
                     <h2 id="biomes-title">Seis biomas, <em>um país.</em></h2>
                 </div>
                 <p>Participação aproximada de cada bioma na área do Brasil, conforme a delimitação territorial do IBGE.</p>
@@ -88,27 +208,27 @@
                     <span class="chart-note">Percentuais arredondados; podem não somar 100%.</span>
                 </div>
                 <div class="biome-list" aria-label="Área aproximada por bioma">
-                    <article class="biome-row" style="--biome-color:#9cff27;--biome-share:49.3%">
+                    <article class="biome-row" style="--biome-color:#97af41;--biome-share:49.3%">
                         <div class="biome-row-top"><span class="biome-name"><i></i>Amazônia</span><strong>49,3%</strong></div>
                         <div class="biome-track"><span></span></div><span class="biome-area">≈ 4,2 milhões km²</span>
                     </article>
-                    <article class="biome-row" style="--biome-color:#d5b65b;--biome-share:23.9%">
+                    <article class="biome-row" style="--biome-color:#f9b558;--biome-share:23.9%">
                         <div class="biome-row-top"><span class="biome-name"><i></i>Cerrado</span><strong>23,9%</strong></div>
                         <div class="biome-track"><span></span></div><span class="biome-area">≈ 2,0 milhões km²</span>
                     </article>
-                    <article class="biome-row" style="--biome-color:#54b876;--biome-share:13%">
+                    <article class="biome-row" style="--biome-color:#71bf97;--biome-share:13%">
                         <div class="biome-row-top"><span class="biome-name"><i></i>Mata Atlântica</span><strong>13,0%</strong></div>
                         <div class="biome-track"><span></span></div><span class="biome-area">≈ 1,1 milhão km²</span>
                     </article>
-                    <article class="biome-row" style="--biome-color:#e5a152;--biome-share:9.9%">
+                    <article class="biome-row" style="--biome-color:#fde588;--biome-share:9.9%">
                         <div class="biome-row-top"><span class="biome-name"><i></i>Caatinga</span><strong>9,9%</strong></div>
                         <div class="biome-track"><span></span></div><span class="biome-area">≈ 844 mil km²</span>
                     </article>
-                    <article class="biome-row" style="--biome-color:#84a9a0;--biome-share:2.1%">
+                    <article class="biome-row" style="--biome-color:#f4e1bc;--biome-share:2.1%">
                         <div class="biome-row-top"><span class="biome-name"><i></i>Pampa</span><strong>2,1%</strong></div>
                         <div class="biome-track"><span></span></div><span class="biome-area">≈ 176 mil km²</span>
                     </article>
-                    <article class="biome-row" style="--biome-color:#74b9d4;--biome-share:1.8%">
+                    <article class="biome-row" style="--biome-color:#78968d;--biome-share:1.8%">
                         <div class="biome-row-top"><span class="biome-name"><i></i>Pantanal</span><strong>1,8%</strong></div>
                         <div class="biome-track"><span></span></div><span class="biome-area">≈ 150 mil km²</span>
                     </article>
@@ -120,46 +240,36 @@
         <section class="dashboard-section species-section" id="especies" aria-labelledby="species-title">
             <div class="section-heading species-heading">
                 <div>
-                    <span class="section-kicker">02 / ESPÉCIES AMEAÇADAS</span>
-                    <h2 id="species-title">Cada espécie importa.</h2>
+                    <span class="section-kicker">08 / ESPÉCIES AMEAÇADAS</span>
+                    <h2 id="species-title">Espécies em destaque.</h2>
                 </div>
             </div>
-            <p class="species-context">O ICMBio registra <strong>1.249 espécies da fauna brasileira ameaçadas</strong> na lista nacional. Abaixo, exemplos com suas categorias globais da IUCN e nacionais do ICMBio. As categorias podem divergir porque os escopos de avaliação são diferentes.</p>
+            <p class="species-context">Estas quatro espécies ficam em destaque. Pesquise a lista oficial de espécies ameaçadas do <strong>SALVE/ICMBio</strong> pelo nome popular ou científico; a base é atualizada periodicamente.</p>
 
-            <div class="species-tools" role="search" aria-label="Pesquisar e filtrar espécies">
+            <section class="salve-updates" aria-labelledby="salve-updates-title">
+                <div class="salve-updates-heading">
+                    <h3 id="salve-updates-title">Atualizações do SALVE</h3>
+                    <div class="salve-updates-controls">
+                        <time id="salve-sync-time">Aguardando consulta</time>
+                        <button id="salve-refresh" type="button">Atualizar agora</button>
+                    </div>
+                </div>
+                <p id="salve-sync-message" role="status" aria-live="polite">A lista será conferida automaticamente.</p>
+                <ul id="salve-update-list"></ul>
+            </section>
+
+            <div class="species-tools" role="search" aria-label="Pesquisar espécies ameaçadas no SALVE">
                 <label class="species-search" for="species-search">
                     <i class="bi bi-search" aria-hidden="true"></i>
-                    <input id="species-search" type="search" placeholder="Nome popular ou científico" autocomplete="off">
+                    <input id="species-search" type="search" placeholder="Digite um nome popular ou científico" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="species-search-suggestions">
                 </label>
-                <label class="filter-label" for="biome-filter">Bioma
-                    <select id="biome-filter">
-                        <option value="todos">Todos</option>
-                        <option value="mata-atlantica">Mata Atlântica</option>
-                        <option value="caatinga">Caatinga</option>
-                        <option value="amazonia">Amazônia</option>
-                        <option value="cerrado">Cerrado</option>
-                        <option value="pantanal">Pantanal</option>
-                        <option value="pampa">Pampa</option>
-                    </select>
-                </label>
-                <label class="filter-label" for="taxon-filter">Grupo
-                    <select id="taxon-filter">
-                        <option value="todos">Todos os grupos</option>
-                        <option value="mamifero">Mamíferos</option>
-                        <option value="ave">Aves</option>
-                    </select>
-                </label>
-                <label class="filter-label" for="risk-filter">Categoria nacional
-                    <select id="risk-filter">
-                        <option value="todos">Todas as categorias</option>
-                        <option value="EN">EN · Em perigo</option>
-                        <option value="VU">VU · Vulnerável</option>
-                    </select>
-                </label>
+                <ul class="species-search-suggestions" id="species-search-suggestions" role="listbox" aria-label="Sugestões de espécies" hidden></ul>
             </div>
 
+            <div class="species-search-results" id="species-search-results" aria-live="polite" hidden></div>
+
             <div class="species-grid" id="species-grid">
-                <article class="species-card" data-biomes="mata-atlantica" data-taxon="mamifero" data-risk="EN" data-search="mico-leao-dourado leontopithecus rosalia">
+                <article class="species-card" data-scientific="Leontopithecus rosalia" data-search="mico-leao-dourado leontopithecus rosalia">
                     <div class="species-image"><img src="assets/img/mico.png" alt="Mico-leão-dourado" loading="lazy"><span class="species-order">01</span></div>
                     <div class="species-content">
                         <span class="species-biome"><i class="bi bi-geo-alt"></i> Mata Atlântica</span>
@@ -168,7 +278,7 @@
                         <a class="species-source" href="https://www.iucnredlist.org/search?query=Leontopithecus%20rosalia&searchType=species" target="_blank" rel="noopener noreferrer">Consultar IUCN <i class="bi bi-box-arrow-up-right"></i></a>
                     </div>
                 </article>
-                <article class="species-card" data-biomes="cerrado pantanal amazonia" data-taxon="ave" data-risk="VU" data-search="arara-azul-grande anodorhynchus hyacinthinus">
+                <article class="species-card" data-scientific="Anodorhynchus hyacinthinus" data-search="arara-azul-grande anodorhynchus hyacinthinus">
                     <div class="species-image"><img src="assets/img/arara.png" alt="Arara-azul-grande" loading="lazy"><span class="species-order">02</span></div>
                     <div class="species-content">
                         <span class="species-biome"><i class="bi bi-geo-alt"></i> Cerrado e Pantanal</span>
@@ -177,7 +287,7 @@
                         <a class="species-source" href="https://www.iucnredlist.org/search?query=Anodorhynchus%20hyacinthinus&searchType=species" target="_blank" rel="noopener noreferrer">Consultar IUCN <i class="bi bi-box-arrow-up-right"></i></a>
                     </div>
                 </article>
-                <article class="species-card" data-biomes="cerrado" data-taxon="mamifero" data-risk="VU" data-search="lobo-guara chrysocyon brachyurus">
+                <article class="species-card" data-scientific="Chrysocyon brachyurus" data-search="lobo-guara chrysocyon brachyurus">
                     <div class="species-image"><img src="assets/img/lobo-guara.png" alt="Lobo-guará" loading="lazy"><span class="species-order">03</span></div>
                     <div class="species-content">
                         <span class="species-biome"><i class="bi bi-geo-alt"></i> Cerrado e áreas abertas</span>
@@ -186,7 +296,7 @@
                         <a class="species-source" href="https://www.iucnredlist.org/search?query=Chrysocyon%20brachyurus&searchType=species" target="_blank" rel="noopener noreferrer">Consultar IUCN <i class="bi bi-box-arrow-up-right"></i></a>
                     </div>
                 </article>
-                <article class="species-card" data-biomes="amazonia cerrado pantanal mata-atlantica caatinga" data-taxon="mamifero" data-risk="VU" data-search="onca-pintada panthera onca">
+                <article class="species-card" data-scientific="Panthera onca" data-search="onca-pintada panthera onca">
                     <div class="species-image"><img src="assets/img/onca.jpg" alt="Onça-pintada" loading="lazy"><span class="species-order">04</span></div>
                     <div class="species-content">
                         <span class="species-biome"><i class="bi bi-geo-alt"></i> Diferentes biomas</span>
@@ -200,7 +310,7 @@
             <div class="status-legend"><span><i class="legend-status endangered"></i> EN · Em perigo</span><span><i class="legend-status vulnerable"></i> VU · Vulnerável</span><span><i class="legend-status near-threatened"></i> NT · Quase ameaçada</span></div>
             <section class="threats-panel" aria-labelledby="threats-title">
                 <div class="threats-heading">
-                    <span class="section-kicker">03 / PRESSÕES SOBRE A FAUNA</span>
+                    <span class="section-kicker">09 / PRESSÕES SOBRE A FAUNA</span>
                     <h3 id="threats-title">O que ameaça a vida?</h3>
                     <p>As ameaças variam por espécie e território. Estes fatores aparecem em avaliações e planos de ação de conservação — não são uma classificação única para toda a fauna.</p>
                 </div>
@@ -212,7 +322,7 @@
                 </div>
                 <p class="source-line"><i class="bi bi-journal-text"></i> Referências para avaliação de ameaças: <a href="https://www.gov.br/icmbio/pt-br/assuntos/biodiversidade/pan" target="_blank" rel="noopener noreferrer">Planos de Ação Nacional para a Conservação das Espécies Ameaçadas (ICMBio)</a> e <a href="https://www.iucnredlist.org/resources/threat-classification-scheme" target="_blank" rel="noopener noreferrer">Classificação de ameaças da IUCN</a>.</p>
             </section>
-            <p class="source-line"><i class="bi bi-info-circle"></i> Lista nacional: <a href="https://www.in.gov.br/en/web/dou/-/portaria-mma-n-148-de-7-de-junho-de-2022-406272733" target="_blank" rel="noopener noreferrer">ICMBio / MMA — Portaria MMA nº 148/2022</a>. Categorias globais: <a href="https://www.iucnredlist.org/" target="_blank" rel="noopener noreferrer">IUCN Red List</a>. Consulte as fichas para detalhes da avaliação.</p>
+            <p class="source-line"><i class="bi bi-info-circle"></i> Consulte a <a href="https://www.gov.br/icmbio/pt-br/assuntos/biodiversidade/fauna-brasileira" target="_blank" rel="noopener noreferrer">lista nacional vigente do ICMBio / MMA</a> e as fichas globais da <a href="https://www.iucnredlist.org/" target="_blank" rel="noopener noreferrer">IUCN Red List</a>. Consulte as fichas para detalhes e datas de cada avaliação.</p>
         </section>
 
     </main>
@@ -220,11 +330,13 @@
         <div class="footer-container">
             <div class="footer-brand"><div class="footer-logo"><a href="index.html" class="logo"><img src="assets/img/logo.svg" alt="Extinção Zero"></a></div><p>Projeto acadêmico da Fatec Carapicuíba.<br>Conhecer é o primeiro passo para preservar.</p></div>
             <div class="footer-navigation"><h4>NAVEGAÇÃO</h4><div class="footer-links"><div><a href="index.html">Início</a><a href="app.html">O App</a><a href="dashboard.html">Dashboard</a><a href="biomas.html">Biomas</a></div><div><a href="mostruario.html">Mostruário</a><a href="preservar.html">Preservar</a><a href="loja.html">Loja</a></div></div></div>
-            <div class="footer-sources"><h4>FONTES DE DADOS</h4><p>ICMBio/MMA · IUCN Red List · IBGE · INPE/PRODES · MapBiomas</p></div>
+            <div class="footer-sources"><h4>FONTES DE DADOS</h4><p>SALVE · ICMBio/MMA · IUCN Red List · IBGE · INPE/PRODES · MapBiomas</p></div>
         </div>
         <div class="footer-bottom"><p>© 2026 Extinção Zero — Fatec Carapicuíba. Projeto educativo sem fins lucrativos.</p><p>Dados com finalidade educativa. Consulte as fontes originais.</p></div>
     </footer>
     <script src="js/common.js"></script>
+    <script src="js/dashboard-data.js"></script>
+    <script src="api/salve-species-api.js"></script>
     <script src="js/dashboard.js"></script>
 </body>
 </html>

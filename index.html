@@ -84,8 +84,8 @@
                     <i class="bi bi-arrow-right"></i>
                 </a>
 
-                <a href="#" class="btn-secondary problem-button-2">
-                    Assistir ao trailer
+                <a href="app.html#jornada" class="btn-secondary problem-button-2">
+                    Explorar o protótipo
                     <i class="bi bi-play-fill"></i>
                 </a>
 
@@ -94,23 +94,23 @@
             <!-- LOJAS -->
             <div class="store-buttons">
 
-                <a href="#" class="store-button">
+                <div class="store-button store-status">
                     <i class="bi bi-play-fill"></i>
 
                     <span>
-                        <small>DISPONÍVEL EM</small>
+                        <small>EM DESENVOLVIMENTO</small>
                         Google Play
                     </span>
-                </a>
+                </div>
 
-                <a href="#" class="store-button">
+                <div class="store-button store-status">
                     <i class="bi bi-apple"></i>
 
                     <span>
-                        <small>BAIXAR NA</small>
+                        <small>AINDA INDISPONÍVEL</small>
                         App Store
                     </span>
-                </a>
+                </div>
 
             </div>
 
@@ -269,10 +269,10 @@
 
 
     <!-- CARROSSEL -->
-    <div class="field-carousel">
+    <div class="field-carousel" role="region" aria-roledescription="carrossel" aria-label="Destaques sobre espécies, biomas e preservação" aria-live="off">
 
         <!-- SLIDE 1 -->
-        <div class="field-slide active">
+        <div class="field-slide active" role="group" aria-roledescription="slide" aria-label="1 de 3: Onça-pintada">
             <img src="assets/img/onca.jpg" alt="Onça-pintada">
 
             <div class="slide-overlay"></div>
@@ -288,7 +288,7 @@
                     passo para protegê-la.
                 </p>
 
-                <a href="#" class="slide-button">
+                <a href="mostruario.html" class="slide-button">
                     Ver no mostruário
                     <i class="bi bi-arrow-right"></i>
                 </a>
@@ -297,7 +297,7 @@
 
 
         <!-- SLIDE 2 -->
-        <div class="field-slide">
+        <div class="field-slide" role="group" aria-roledescription="slide" aria-label="2 de 3: Amazônia">
             <img src="assets/img/amazonia.jpg" alt="Amazônia">
 
             <div class="slide-overlay"></div>
@@ -313,7 +313,7 @@
                     o continente.
                 </p>
 
-                <a href="#" class="slide-button">
+                <a href="biomas.html" class="slide-button">
                     Explorar biomas
                     <i class="bi bi-arrow-right"></i>
                 </a>
@@ -322,7 +322,7 @@
 
 
         <!-- SLIDE 3 -->
-        <div class="field-slide">
+        <div class="field-slide" role="group" aria-roledescription="slide" aria-label="3 de 3: Queimadas">
             <img src="assets/img/queimadas.jpg" alt="Queimadas">
 
             <div class="slide-overlay"></div>
@@ -337,7 +337,7 @@
                     como denunciar focos de incêndio, salvam ecossistemas inteiros.
                 </p>
 
-                <a href="#" class="slide-button">
+                <a href="preservar.html" class="slide-button">
                     Como preservar
                     <i class="bi bi-arrow-right"></i>
                 </a>
@@ -348,22 +348,22 @@
         <!-- CONTROLES -->
         <div class="carousel-controls">
 
-            <div class="carousel-dots">
-                <span class="carousel-dot active"></span>
-                <span class="carousel-dot"></span>
-                <span class="carousel-dot"></span>
+            <div class="carousel-dots" role="group" aria-label="Selecionar destaque">
+                <button class="carousel-dot active" type="button" aria-label="Mostrar destaque 1 de 3" aria-pressed="true"></button>
+                <button class="carousel-dot" type="button" aria-label="Mostrar destaque 2 de 3" aria-pressed="false"></button>
+                <button class="carousel-dot" type="button" aria-label="Mostrar destaque 3 de 3" aria-pressed="false"></button>
             </div>
 
             <div class="carousel-buttons">
-                <button id="carousel-pause">
+                <button id="carousel-pause" type="button" aria-label="Pausar rotação dos destaques">
                     <i class="bi bi-pause"></i>
                 </button>
 
-                <button id="carousel-prev">
+                <button id="carousel-prev" type="button" aria-label="Destaque anterior">
                     <i class="bi bi-chevron-left"></i>
                 </button>
 
-                <button id="carousel-next">
+                <button id="carousel-next" type="button" aria-label="Próximo destaque">
                     <i class="bi bi-chevron-right"></i>
                 </button>
             </div>
@@ -476,7 +476,7 @@
                 por isso, conhecer é o primeiro passo para preservar.
             </p>
 
-            <a href="#" class="problem-button">
+            <a href="dashboard.html#painel-extincao" class="problem-button">
                 Exibir os dados
                 <i class="bi bi-arrow-right"></i>
             </a>
@@ -736,7 +736,7 @@
                             VERSÃO 2024-2 · ATUALIZADA EM 01/2024
                         </small>
 
-                        <a href="#" target="_blank">
+                        <a href="https://www.iucnredlist.org/" target="_blank" rel="noopener noreferrer">
                             Saiba mais
                             <i class="bi bi-box-arrow-up-right"></i>
                         </a>
@@ -761,7 +761,7 @@
                             PORTARIA MMA Nº 148 · JUN/2022
                         </small>
 
-                        <a href="#" target="_blank">
+                        <a href="https://www.gov.br/icmbio/pt-br/assuntos/biodiversidade/fauna-brasileira/lista-de-especies-ameacadas-de-extincao" target="_blank" rel="noopener noreferrer">
                             Saiba mais
                             <i class="bi bi-box-arrow-up-right"></i>
                         </a>
@@ -785,7 +785,7 @@
                             MAPA DE BIOMAS · 2019
                         </small>
 
-                        <a href="#" target="_blank">
+                        <a href="https://www.ibge.gov.br/geociencias/informacoes-ambientais/vegetacao/15842-biomas.html" target="_blank" rel="noopener noreferrer">
                             Saiba mais
                             <i class="bi bi-box-arrow-up-right"></i>
                         </a>
@@ -810,7 +810,7 @@
                             ATLAS DOS REMANESCENTES · 2023
                         </small>
 
-                        <a href="#" target="_blank">
+                        <a href="https://www.sosma.org.br/iniciativas/atlas-da-mata-atlantica/" target="_blank" rel="noopener noreferrer">
                             Saiba mais
                             <i class="bi bi-box-arrow-up-right"></i>
                         </a>

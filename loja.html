@@ -1313,6 +1313,8 @@
         <button
             class="close-cart"
             id="closeCart"
+            type="button"
+            aria-label="Fechar carrinho"
         >
 
             <i class="bi bi-x-lg"></i>
@@ -1387,19 +1389,18 @@
             </div>
 
             <div class="checkout-field">
+                <label for="checkoutPostalCode">CEP</label>
+                <input id="checkoutPostalCode" name="postalCode" type="text" autocomplete="postal-code" inputmode="numeric" pattern="[0-9]{5}-?[0-9]{3}" placeholder="00000-000" title="Informe um CEP válido." required>
+            </div>
+
+            <div class="checkout-field">
                 <label for="checkoutAddress">Endereço</label>
                 <input id="checkoutAddress" name="address" type="text" autocomplete="street-address" placeholder="Rua, número e complemento" required>
             </div>
 
-            <div class="checkout-field checkout-field-inline">
-                <div>
-                    <label for="checkoutCity">Cidade</label>
-                    <input id="checkoutCity" name="city" type="text" autocomplete="address-level2" required>
-                </div>
-                <div>
-                    <label for="checkoutPostalCode">CEP</label>
-                    <input id="checkoutPostalCode" name="postalCode" type="text" autocomplete="postal-code" inputmode="numeric" pattern="[0-9]{5}-?[0-9]{3}" placeholder="00000-000" title="Informe um CEP válido." required>
-                </div>
+            <div class="checkout-field">
+                <label for="checkoutCity">Cidade</label>
+                <input id="checkoutCity" name="city" type="text" autocomplete="address-level2" required>
             </div>
 
             <div class="checkout-field">
@@ -1439,6 +1440,8 @@
         <button
             class="modal-close"
             id="closeModal"
+            type="button"
+            aria-label="Fechar detalhes do produto"
         >
 
             <i class="bi bi-x-lg"></i>
@@ -1524,6 +1527,8 @@
 
                     <button
                         id="decreaseQuantity"
+                        type="button"
+                        aria-label="Diminuir quantidade"
                     >
                         −
                     </button>
@@ -1536,6 +1541,8 @@
 
                     <button
                         id="increaseQuantity"
+                        type="button"
+                        aria-label="Aumentar quantidade"
                     >
                         +
                     </button>
